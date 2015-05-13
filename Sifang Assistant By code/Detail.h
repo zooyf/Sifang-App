@@ -26,13 +26,9 @@
     ClassFIeld *classField;
 }
 
-@property (retain , nonatomic) NSArray *fieldLabel;
+@property (retain , nonatomic) NSArray *fieldLabelArray;
 @property (retain , nonatomic) NSMutableDictionary *tempValue;
 @property (retain , nonatomic) UITextField *textFields;
 @property (retain , nonatomic) ClassFIeld *classField;
-
-- (IBAction)save:(id)sender;
-- (IBAction)cancel:(id)sender;
-- (IBAction)textFieldDone:(id)sender;
 
 @end

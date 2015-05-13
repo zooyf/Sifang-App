@@ -19,14 +19,4 @@
     self.afternoon = [[NSString alloc] init];
 }
 
-- (void)dealloc
-{
-    [noon release];
-    [moreing release];
-    [afternoon release];
-    [title release];
-    [evening release];
-    [super dealloc];
-}
-
 @end

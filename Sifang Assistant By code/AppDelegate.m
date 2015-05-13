@@ -7,11 +7,11 @@
 //
 
 #import "AppDelegate.h"
-#import "SFCTimetableViewController.h"
 #import "SFCGreetingView.h"
 #import "SFCEduAdministrationViewControllerViewController.h"
 #import "SFCLibraryViewController.h"
 #import "SFCEmptyclassViewController.h"
+#import "SFCTimeTableTableViewController.h"
 
 @interface AppDelegate ()
 
@@ -23,10 +23,11 @@
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    //、课表页
-    SFCTimetableViewController *timeVC = [[SFCTimetableViewController alloc] init];
-    UINavigationController *timeNav = [[UINavigationController alloc] initWithRootViewController:timeVC];
-
+    //课表页
+//    SFCTimetableViewController *timeVC = [[SFCTimetableViewController alloc] init];
+//    UINavigationController *timeNav = [[UINavigationController alloc] initWithRootViewController:timeVC];
+    SFCTimeTableTableViewController *timeVC = [[SFCTimeTableTableViewController alloc] initWithStyle:UITableViewStylePlain];
+    _navController = [[UINavigationController alloc] initWithRootViewController:timeVC];
     
     //教务页
     SFCEduAdministrationViewControllerViewController *eduVC = [[SFCEduAdministrationViewControllerViewController alloc] init];
@@ -44,7 +45,7 @@
 //设置UITabBarController颜色 在AppDelegate.m中
     UITabBarController *tabBarController = [[UITabBarController alloc] init];
 //    [tabBarController.view setBackgroundColor:[UIColor redColor]];//设置view
-    tabBarController.viewControllers = [NSArray arrayWithObjects:timeNav,eduNav,libNav,empNav, nil];//@[timeNav,eduNav,libNav,empNav];
+    tabBarController.viewControllers = [NSArray arrayWithObjects:_navController,eduNav,libNav,empNav, nil];//@[timeNav,eduNav,libNav,empNav];
     
 //    [tabBarController.tabBar setBackgroundColor:[UIColor blackColor]];//设置tabBar
     
