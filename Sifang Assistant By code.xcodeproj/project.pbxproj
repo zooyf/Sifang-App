@@ -1,0 +1,482 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		996F44681B021C3F008FD10A /* SFCTimeTableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 996F44671B021C3F008FD10A /* SFCTimeTableTableViewController.m */; };
+		996F44781B023ACA008FD10A /* ClassFIeld.m in Sources */ = {isa = PBXBuildFile; fileRef = 996F44771B023ACA008FD10A /* ClassFIeld.m */; };
+		996F447B1B0245A2008FD10A /* Detail.m in Sources */ = {isa = PBXBuildFile; fileRef = 996F447A1B0245A2008FD10A /* Detail.m */; };
+		99BA4E9D1AF86AE900270998 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 99BA4E9C1AF86AE900270998 /* main.m */; };
+		99BA4EA01AF86AE900270998 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 99BA4E9F1AF86AE900270998 /* AppDelegate.m */; };
+		99BA4EB71AF86AE900270998 /* Sifang_Assistant_By_codeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 99BA4EB61AF86AE900270998 /* Sifang_Assistant_By_codeTests.m */; };
+		99BA4ECA1AF86EC300270998 /* SFCGreetingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 99BA4EC91AF86EC300270998 /* SFCGreetingView.m */; };
+		99BA4ED81AF89C0B00270998 /* SFCEduAdministrationViewControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99BA4ED61AF89C0B00270998 /* SFCEduAdministrationViewControllerViewController.m */; };
+		99BA4EDD1AF8A39000270998 /* SFCLibraryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99BA4EDB1AF8A39000270998 /* SFCLibraryViewController.m */; };
+		99BA4EE21AF8A3BF00270998 /* SFCEmptyclassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99BA4EE01AF8A3BF00270998 /* SFCEmptyclassViewController.m */; };
+		99CCDCA31AFBC4B300479D2B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99CCDCA21AFBC4B300479D2B /* Images.xcassets */; };
+		99CCDCC31AFF978E00479D2B /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99CCDCC21AFF978E00479D2B /* TestViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		99BA4EB11AF86AE900270998 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 99BA4E8F1AF86AE900270998 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 99BA4E961AF86AE900270998;
+			remoteInfo = "Sifang Assistant By code";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		996F44661B021C3F008FD10A /* SFCTimeTableTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFCTimeTableTableViewController.h; sourceTree = "<group>"; };
+		996F44671B021C3F008FD10A /* SFCTimeTableTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFCTimeTableTableViewController.m; sourceTree = "<group>"; };
+		996F44761B023ACA008FD10A /* ClassFIeld.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassFIeld.h; sourceTree = "<group>"; };
+		996F44771B023ACA008FD10A /* ClassFIeld.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassFIeld.m; sourceTree = "<group>"; };
+		996F44791B0245A2008FD10A /* Detail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Detail.h; sourceTree = "<group>"; };
+		996F447A1B0245A2008FD10A /* Detail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Detail.m; sourceTree = "<group>"; };
+		99BA4E971AF86AE900270998 /* Sifang Assistant By code.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sifang Assistant By code.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		99BA4E9B1AF86AE900270998 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		99BA4E9C1AF86AE900270998 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		99BA4E9E1AF86AE900270998 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		99BA4E9F1AF86AE900270998 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		99BA4EB01AF86AE900270998 /* Sifang Assistant By codeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Sifang Assistant By codeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		99BA4EB51AF86AE900270998 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		99BA4EB61AF86AE900270998 /* Sifang_Assistant_By_codeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Sifang_Assistant_By_codeTests.m; sourceTree = "<group>"; };
+		99BA4EC81AF86EC300270998 /* SFCGreetingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFCGreetingView.h; sourceTree = "<group>"; };
+		99BA4EC91AF86EC300270998 /* SFCGreetingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFCGreetingView.m; sourceTree = "<group>"; };
+		99BA4ED51AF89C0B00270998 /* SFCEduAdministrationViewControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFCEduAdministrationViewControllerViewController.h; sourceTree = "<group>"; };
+		99BA4ED61AF89C0B00270998 /* SFCEduAdministrationViewControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFCEduAdministrationViewControllerViewController.m; sourceTree = "<group>"; };
+		99BA4EDA1AF8A39000270998 /* SFCLibraryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFCLibraryViewController.h; sourceTree = "<group>"; };
+		99BA4EDB1AF8A39000270998 /* SFCLibraryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFCLibraryViewController.m; sourceTree = "<group>"; };
+		99BA4EDF1AF8A3BF00270998 /* SFCEmptyclassViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFCEmptyclassViewController.h; sourceTree = "<group>"; };
+		99BA4EE01AF8A3BF00270998 /* SFCEmptyclassViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFCEmptyclassViewController.m; sourceTree = "<group>"; };
+		99CCDCA21AFBC4B300479D2B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		99CCDCC11AFF978E00479D2B /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		99CCDCC21AFF978E00479D2B /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		99BA4E941AF86AE900270998 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		99BA4EAD1AF86AE900270998 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		99BA4E8E1AF86AE900270998 = {
+			isa = PBXGroup;
+			children = (
+				99BA4E991AF86AE900270998 /* Sifang Assistant By code */,
+				99BA4EB31AF86AE900270998 /* Sifang Assistant By codeTests */,
+				99BA4E981AF86AE900270998 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		99BA4E981AF86AE900270998 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				99BA4E971AF86AE900270998 /* Sifang Assistant By code.app */,
+				99BA4EB01AF86AE900270998 /* Sifang Assistant By codeTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		99BA4E991AF86AE900270998 /* Sifang Assistant By code */ = {
+			isa = PBXGroup;
+			children = (
+				99CCDCA61AFF5C3E00479D2B /* Timetable */,
+				99CCDCB21AFF652500479D2B /* Education_Administration */,
+				99CCDCB31AFF655400479D2B /* Library */,
+				99CCDCB51AFF658600479D2B /* EmptyClassroom */,
+				99BA4EC81AF86EC300270998 /* SFCGreetingView.h */,
+				99BA4EC91AF86EC300270998 /* SFCGreetingView.m */,
+				99BA4E9E1AF86AE900270998 /* AppDelegate.h */,
+				99BA4E9F1AF86AE900270998 /* AppDelegate.m */,
+				99CCDCC11AFF978E00479D2B /* TestViewController.h */,
+				99CCDCC21AFF978E00479D2B /* TestViewController.m */,
+				99CCDCA21AFBC4B300479D2B /* Images.xcassets */,
+				99BA4E9A1AF86AE900270998 /* Supporting Files */,
+			);
+			path = "Sifang Assistant By code";
+			sourceTree = "<group>";
+		};
+		99BA4E9A1AF86AE900270998 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				99BA4E9B1AF86AE900270998 /* Info.plist */,
+				99BA4E9C1AF86AE900270998 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		99BA4EB31AF86AE900270998 /* Sifang Assistant By codeTests */ = {
+			isa = PBXGroup;
+			children = (
+				99BA4EB61AF86AE900270998 /* Sifang_Assistant_By_codeTests.m */,
+				99BA4EB41AF86AE900270998 /* Supporting Files */,
+			);
+			path = "Sifang Assistant By codeTests";
+			sourceTree = "<group>";
+		};
+		99BA4EB41AF86AE900270998 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				99BA4EB51AF86AE900270998 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		99CCDCA61AFF5C3E00479D2B /* Timetable */ = {
+			isa = PBXGroup;
+			children = (
+				996F44761B023ACA008FD10A /* ClassFIeld.h */,
+				996F44771B023ACA008FD10A /* ClassFIeld.m */,
+				996F44791B0245A2008FD10A /* Detail.h */,
+				996F447A1B0245A2008FD10A /* Detail.m */,
+				996F44661B021C3F008FD10A /* SFCTimeTableTableViewController.h */,
+				996F44671B021C3F008FD10A /* SFCTimeTableTableViewController.m */,
+			);
+			name = Timetable;
+			sourceTree = "<group>";
+		};
+		99CCDCB21AFF652500479D2B /* Education_Administration */ = {
+			isa = PBXGroup;
+			children = (
+				99BA4ED51AF89C0B00270998 /* SFCEduAdministrationViewControllerViewController.h */,
+				99BA4ED61AF89C0B00270998 /* SFCEduAdministrationViewControllerViewController.m */,
+			);
+			name = Education_Administration;
+			sourceTree = "<group>";
+		};
+		99CCDCB31AFF655400479D2B /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				99BA4EDA1AF8A39000270998 /* SFCLibraryViewController.h */,
+				99BA4EDB1AF8A39000270998 /* SFCLibraryViewController.m */,
+			);
+			name = Library;
+			sourceTree = "<group>";
+		};
+		99CCDCB51AFF658600479D2B /* EmptyClassroom */ = {
+			isa = PBXGroup;
+			children = (
+				99BA4EDF1AF8A3BF00270998 /* SFCEmptyclassViewController.h */,
+				99BA4EE01AF8A3BF00270998 /* SFCEmptyclassViewController.m */,
+			);
+			name = EmptyClassroom;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		99BA4E961AF86AE900270998 /* Sifang Assistant By code */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 99BA4EBA1AF86AE900270998 /* Build configuration list for PBXNativeTarget "Sifang Assistant By code" */;
+			buildPhases = (
+				99BA4E931AF86AE900270998 /* Sources */,
+				99BA4E941AF86AE900270998 /* Frameworks */,
+				99BA4E951AF86AE900270998 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Sifang Assistant By code";
+			productName = "Sifang Assistant By code";
+			productReference = 99BA4E971AF86AE900270998 /* Sifang Assistant By code.app */;
+			productType = "com.apple.product-type.application";
+		};
+		99BA4EAF1AF86AE900270998 /* Sifang Assistant By codeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 99BA4EBD1AF86AE900270998 /* Build configuration list for PBXNativeTarget "Sifang Assistant By codeTests" */;
+			buildPhases = (
+				99BA4EAC1AF86AE900270998 /* Sources */,
+				99BA4EAD1AF86AE900270998 /* Frameworks */,
+				99BA4EAE1AF86AE900270998 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				99BA4EB21AF86AE900270998 /* PBXTargetDependency */,
+			);
+			name = "Sifang Assistant By codeTests";
+			productName = "Sifang Assistant By codeTests";
+			productReference = 99BA4EB01AF86AE900270998 /* Sifang Assistant By codeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		99BA4E8F1AF86AE900270998 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = YesterdayFinder;
+				TargetAttributes = {
+					99BA4E961AF86AE900270998 = {
+						CreatedOnToolsVersion = 6.3.1;
+					};
+					99BA4EAF1AF86AE900270998 = {
+						CreatedOnToolsVersion = 6.3.1;
+						TestTargetID = 99BA4E961AF86AE900270998;
+					};
+				};
+			};
+			buildConfigurationList = 99BA4E921AF86AE900270998 /* Build configuration list for PBXProject "Sifang Assistant By code" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 99BA4E8E1AF86AE900270998;
+			productRefGroup = 99BA4E981AF86AE900270998 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				99BA4E961AF86AE900270998 /* Sifang Assistant By code */,
+				99BA4EAF1AF86AE900270998 /* Sifang Assistant By codeTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		99BA4E951AF86AE900270998 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				99CCDCA31AFBC4B300479D2B /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		99BA4EAE1AF86AE900270998 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		99BA4E931AF86AE900270998 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				996F447B1B0245A2008FD10A /* Detail.m in Sources */,
+				99BA4ECA1AF86EC300270998 /* SFCGreetingView.m in Sources */,
+				99BA4EE21AF8A3BF00270998 /* SFCEmptyclassViewController.m in Sources */,
+				99BA4ED81AF89C0B00270998 /* SFCEduAdministrationViewControllerViewController.m in Sources */,
+				99BA4EA01AF86AE900270998 /* AppDelegate.m in Sources */,
+				99BA4E9D1AF86AE900270998 /* main.m in Sources */,
+				99CCDCC31AFF978E00479D2B /* TestViewController.m in Sources */,
+				99BA4EDD1AF8A39000270998 /* SFCLibraryViewController.m in Sources */,
+				996F44681B021C3F008FD10A /* SFCTimeTableTableViewController.m in Sources */,
+				996F44781B023ACA008FD10A /* ClassFIeld.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		99BA4EAC1AF86AE900270998 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				99BA4EB71AF86AE900270998 /* Sifang_Assistant_By_codeTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		99BA4EB21AF86AE900270998 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 99BA4E961AF86AE900270998 /* Sifang Assistant By code */;
+			targetProxy = 99BA4EB11AF86AE900270998 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		99BA4EB81AF86AE900270998 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		99BA4EB91AF86AE900270998 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		99BA4EBB1AF86AE900270998 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = "Sifang Assistant By code/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		99BA4EBC1AF86AE900270998 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = "Sifang Assistant By code/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		99BA4EBE1AF86AE900270998 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Sifang Assistant By codeTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sifang Assistant By code.app/Sifang Assistant By code";
+			};
+			name = Debug;
+		};
+		99BA4EBF1AF86AE900270998 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Sifang Assistant By codeTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sifang Assistant By code.app/Sifang Assistant By code";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		99BA4E921AF86AE900270998 /* Build configuration list for PBXProject "Sifang Assistant By code" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				99BA4EB81AF86AE900270998 /* Debug */,
+				99BA4EB91AF86AE900270998 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		99BA4EBA1AF86AE900270998 /* Build configuration list for PBXNativeTarget "Sifang Assistant By code" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				99BA4EBB1AF86AE900270998 /* Debug */,
+				99BA4EBC1AF86AE900270998 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		99BA4EBD1AF86AE900270998 /* Build configuration list for PBXNativeTarget "Sifang Assistant By codeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				99BA4EBE1AF86AE900270998 /* Debug */,
+				99BA4EBF1AF86AE900270998 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 99BA4E8F1AF86AE900270998 /* Project object */;
+}
