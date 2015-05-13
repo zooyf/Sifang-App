@@ -8,7 +8,7 @@
 
 #import "Detail.h"
 #import "ClassFIeld.h"
-#import "AppDelegate.h"
+#import "rxjsfAppDelegate.h"
 
 @implementation Detail
 
@@ -20,7 +20,7 @@
 
 - (IBAction)cancel:(id)sender
 {
-    AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+    rxjsfAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
     [delegate.navController popViewControllerAnimated:YES];
 }
 
@@ -54,7 +54,7 @@
         }
     }
     //创建程序委托 ，将类加入导航控制器
-    AppDelegate *delegate = [[UIApplication sharedApplication ]delegate];
+    rxjsfAppDelegate *delegate = [[UIApplication sharedApplication ]delegate];
     UINavigationController *nav = [delegate navController];
     [nav popViewControllerAnimated:YES];
     

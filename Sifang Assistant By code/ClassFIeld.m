@@ -10,12 +10,6 @@
 
 @implementation ClassFIeld
 
-@synthesize evening;
-@synthesize noon;
-@synthesize afternoon;
-@synthesize moreing;
-@synthesize title;
-
 - (void)setvalue
 {
     self.evening = [[NSString alloc] init];
