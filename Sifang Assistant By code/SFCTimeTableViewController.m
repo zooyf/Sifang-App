@@ -16,6 +16,18 @@
 
 @implementation SFCTimeTableViewController
 
+//UITableView隐藏多余的分割线
+- (void)setExtraCellLineHidden: (UITableView *)tableView{
+    
+    UIView *view =[ [UIView alloc]init];
+    
+    view.backgroundColor = [UIColor clearColor];
+    
+    [tableView setTableFooterView:view];
+    
+    [tableView setTableHeaderView:view];
+    
+}
 
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -25,11 +37,14 @@
         self.tabBarItem.title = @"课程表";
         
     }
+//    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     return self;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //UITableView隐藏多余的分割线
+    [self setExtraCellLineHidden:self.tableView];
     NSMutableArray *array = [[NSMutableArray alloc] init];
     
     SFCCourses *monday = [[SFCCourses alloc] init];

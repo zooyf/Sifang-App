@@ -7,8 +7,8 @@
 //
 
 #import "SFCDetailViewController.h"
-
-@interface SFCDetailViewController ()
+#import "AppDelegate.h"
+@interface SFCDetailViewController ()<UITextFieldDelegate>
 
 - (void)save:(id)sender;
 
@@ -18,7 +18,33 @@
 
 - (void)save:(id)sender
 {
-    
+    if(self.textFields!=nil)
+    {
+        NSNumber *rowNum = [[NSNumber alloc] initWithInt:self.textFields.tag];
+        [self.tempValue setObject:self.textFields.text forKey:rowNum];    //根据标签提取对象，然后根据将该数字对象设为该文字段的键
+    }
+    //根据键将self.tempValue复制到self.courseInfo数据类中。
+    for(NSString *key in [self.tempValue allKeys])
+    {
+        switch ([key intValue]) {
+            case kmoreing:
+                self.courseInfo.morening = [self.tempValue objectForKey:key];
+                break;
+            case knoon:
+                self.courseInfo.noon = [self.tempValue objectForKey:key];
+                break;
+            case kafternoon:
+                self.courseInfo.afternoon = [self.tempValue objectForKey:key];
+                break;
+            case kevening:
+                self.courseInfo.evening = [self.tempValue objectForKey:key];
+                break;
+                
+            default:
+                break;
+        }
+    }
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 - (void)viewDidLoad {
@@ -31,6 +57,7 @@
     NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
     self.tempValue = dic;
     [super viewDidLoad];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -44,15 +71,15 @@
 {
     static NSString *cellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    UILabel *label = [[UILabel alloc] init];
-    label.frame = CGRectMake(10, 10, 75, 25);
     if(cell == nil)
     {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
-    //        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 75, 25)];
+    
+    UILabel *label = [[UILabel alloc] init];
+    label.frame = CGRectMake(10, 10, 75, 25);
     label.textAlignment = UITextAlignmentRight;
-//    label.tag = klabel;
+    label.tag = klabel;
     label.font = [UIFont boldSystemFontOfSize:14];
     [cell.contentView addSubview:label];
     
@@ -60,14 +87,12 @@
     field.clearsOnBeginEditing = NO;
     field.delegate = self;
     field.returnKeyType = UIReturnKeyDone;
-    field.tag = indexPath.row;
-//    [field addTarget:self action:@selector(textFieldDone:) forControlEvents:UIControlEventEditingDidEndOnExit];  //暂时不懂
     [cell.contentView addSubview:field];
-    NSUInteger row = [indexPath row];
-    //    UILabel *label = (UILabel *)[cell viewWithTag:klabel];
     
-    label.text = self.labelArray[row];
-    //UITextField *field = (UITextField *)[cell viewWithTag:row];
+    NSUInteger row = [indexPath row];
+    
+//    label.text = self.labelArray[row];
+    label.text = [self.labelArray objectAtIndex:row];
     field = nil;
     for(UIView *view in cell.contentView.subviews)
     {
@@ -114,7 +139,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -122,4 +147,15 @@
     return knumberofrow;
 }
 
+//按下文字段时调用的方法，将textField指针指向文字段
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    self.textFields = textField;
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    NSNumber *rowNum = [[NSNumber alloc] initWithInt:textField.tag];
+    [self.tempValue setObject:textField.text forKey:rowNum];
+}
 @end

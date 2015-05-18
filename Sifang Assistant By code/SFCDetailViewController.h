@@ -18,7 +18,7 @@ typedef enum
     kafternoon = 2,
     kevening = 3,
     
-//    klabel = 9999
+    klabel = 9999
 };
 
 @interface SFCDetailViewController : UITableViewController

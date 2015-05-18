@@ -29,9 +29,6 @@
     //课表页
     SFCTimeTableViewController *timeVC = [[SFCTimeTableViewController alloc] initWithStyle:UITableViewStylePlain];
     UINavigationController *timeNav = [[UINavigationController alloc] initWithRootViewController:timeVC];
-//    _navController = [[UINavigationController alloc] initWithRootViewController:timeVC];
-//    testTableViewController *timeVC = [[testTableViewController alloc] init];
-//    UINavigationController *timeNav = [[UINavigationController alloc] initWithRootViewController:timeVC];
     
     //教务页
     SFCEduAdministrationViewControllerViewController *eduVC = [[SFCEduAdministrationViewControllerViewController alloc] init];

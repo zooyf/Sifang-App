@@ -8,9 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		99A8DC6F1B09D3FF007ED5A5 /* SFCCourses.m in Sources */ = {isa = PBXBuildFile; fileRef = 99A8DC6E1B09D3FF007ED5A5 /* SFCCourses.m */; };
-		99A8DC721B09E120007ED5A5 /* SFCDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99A8DC711B09E120007ED5A5 /* SFCDetailViewController.m */; };
-		99A8DC781B0A0931007ED5A5 /* testTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99A8DC771B0A0931007ED5A5 /* testTableViewController.m */; };
 		99A8DC7B1B0A1FE3007ED5A5 /* SFCTimeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99A8DC7A1B0A1FE3007ED5A5 /* SFCTimeTableViewController.m */; };
+		99A8DC7D1B0A3279007ED5A5 /* SFCDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99A8DC7C1B0A3279007ED5A5 /* SFCDetailViewController.m */; };
 		99BA4E9D1AF86AE900270998 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 99BA4E9C1AF86AE900270998 /* main.m */; };
 		99BA4EA01AF86AE900270998 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 99BA4E9F1AF86AE900270998 /* AppDelegate.m */; };
 		99BA4EB71AF86AE900270998 /* Sifang_Assistant_By_codeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 99BA4EB61AF86AE900270998 /* Sifang_Assistant_By_codeTests.m */; };
@@ -34,11 +33,9 @@
 		99A8DC6D1B09D3FF007ED5A5 /* SFCCourses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFCCourses.h; sourceTree = "<group>"; };
 		99A8DC6E1B09D3FF007ED5A5 /* SFCCourses.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFCCourses.m; sourceTree = "<group>"; };
 		99A8DC701B09E120007ED5A5 /* SFCDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFCDetailViewController.h; sourceTree = "<group>"; };
-		99A8DC711B09E120007ED5A5 /* SFCDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFCDetailViewController.m; sourceTree = "<group>"; };
-		99A8DC761B0A0931007ED5A5 /* testTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testTableViewController.h; sourceTree = "<group>"; };
-		99A8DC771B0A0931007ED5A5 /* testTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = testTableViewController.m; sourceTree = "<group>"; };
 		99A8DC791B0A1FE3007ED5A5 /* SFCTimeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFCTimeTableViewController.h; sourceTree = "<group>"; };
 		99A8DC7A1B0A1FE3007ED5A5 /* SFCTimeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFCTimeTableViewController.m; sourceTree = "<group>"; };
+		99A8DC7C1B0A3279007ED5A5 /* SFCDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFCDetailViewController.m; sourceTree = "<group>"; };
 		99BA4E971AF86AE900270998 /* Sifang Assistant By code.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sifang Assistant By code.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		99BA4E9B1AF86AE900270998 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		99BA4E9C1AF86AE900270998 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -101,8 +98,6 @@
 				99CCDCB51AFF658600479D2B /* EmptyClassroom */,
 				99BA4E9E1AF86AE900270998 /* AppDelegate.h */,
 				99BA4E9F1AF86AE900270998 /* AppDelegate.m */,
-				99A8DC761B0A0931007ED5A5 /* testTableViewController.h */,
-				99A8DC771B0A0931007ED5A5 /* testTableViewController.m */,
 				99CCDCA21AFBC4B300479D2B /* Images.xcassets */,
 				99BA4E9A1AF86AE900270998 /* Supporting Files */,
 			);
@@ -141,7 +136,7 @@
 				99A8DC6D1B09D3FF007ED5A5 /* SFCCourses.h */,
 				99A8DC6E1B09D3FF007ED5A5 /* SFCCourses.m */,
 				99A8DC701B09E120007ED5A5 /* SFCDetailViewController.h */,
-				99A8DC711B09E120007ED5A5 /* SFCDetailViewController.m */,
+				99A8DC7C1B0A3279007ED5A5 /* SFCDetailViewController.m */,
 				99A8DC791B0A1FE3007ED5A5 /* SFCTimeTableViewController.h */,
 				99A8DC7A1B0A1FE3007ED5A5 /* SFCTimeTableViewController.m */,
 			);
@@ -273,13 +268,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				99A8DC721B09E120007ED5A5 /* SFCDetailViewController.m in Sources */,
 				99BA4EE21AF8A3BF00270998 /* SFCEmptyclassViewController.m in Sources */,
 				99BA4ED81AF89C0B00270998 /* SFCEduAdministrationViewControllerViewController.m in Sources */,
+				99A8DC7D1B0A3279007ED5A5 /* SFCDetailViewController.m in Sources */,
 				99BA4EA01AF86AE900270998 /* AppDelegate.m in Sources */,
 				99BA4E9D1AF86AE900270998 /* main.m in Sources */,
 				99A8DC7B1B0A1FE3007ED5A5 /* SFCTimeTableViewController.m in Sources */,
-				99A8DC781B0A0931007ED5A5 /* testTableViewController.m in Sources */,
 				99A8DC6F1B09D3FF007ED5A5 /* SFCCourses.m in Sources */,
 				99BA4EDD1AF8A39000270998 /* SFCLibraryViewController.m in Sources */,
 			);
