@@ -7,7 +7,6 @@
 //
 
 #import "SFCEduAdministrationViewControllerViewController.h"
-#import "SFCGreetingView.h"
 
 @interface SFCEduAdministrationViewControllerViewController ()
 

@@ -7,11 +7,14 @@
 //
 
 #import "AppDelegate.h"
-#import "SFCGreetingView.h"
+
+//#import "SFCTimeTableTableViewController.h"
+#import "SFCTimeTableViewController.h"
+//#import "testTableViewController.h"
+
 #import "SFCEduAdministrationViewControllerViewController.h"
 #import "SFCLibraryViewController.h"
 #import "SFCEmptyclassViewController.h"
-#import "SFCTimeTableTableViewController.h"
 
 @interface AppDelegate ()
 
@@ -24,10 +27,11 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     //课表页
-//    SFCTimetableViewController *timeVC = [[SFCTimetableViewController alloc] init];
+    SFCTimeTableViewController *timeVC = [[SFCTimeTableViewController alloc] initWithStyle:UITableViewStylePlain];
+    UINavigationController *timeNav = [[UINavigationController alloc] initWithRootViewController:timeVC];
+//    _navController = [[UINavigationController alloc] initWithRootViewController:timeVC];
+//    testTableViewController *timeVC = [[testTableViewController alloc] init];
 //    UINavigationController *timeNav = [[UINavigationController alloc] initWithRootViewController:timeVC];
-    SFCTimeTableTableViewController *timeVC = [[SFCTimeTableTableViewController alloc] initWithStyle:UITableViewStylePlain];
-    _navController = [[UINavigationController alloc] initWithRootViewController:timeVC];
     
     //教务页
     SFCEduAdministrationViewControllerViewController *eduVC = [[SFCEduAdministrationViewControllerViewController alloc] init];
@@ -44,10 +48,7 @@
     
 //设置UITabBarController颜色 在AppDelegate.m中
     UITabBarController *tabBarController = [[UITabBarController alloc] init];
-//    [tabBarController.view setBackgroundColor:[UIColor redColor]];//设置view
-    tabBarController.viewControllers = [NSArray arrayWithObjects:_navController,eduNav,libNav,empNav, nil];//@[timeNav,eduNav,libNav,empNav];
-    
-//    [tabBarController.tabBar setBackgroundColor:[UIColor blackColor]];//设置tabBar
+    tabBarController.viewControllers = [NSArray arrayWithObjects:timeNav,eduNav,libNav,empNav, nil];//@[timeNav,eduNav,libNav,empNav];
     
     self.window.rootViewController = tabBarController;
     self.window.backgroundColor = [UIColor whiteColor];

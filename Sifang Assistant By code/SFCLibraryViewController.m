@@ -7,7 +7,6 @@
 //
 
 #import "SFCLibraryViewController.h"
-#import "SFCGreetingView.h"
 
 @interface SFCLibraryViewController ()
 

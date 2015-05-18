@@ -7,18 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		996F44681B021C3F008FD10A /* SFCTimeTableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 996F44671B021C3F008FD10A /* SFCTimeTableTableViewController.m */; };
-		996F44781B023ACA008FD10A /* ClassFIeld.m in Sources */ = {isa = PBXBuildFile; fileRef = 996F44771B023ACA008FD10A /* ClassFIeld.m */; };
-		996F447B1B0245A2008FD10A /* Detail.m in Sources */ = {isa = PBXBuildFile; fileRef = 996F447A1B0245A2008FD10A /* Detail.m */; };
+		99A8DC6F1B09D3FF007ED5A5 /* SFCCourses.m in Sources */ = {isa = PBXBuildFile; fileRef = 99A8DC6E1B09D3FF007ED5A5 /* SFCCourses.m */; };
+		99A8DC721B09E120007ED5A5 /* SFCDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99A8DC711B09E120007ED5A5 /* SFCDetailViewController.m */; };
+		99A8DC781B0A0931007ED5A5 /* testTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99A8DC771B0A0931007ED5A5 /* testTableViewController.m */; };
+		99A8DC7B1B0A1FE3007ED5A5 /* SFCTimeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99A8DC7A1B0A1FE3007ED5A5 /* SFCTimeTableViewController.m */; };
 		99BA4E9D1AF86AE900270998 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 99BA4E9C1AF86AE900270998 /* main.m */; };
 		99BA4EA01AF86AE900270998 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 99BA4E9F1AF86AE900270998 /* AppDelegate.m */; };
 		99BA4EB71AF86AE900270998 /* Sifang_Assistant_By_codeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 99BA4EB61AF86AE900270998 /* Sifang_Assistant_By_codeTests.m */; };
-		99BA4ECA1AF86EC300270998 /* SFCGreetingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 99BA4EC91AF86EC300270998 /* SFCGreetingView.m */; };
 		99BA4ED81AF89C0B00270998 /* SFCEduAdministrationViewControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99BA4ED61AF89C0B00270998 /* SFCEduAdministrationViewControllerViewController.m */; };
 		99BA4EDD1AF8A39000270998 /* SFCLibraryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99BA4EDB1AF8A39000270998 /* SFCLibraryViewController.m */; };
 		99BA4EE21AF8A3BF00270998 /* SFCEmptyclassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99BA4EE01AF8A3BF00270998 /* SFCEmptyclassViewController.m */; };
 		99CCDCA31AFBC4B300479D2B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99CCDCA21AFBC4B300479D2B /* Images.xcassets */; };
-		99CCDCC31AFF978E00479D2B /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99CCDCC21AFF978E00479D2B /* TestViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,12 +31,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		996F44661B021C3F008FD10A /* SFCTimeTableTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFCTimeTableTableViewController.h; sourceTree = "<group>"; };
-		996F44671B021C3F008FD10A /* SFCTimeTableTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFCTimeTableTableViewController.m; sourceTree = "<group>"; };
-		996F44761B023ACA008FD10A /* ClassFIeld.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassFIeld.h; sourceTree = "<group>"; };
-		996F44771B023ACA008FD10A /* ClassFIeld.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassFIeld.m; sourceTree = "<group>"; };
-		996F44791B0245A2008FD10A /* Detail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Detail.h; sourceTree = "<group>"; };
-		996F447A1B0245A2008FD10A /* Detail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Detail.m; sourceTree = "<group>"; };
+		99A8DC6D1B09D3FF007ED5A5 /* SFCCourses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFCCourses.h; sourceTree = "<group>"; };
+		99A8DC6E1B09D3FF007ED5A5 /* SFCCourses.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFCCourses.m; sourceTree = "<group>"; };
+		99A8DC701B09E120007ED5A5 /* SFCDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFCDetailViewController.h; sourceTree = "<group>"; };
+		99A8DC711B09E120007ED5A5 /* SFCDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFCDetailViewController.m; sourceTree = "<group>"; };
+		99A8DC761B0A0931007ED5A5 /* testTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testTableViewController.h; sourceTree = "<group>"; };
+		99A8DC771B0A0931007ED5A5 /* testTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = testTableViewController.m; sourceTree = "<group>"; };
+		99A8DC791B0A1FE3007ED5A5 /* SFCTimeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFCTimeTableViewController.h; sourceTree = "<group>"; };
+		99A8DC7A1B0A1FE3007ED5A5 /* SFCTimeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFCTimeTableViewController.m; sourceTree = "<group>"; };
 		99BA4E971AF86AE900270998 /* Sifang Assistant By code.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sifang Assistant By code.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		99BA4E9B1AF86AE900270998 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		99BA4E9C1AF86AE900270998 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -46,8 +47,6 @@
 		99BA4EB01AF86AE900270998 /* Sifang Assistant By codeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Sifang Assistant By codeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		99BA4EB51AF86AE900270998 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		99BA4EB61AF86AE900270998 /* Sifang_Assistant_By_codeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Sifang_Assistant_By_codeTests.m; sourceTree = "<group>"; };
-		99BA4EC81AF86EC300270998 /* SFCGreetingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFCGreetingView.h; sourceTree = "<group>"; };
-		99BA4EC91AF86EC300270998 /* SFCGreetingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFCGreetingView.m; sourceTree = "<group>"; };
 		99BA4ED51AF89C0B00270998 /* SFCEduAdministrationViewControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFCEduAdministrationViewControllerViewController.h; sourceTree = "<group>"; };
 		99BA4ED61AF89C0B00270998 /* SFCEduAdministrationViewControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFCEduAdministrationViewControllerViewController.m; sourceTree = "<group>"; };
 		99BA4EDA1AF8A39000270998 /* SFCLibraryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFCLibraryViewController.h; sourceTree = "<group>"; };
@@ -55,8 +54,6 @@
 		99BA4EDF1AF8A3BF00270998 /* SFCEmptyclassViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFCEmptyclassViewController.h; sourceTree = "<group>"; };
 		99BA4EE01AF8A3BF00270998 /* SFCEmptyclassViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFCEmptyclassViewController.m; sourceTree = "<group>"; };
 		99CCDCA21AFBC4B300479D2B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		99CCDCC11AFF978E00479D2B /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
-		99CCDCC21AFF978E00479D2B /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,12 +99,10 @@
 				99CCDCB21AFF652500479D2B /* Education_Administration */,
 				99CCDCB31AFF655400479D2B /* Library */,
 				99CCDCB51AFF658600479D2B /* EmptyClassroom */,
-				99BA4EC81AF86EC300270998 /* SFCGreetingView.h */,
-				99BA4EC91AF86EC300270998 /* SFCGreetingView.m */,
 				99BA4E9E1AF86AE900270998 /* AppDelegate.h */,
 				99BA4E9F1AF86AE900270998 /* AppDelegate.m */,
-				99CCDCC11AFF978E00479D2B /* TestViewController.h */,
-				99CCDCC21AFF978E00479D2B /* TestViewController.m */,
+				99A8DC761B0A0931007ED5A5 /* testTableViewController.h */,
+				99A8DC771B0A0931007ED5A5 /* testTableViewController.m */,
 				99CCDCA21AFBC4B300479D2B /* Images.xcassets */,
 				99BA4E9A1AF86AE900270998 /* Supporting Files */,
 			);
@@ -143,12 +138,12 @@
 		99CCDCA61AFF5C3E00479D2B /* Timetable */ = {
 			isa = PBXGroup;
 			children = (
-				996F44761B023ACA008FD10A /* ClassFIeld.h */,
-				996F44771B023ACA008FD10A /* ClassFIeld.m */,
-				996F44791B0245A2008FD10A /* Detail.h */,
-				996F447A1B0245A2008FD10A /* Detail.m */,
-				996F44661B021C3F008FD10A /* SFCTimeTableTableViewController.h */,
-				996F44671B021C3F008FD10A /* SFCTimeTableTableViewController.m */,
+				99A8DC6D1B09D3FF007ED5A5 /* SFCCourses.h */,
+				99A8DC6E1B09D3FF007ED5A5 /* SFCCourses.m */,
+				99A8DC701B09E120007ED5A5 /* SFCDetailViewController.h */,
+				99A8DC711B09E120007ED5A5 /* SFCDetailViewController.m */,
+				99A8DC791B0A1FE3007ED5A5 /* SFCTimeTableViewController.h */,
+				99A8DC7A1B0A1FE3007ED5A5 /* SFCTimeTableViewController.m */,
 			);
 			name = Timetable;
 			sourceTree = "<group>";
@@ -278,16 +273,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				996F447B1B0245A2008FD10A /* Detail.m in Sources */,
-				99BA4ECA1AF86EC300270998 /* SFCGreetingView.m in Sources */,
+				99A8DC721B09E120007ED5A5 /* SFCDetailViewController.m in Sources */,
 				99BA4EE21AF8A3BF00270998 /* SFCEmptyclassViewController.m in Sources */,
 				99BA4ED81AF89C0B00270998 /* SFCEduAdministrationViewControllerViewController.m in Sources */,
 				99BA4EA01AF86AE900270998 /* AppDelegate.m in Sources */,
 				99BA4E9D1AF86AE900270998 /* main.m in Sources */,
-				99CCDCC31AFF978E00479D2B /* TestViewController.m in Sources */,
+				99A8DC7B1B0A1FE3007ED5A5 /* SFCTimeTableViewController.m in Sources */,
+				99A8DC781B0A0931007ED5A5 /* testTableViewController.m in Sources */,
+				99A8DC6F1B09D3FF007ED5A5 /* SFCCourses.m in Sources */,
 				99BA4EDD1AF8A39000270998 /* SFCLibraryViewController.m in Sources */,
-				996F44681B021C3F008FD10A /* SFCTimeTableTableViewController.m in Sources */,
-				996F44781B023ACA008FD10A /* ClassFIeld.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

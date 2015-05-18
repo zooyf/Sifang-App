@@ -7,7 +7,6 @@
 //
 
 #import "SFCEmptyclassViewController.h"
-#import "SFCGreetingView.h"
 
 @interface SFCEmptyclassViewController ()
 
