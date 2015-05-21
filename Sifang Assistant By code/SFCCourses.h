@@ -16,4 +16,6 @@
 @property (retain ,nonatomic) NSString *afternoon;
 @property (retain , nonatomic) NSString *evening;
 
+@property (retain , nonatomic) NSString *indexPath; //return value represent the weekday
+
 @end

@@ -25,7 +25,9 @@ typedef enum
 
 @property (retain , nonatomic) NSArray *labelArray;
 @property (retain , nonatomic) NSMutableDictionary *tempValue;
+@property (retain , nonatomic) NSMutableDictionary *allKeys;
 @property (retain , nonatomic) UITextField *textFields;
 @property (retain , nonatomic) SFCCourses *courseInfo;
+
 
 @end

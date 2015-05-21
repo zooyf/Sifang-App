@@ -16,19 +16,6 @@
 
 @implementation SFCTimeTableViewController
 
-//UITableView隐藏多余的分割线
-- (void)setExtraCellLineHidden: (UITableView *)tableView{
-    
-    UIView *view =[ [UIView alloc]init];
-    
-    view.backgroundColor = [UIColor clearColor];
-    
-    [tableView setTableFooterView:view];
-    
-    [tableView setTableHeaderView:view];
-    
-}
-
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -37,14 +24,13 @@
         self.tabBarItem.title = @"课程表";
         
     }
-//    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     return self;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     //UITableView隐藏多余的分割线
-    [self setExtraCellLineHidden:self.tableView];
+    self.tableView.tableFooterView = [[UIView alloc] init];
     NSMutableArray *array = [[NSMutableArray alloc] init];
     
     SFCCourses *monday = [[SFCCourses alloc] init];
@@ -107,56 +93,16 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSUInteger row =indexPath.row;
+    NSNumber *rowNum = [[NSNumber alloc] initWithInteger:row];
     SFCCourses *theClass = [self.controllers objectAtIndex:row];
     SFCDetailViewController *newView = [[SFCDetailViewController alloc] initWithStyle:UITableViewStyleGrouped];
     newView.title = theClass.title;
+    theClass.indexPath = (NSString*)rowNum.stringValue;
     newView.courseInfo = theClass;
+//    NSLog(@"%@",[theClass ]);
     
     [self.navigationController pushViewController:newView animated:YES];
     
 }
-/*
- // Override to support conditional editing of the table view.
- - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
- // Return NO if you do not want the specified item to be editable.
- return YES;
- }
- */
-
-/*
- // Override to support editing the table view.
- - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
- if (editingStyle == UITableViewCellEditingStyleDelete) {
- // Delete the row from the data source
- [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
- } else if (editingStyle == UITableViewCellEditingStyleInsert) {
- // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
- }
- }
- */
-
-/*
- // Override to support rearranging the table view.
- - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
- }
- */
-
-/*
- // Override to support conditional rearranging of the table view.
- - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
- // Return NO if you do not want the item to be re-orderable.
- return YES;
- }
- */
-
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
 
 @end

@@ -21,12 +21,15 @@
     if(self.textFields!=nil)
     {
         NSNumber *rowNum = [[NSNumber alloc] initWithInt:self.textFields.tag];
-        [self.tempValue setObject:self.textFields.text forKey:rowNum];    //根据标签提取对象，然后根据将该数字对象设为该文字段的键
+        [self.tempValue setObject:self.textFields.text forKey:(NSString*)rowNum.stringValue];    //根据标签提取对象，然后根据将该数字对象设为该文字段的键
     }
+    
     //根据键将self.tempValue复制到self.courseInfo数据类中。
     for(NSString *key in [self.tempValue allKeys])
     {
         switch ([key intValue]) {
+            default:
+                break;
             case kmoreing:
                 self.courseInfo.morening = [self.tempValue objectForKey:key];
                 break;
@@ -39,23 +42,57 @@
             case kevening:
                 self.courseInfo.evening = [self.tempValue objectForKey:key];
                 break;
-                
-            default:
-                break;
         }
     }
+    
+    
+    NSArray *paths=NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES);
+    NSString *path=[paths    objectAtIndex:0];
+    NSString *filename=[path stringByAppendingPathComponent:@"test.plist"];
+    NSLog(@"self.temValue:%@",self.tempValue);
+    
+    NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithDictionary:self.allKeys];
+    NSLog(@"dict:%@",dict);
+    
+    [dict setObject:self.tempValue forKey:self.courseInfo.indexPath];
+    //输入写入
+    [dict writeToFile:filename atomically:YES];
+    dict = nil;
+
+    dict = [[NSMutableDictionary alloc] initWithContentsOfFile:filename];
+    NSLog(@"dict:%@",dict);
+    
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 - (void)viewDidLoad {
-    NSArray *array = [[NSArray alloc] initWithObjects:@"上午：",@"中午：",@"下午：",@"晚上：" ,nil];
+    NSArray *array = [[NSArray alloc] initWithObjects:@"第一节：",@"第二节：",@"第三节：",@"第四节：" ,nil];
     self.labelArray = array;
     
     UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithTitle:@"保存" style:UIBarButtonItemStyleDone target:self action:@selector(save:)];
     self.navigationItem.rightBarButtonItem = saveButton;
-    
-    NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
-    self.tempValue = dic;
+
+    NSArray *paths=NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES);
+    NSString *path=[paths    objectAtIndex:0];
+    NSString *filename=[path stringByAppendingPathComponent:@"test.plist"];
+    NSFileManager* fm = [NSFileManager defaultManager];
+//    NSMutableDictionary *data1 = [[NSMutableDictionary alloc] initWithContentsOfFile:filename];
+////删除文件
+//    [fm removeItemAtPath:filename error:nil];
+    BOOL isDirExist = [fm fileExistsAtPath:filename];
+    //创建文件
+    if (!isDirExist) {
+        [fm createFileAtPath:filename contents:nil attributes:nil];
+    }
+    self.allKeys = [[NSMutableDictionary alloc] initWithContentsOfFile:filename];
+    if (self.allKeys==nil) {
+        self.allKeys = [[NSMutableDictionary alloc] init];
+    }
+    self.tempValue = [self.allKeys objectForKey:self.courseInfo.indexPath];
+    if (self.tempValue==nil) {
+        self.tempValue = [[NSMutableDictionary alloc] init];
+    }
+    NSLog(@"allkeys:%@\ntempValue:%@",self.allKeys,self.tempValue);
     [super viewDidLoad];
     
 }
@@ -99,40 +136,43 @@
         if([view isMemberOfClass:[UITextField class]])
             field = (UITextField *)view;
     }
-    NSNumber *rownNum = [[NSNumber alloc] initWithInt:row];
-    
-    switch (row) {
-        case kmoreing:
-            if([[self.tempValue allKeys]containsObject:rownNum])
-                field.text = [self.tempValue objectForKey:rownNum];
-            else
-                field.text = self.courseInfo.morening;
-            break;
-        case knoon:
-            if([[self.tempValue allKeys]containsObject:rownNum])
-                field.text = [self.tempValue objectForKey:rownNum];
-            else
-                field.text = self.courseInfo.noon ;
-            break;
-        case kafternoon:
-            if([[self.tempValue allKeys] containsObject:rownNum ])
-                field.text = [self.tempValue objectForKey:rownNum];
-            else
-                field.text = self.courseInfo.afternoon;
-            break;
-        case kevening:
-            if([[self.tempValue allKeys] containsObject:rownNum])
-                field.text = [self.tempValue objectForKey:rownNum];
-            else
-                field.text = self.courseInfo.evening;
-            break;
-            
-        default:
-            break;
-    }
-    field.tag =row;
-    if(self.textFields == field)
-        self.textFields =nil;
+//    if (self.allKeys) {
+        NSNumber *rownNumber = [[NSNumber alloc] initWithInt:row];
+        NSString *rownNum = (NSString*)rownNumber.stringValue;
+        switch (row) {
+            case kmoreing:
+                if([[self.tempValue allKeys]containsObject:rownNum])
+                    field.text = [self.tempValue objectForKey:rownNum];
+                else
+                    field.text = self.courseInfo.morening;
+                break;
+            case knoon:
+                if([[self.tempValue allKeys]containsObject:rownNum])
+                    field.text = [self.tempValue objectForKey:rownNum];
+                else
+                    field.text = self.courseInfo.noon ;
+                break;
+            case kafternoon:
+                if([[self.tempValue allKeys] containsObject:rownNum ])
+                    field.text = [self.tempValue objectForKey:rownNum];
+                else
+                    field.text = self.courseInfo.afternoon;
+                break;
+            case kevening:
+                if([[self.tempValue allKeys] containsObject:rownNum])
+                    field.text = [self.tempValue objectForKey:rownNum];
+                else
+                    field.text = self.courseInfo.evening;
+                break;
+                
+            default:
+                break;
+        }
+        field.tag =row;
+        if(self.textFields == field)
+            self.textFields =nil;
+        
+//    }
     return cell;
     
 }
@@ -156,6 +196,7 @@
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
     NSNumber *rowNum = [[NSNumber alloc] initWithInt:textField.tag];
-    [self.tempValue setObject:textField.text forKey:rowNum];
+    [self.tempValue setObject:textField.text forKey:(NSString*)rowNum.stringValue];
+
 }
 @end
