@@ -10,4 +10,6 @@
 
 @interface SFCEduAdministrationViewControllerViewController : UIViewController
 
+@property (nonatomic, strong) NSURL *URL;
+
 @end
