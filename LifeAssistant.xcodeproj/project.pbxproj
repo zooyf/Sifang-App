@@ -1,0 +1,331 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9950E5AE1CB3BEFD00F13D63 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9950E5AD1CB3BEFD00F13D63 /* main.m */; };
+		9950E5B11CB3BEFD00F13D63 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9950E5B01CB3BEFD00F13D63 /* AppDelegate.m */; };
+		9950E5B71CB3BEFD00F13D63 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9950E5B51CB3BEFD00F13D63 /* Main.storyboard */; };
+		9950E5BA1CB3BEFD00F13D63 /* LifeAssistant.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9950E5B81CB3BEFD00F13D63 /* LifeAssistant.xcdatamodeld */; };
+		9950E5BC1CB3BEFD00F13D63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9950E5BB1CB3BEFD00F13D63 /* Assets.xcassets */; };
+		9950E5BF1CB3BEFD00F13D63 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9950E5BD1CB3BEFD00F13D63 /* LaunchScreen.storyboard */; };
+		99745C801CB8E5FE0005D137 /* YFFleaMarketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99745C7F1CB8E5FE0005D137 /* YFFleaMarketViewController.m */; };
+		99745C831CB8F2860005D137 /* YFSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99745C821CB8F2860005D137 /* YFSearchViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		9950E5A91CB3BEFC00F13D63 /* LifeAssistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LifeAssistant.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9950E5AD1CB3BEFD00F13D63 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9950E5AF1CB3BEFD00F13D63 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		9950E5B01CB3BEFD00F13D63 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		9950E5B61CB3BEFD00F13D63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9950E5B91CB3BEFD00F13D63 /* LifeAssistant.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LifeAssistant.xcdatamodel; sourceTree = "<group>"; };
+		9950E5BB1CB3BEFD00F13D63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9950E5BE1CB3BEFD00F13D63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9950E5C01CB3BEFD00F13D63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		99745C7E1CB8E5FE0005D137 /* YFFleaMarketViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFFleaMarketViewController.h; sourceTree = "<group>"; };
+		99745C7F1CB8E5FE0005D137 /* YFFleaMarketViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFFleaMarketViewController.m; sourceTree = "<group>"; };
+		99745C811CB8F2860005D137 /* YFSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFSearchViewController.h; sourceTree = "<group>"; };
+		99745C821CB8F2860005D137 /* YFSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFSearchViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9950E5A61CB3BEFC00F13D63 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9950E5A01CB3BEFC00F13D63 = {
+			isa = PBXGroup;
+			children = (
+				9950E5AB1CB3BEFD00F13D63 /* LifeAssistant */,
+				9950E5AA1CB3BEFC00F13D63 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9950E5AA1CB3BEFC00F13D63 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9950E5A91CB3BEFC00F13D63 /* LifeAssistant.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9950E5AB1CB3BEFD00F13D63 /* LifeAssistant */ = {
+			isa = PBXGroup;
+			children = (
+				9950E5AF1CB3BEFD00F13D63 /* AppDelegate.h */,
+				9950E5B01CB3BEFD00F13D63 /* AppDelegate.m */,
+				9950E5B51CB3BEFD00F13D63 /* Main.storyboard */,
+				99745C811CB8F2860005D137 /* YFSearchViewController.h */,
+				99745C821CB8F2860005D137 /* YFSearchViewController.m */,
+				99745C7E1CB8E5FE0005D137 /* YFFleaMarketViewController.h */,
+				99745C7F1CB8E5FE0005D137 /* YFFleaMarketViewController.m */,
+				9950E5BB1CB3BEFD00F13D63 /* Assets.xcassets */,
+				9950E5BD1CB3BEFD00F13D63 /* LaunchScreen.storyboard */,
+				9950E5C01CB3BEFD00F13D63 /* Info.plist */,
+				9950E5B81CB3BEFD00F13D63 /* LifeAssistant.xcdatamodeld */,
+				9950E5AC1CB3BEFD00F13D63 /* Supporting Files */,
+			);
+			path = LifeAssistant;
+			sourceTree = "<group>";
+		};
+		9950E5AC1CB3BEFD00F13D63 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9950E5AD1CB3BEFD00F13D63 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9950E5A81CB3BEFC00F13D63 /* LifeAssistant */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9950E5C31CB3BEFD00F13D63 /* Build configuration list for PBXNativeTarget "LifeAssistant" */;
+			buildPhases = (
+				9950E5A51CB3BEFC00F13D63 /* Sources */,
+				9950E5A61CB3BEFC00F13D63 /* Frameworks */,
+				9950E5A71CB3BEFC00F13D63 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LifeAssistant;
+			productName = LifeAssistant;
+			productReference = 9950E5A91CB3BEFC00F13D63 /* LifeAssistant.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9950E5A11CB3BEFC00F13D63 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = zooyf;
+				TargetAttributes = {
+					9950E5A81CB3BEFC00F13D63 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+				};
+			};
+			buildConfigurationList = 9950E5A41CB3BEFC00F13D63 /* Build configuration list for PBXProject "LifeAssistant" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9950E5A01CB3BEFC00F13D63;
+			productRefGroup = 9950E5AA1CB3BEFC00F13D63 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9950E5A81CB3BEFC00F13D63 /* LifeAssistant */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9950E5A71CB3BEFC00F13D63 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9950E5BF1CB3BEFD00F13D63 /* LaunchScreen.storyboard in Resources */,
+				9950E5BC1CB3BEFD00F13D63 /* Assets.xcassets in Resources */,
+				9950E5B71CB3BEFD00F13D63 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9950E5A51CB3BEFC00F13D63 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9950E5BA1CB3BEFD00F13D63 /* LifeAssistant.xcdatamodeld in Sources */,
+				99745C801CB8E5FE0005D137 /* YFFleaMarketViewController.m in Sources */,
+				99745C831CB8F2860005D137 /* YFSearchViewController.m in Sources */,
+				9950E5B11CB3BEFD00F13D63 /* AppDelegate.m in Sources */,
+				9950E5AE1CB3BEFD00F13D63 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		9950E5B51CB3BEFD00F13D63 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9950E5B61CB3BEFD00F13D63 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9950E5BD1CB3BEFD00F13D63 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9950E5BE1CB3BEFD00F13D63 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9950E5C11CB3BEFD00F13D63 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		9950E5C21CB3BEFD00F13D63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9950E5C41CB3BEFD00F13D63 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = LifeAssistant/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.JasonYu.LifeAssistant;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		9950E5C51CB3BEFD00F13D63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = LifeAssistant/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.JasonYu.LifeAssistant;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9950E5A41CB3BEFC00F13D63 /* Build configuration list for PBXProject "LifeAssistant" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9950E5C11CB3BEFD00F13D63 /* Debug */,
+				9950E5C21CB3BEFD00F13D63 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9950E5C31CB3BEFD00F13D63 /* Build configuration list for PBXNativeTarget "LifeAssistant" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9950E5C41CB3BEFD00F13D63 /* Debug */,
+				9950E5C51CB3BEFD00F13D63 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9950E5B81CB3BEFD00F13D63 /* LifeAssistant.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9950E5B91CB3BEFD00F13D63 /* LifeAssistant.xcdatamodel */,
+			);
+			currentVersion = 9950E5B91CB3BEFD00F13D63 /* LifeAssistant.xcdatamodel */;
+			path = LifeAssistant.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 9950E5A11CB3BEFC00F13D63 /* Project object */;
+}
