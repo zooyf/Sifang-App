@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FMListCell" rowHeight="100" id="9XL-70-kEG" customClass="FMListCell">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="100"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9XL-70-kEG" id="LjS-Pd-FJA">
+                <rect key="frame" x="0.0" y="0.0" width="600" height="99"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder_null" translatesAutoresizingMaskIntoConstraints="NO" id="aWM-6z-mah">
+                        <rect key="frame" x="10" y="10" width="79" height="79"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="aWM-6z-mah" secondAttribute="height" multiplier="1:1" id="JMw-Uv-pHV"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oDG-sA-Bfa">
+                        <rect key="frame" x="99" y="10" width="491" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="detail" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pKj-To-lEg">
+                        <rect key="frame" x="99" y="36" width="491" height="17"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0KI-EC-H31">
+                        <rect key="frame" x="561" y="74" width="29" height="15"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="pKj-To-lEg" firstAttribute="leading" secondItem="oDG-sA-Bfa" secondAttribute="leading" id="1Np-KA-6OD"/>
+                    <constraint firstItem="oDG-sA-Bfa" firstAttribute="leading" secondItem="aWM-6z-mah" secondAttribute="trailing" constant="10" id="2Uy-oc-YFx"/>
+                    <constraint firstItem="0KI-EC-H31" firstAttribute="trailing" secondItem="pKj-To-lEg" secondAttribute="trailing" id="Ia6-Gz-7JU"/>
+                    <constraint firstItem="pKj-To-lEg" firstAttribute="top" secondItem="oDG-sA-Bfa" secondAttribute="bottom" constant="5" id="M2x-OC-WSE"/>
+                    <constraint firstItem="oDG-sA-Bfa" firstAttribute="top" secondItem="aWM-6z-mah" secondAttribute="top" id="Nav-jZ-Few"/>
+                    <constraint firstItem="aWM-6z-mah" firstAttribute="top" secondItem="LjS-Pd-FJA" secondAttribute="top" constant="10" id="QoU-Gm-SKr"/>
+                    <constraint firstAttribute="bottom" secondItem="aWM-6z-mah" secondAttribute="bottom" constant="10" id="m6s-fw-FaX"/>
+                    <constraint firstItem="0KI-EC-H31" firstAttribute="bottom" secondItem="aWM-6z-mah" secondAttribute="bottom" id="pxQ-xS-biP"/>
+                    <constraint firstItem="aWM-6z-mah" firstAttribute="leading" secondItem="LjS-Pd-FJA" secondAttribute="leading" constant="10" id="qTN-aF-FND"/>
+                    <constraint firstAttribute="trailing" secondItem="pKj-To-lEg" secondAttribute="trailing" constant="10" id="ufn-dR-o8b"/>
+                    <constraint firstAttribute="trailing" secondItem="oDG-sA-Bfa" secondAttribute="trailing" constant="10" id="yBC-ms-oGP"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="detailLabel" destination="pKj-To-lEg" id="Nx9-oj-lUz"/>
+                <outlet property="imgView" destination="aWM-6z-mah" id="qlF-xI-xtI"/>
+                <outlet property="priceLabel" destination="0KI-EC-H31" id="gHv-u5-9tD"/>
+                <outlet property="titleLabel" destination="oDG-sA-Bfa" id="Hrd-H1-cFv"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="placeholder_null" width="350" height="350"/>
+    </resources>
+</document>

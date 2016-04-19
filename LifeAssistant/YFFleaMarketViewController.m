@@ -12,7 +12,6 @@
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
-@property (nonatomic, strong) UISearchBar *searchBar;
 
 @end
 
@@ -23,43 +22,14 @@
     
     [self.collectionView setKeyboardDismissMode:UIScrollViewKeyboardDismissModeOnDrag];
     
-    UISearchBar *searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(40, 20, 270, 40)];
-    
-    searchBar.backgroundImage = [[UIImage alloc] init];
-    searchBar.delegate = self;
-    
-    [self.navigationController.view addSubview:searchBar];
-    
-    self.searchBar = searchBar;
-
-    UIBarButtonItem *distributeBI = [[UIBarButtonItem alloc] initWithTitle:@"发布" style:UIBarButtonItemStylePlain target:self action:@selector(distributeAction)];
-    self.navigationItem.leftBarButtonItem = distributeBI;
     
     // Do any additional setup after loading the view.
 }
 
-- (void)distributeAction {
-    
+- (IBAction)distributeAction:(UIButton *)sender {
+    NSLog(@"fabufabufabu");
 }
 
-
-#pragma mark -- UISearchBarDelegate --
-
-- (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar {
-    
-    [searchBar setShowsCancelButton:YES animated:YES];
-    
-    return YES;
-}
-
-- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
-    [searchBar setShowsCancelButton:NO animated:YES];
-    [searchBar resignFirstResponder];
-}
-
-- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
-    [searchBar resignFirstResponder];
-}
 
 
 #pragma mark -- UICollectionViewDataSource --
@@ -95,14 +65,11 @@
     return 10;
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    [segue.destinationViewController setHidesBottomBarWhenPushed:YES];
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
-*/
 
 @end

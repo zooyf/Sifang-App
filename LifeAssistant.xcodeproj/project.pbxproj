@@ -14,7 +14,12 @@
 		9950E5BC1CB3BEFD00F13D63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9950E5BB1CB3BEFD00F13D63 /* Assets.xcassets */; };
 		9950E5BF1CB3BEFD00F13D63 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9950E5BD1CB3BEFD00F13D63 /* LaunchScreen.storyboard */; };
 		99745C801CB8E5FE0005D137 /* YFFleaMarketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99745C7F1CB8E5FE0005D137 /* YFFleaMarketViewController.m */; };
-		99745C831CB8F2860005D137 /* YFSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99745C821CB8F2860005D137 /* YFSearchViewController.m */; };
+		99D7C0391CC65AAD007150C0 /* FMListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99D7C0381CC65AAD007150C0 /* FMListViewController.m */; };
+		99D7C03C1CC65B41007150C0 /* FMListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 99D7C03B1CC65B41007150C0 /* FMListCell.m */; };
+		99D7C03E1CC66582007150C0 /* FMListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99D7C03D1CC66582007150C0 /* FMListCell.xib */; };
+		99D7C0421CC667DD007150C0 /* ListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 99D7C0401CC667DD007150C0 /* ListCell.m */; };
+		99D7C0431CC667DD007150C0 /* ListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99D7C0411CC667DD007150C0 /* ListCell.xib */; };
+		99D7C0491CC66E8B007150C0 /* FMDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99D7C0481CC66E8B007150C0 /* FMDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,8 +34,18 @@
 		9950E5C01CB3BEFD00F13D63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		99745C7E1CB8E5FE0005D137 /* YFFleaMarketViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFFleaMarketViewController.h; sourceTree = "<group>"; };
 		99745C7F1CB8E5FE0005D137 /* YFFleaMarketViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFFleaMarketViewController.m; sourceTree = "<group>"; };
-		99745C811CB8F2860005D137 /* YFSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFSearchViewController.h; sourceTree = "<group>"; };
-		99745C821CB8F2860005D137 /* YFSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFSearchViewController.m; sourceTree = "<group>"; };
+		99D7C0371CC65AAD007150C0 /* FMListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMListViewController.h; sourceTree = "<group>"; };
+		99D7C0381CC65AAD007150C0 /* FMListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMListViewController.m; sourceTree = "<group>"; };
+		99D7C03A1CC65B41007150C0 /* FMListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMListCell.h; sourceTree = "<group>"; };
+		99D7C03B1CC65B41007150C0 /* FMListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMListCell.m; sourceTree = "<group>"; };
+		99D7C03D1CC66582007150C0 /* FMListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FMListCell.xib; sourceTree = "<group>"; };
+		99D7C03F1CC667DD007150C0 /* ListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListCell.h; sourceTree = "<group>"; };
+		99D7C0401CC667DD007150C0 /* ListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListCell.m; sourceTree = "<group>"; };
+		99D7C0411CC667DD007150C0 /* ListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListCell.xib; sourceTree = "<group>"; };
+		99D7C0441CC66CC5007150C0 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		99D7C0461CC66D2D007150C0 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		99D7C0471CC66E8B007150C0 /* FMDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDetailViewController.h; sourceTree = "<group>"; };
+		99D7C0481CC66E8B007150C0 /* FMDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,10 +81,18 @@
 				9950E5AF1CB3BEFD00F13D63 /* AppDelegate.h */,
 				9950E5B01CB3BEFD00F13D63 /* AppDelegate.m */,
 				9950E5B51CB3BEFD00F13D63 /* Main.storyboard */,
-				99745C811CB8F2860005D137 /* YFSearchViewController.h */,
-				99745C821CB8F2860005D137 /* YFSearchViewController.m */,
 				99745C7E1CB8E5FE0005D137 /* YFFleaMarketViewController.h */,
 				99745C7F1CB8E5FE0005D137 /* YFFleaMarketViewController.m */,
+				99D7C0371CC65AAD007150C0 /* FMListViewController.h */,
+				99D7C0381CC65AAD007150C0 /* FMListViewController.m */,
+				99D7C0471CC66E8B007150C0 /* FMDetailViewController.h */,
+				99D7C0481CC66E8B007150C0 /* FMDetailViewController.m */,
+				99D7C03A1CC65B41007150C0 /* FMListCell.h */,
+				99D7C03B1CC65B41007150C0 /* FMListCell.m */,
+				99D7C03D1CC66582007150C0 /* FMListCell.xib */,
+				99D7C03F1CC667DD007150C0 /* ListCell.h */,
+				99D7C0401CC667DD007150C0 /* ListCell.m */,
+				99D7C0411CC667DD007150C0 /* ListCell.xib */,
 				9950E5BB1CB3BEFD00F13D63 /* Assets.xcassets */,
 				9950E5BD1CB3BEFD00F13D63 /* LaunchScreen.storyboard */,
 				9950E5C01CB3BEFD00F13D63 /* Info.plist */,
@@ -82,6 +105,8 @@
 		9950E5AC1CB3BEFD00F13D63 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				99D7C0441CC66CC5007150C0 /* Constants.h */,
+				99D7C0461CC66D2D007150C0 /* PrefixHeader.pch */,
 				9950E5AD1CB3BEFD00F13D63 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -146,7 +171,9 @@
 			files = (
 				9950E5BF1CB3BEFD00F13D63 /* LaunchScreen.storyboard in Resources */,
 				9950E5BC1CB3BEFD00F13D63 /* Assets.xcassets in Resources */,
+				99D7C03E1CC66582007150C0 /* FMListCell.xib in Resources */,
 				9950E5B71CB3BEFD00F13D63 /* Main.storyboard in Resources */,
+				99D7C0431CC667DD007150C0 /* ListCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,9 +184,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99D7C0491CC66E8B007150C0 /* FMDetailViewController.m in Sources */,
+				99D7C03C1CC65B41007150C0 /* FMListCell.m in Sources */,
+				99D7C0421CC667DD007150C0 /* ListCell.m in Sources */,
 				9950E5BA1CB3BEFD00F13D63 /* LifeAssistant.xcdatamodeld in Sources */,
 				99745C801CB8E5FE0005D137 /* YFFleaMarketViewController.m in Sources */,
-				99745C831CB8F2860005D137 /* YFSearchViewController.m in Sources */,
+				99D7C0391CC65AAD007150C0 /* FMListViewController.m in Sources */,
 				9950E5B11CB3BEFD00F13D63 /* AppDelegate.m in Sources */,
 				9950E5AE1CB3BEFD00F13D63 /* main.m in Sources */,
 			);
@@ -273,6 +303,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = LifeAssistant/PrefixHeader.pch;
 				INFOPLIST_FILE = LifeAssistant/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.JasonYu.LifeAssistant;
@@ -284,6 +316,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = LifeAssistant/PrefixHeader.pch;
 				INFOPLIST_FILE = LifeAssistant/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.JasonYu.LifeAssistant;
