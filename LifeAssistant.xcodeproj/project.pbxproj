@@ -17,9 +17,9 @@
 		99D7C0391CC65AAD007150C0 /* FMListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99D7C0381CC65AAD007150C0 /* FMListViewController.m */; };
 		99D7C03C1CC65B41007150C0 /* FMListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 99D7C03B1CC65B41007150C0 /* FMListCell.m */; };
 		99D7C03E1CC66582007150C0 /* FMListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99D7C03D1CC66582007150C0 /* FMListCell.xib */; };
-		99D7C0421CC667DD007150C0 /* ListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 99D7C0401CC667DD007150C0 /* ListCell.m */; };
-		99D7C0431CC667DD007150C0 /* ListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99D7C0411CC667DD007150C0 /* ListCell.xib */; };
 		99D7C0491CC66E8B007150C0 /* FMDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99D7C0481CC66E8B007150C0 /* FMDetailViewController.m */; };
+		99D7C04D1CC68669007150C0 /* FMDistributeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99D7C04C1CC68669007150C0 /* FMDistributeViewController.m */; };
+		99D7C0511CC71AE7007150C0 /* YFMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99D7C0501CC71AE7007150C0 /* YFMineViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,13 +39,14 @@
 		99D7C03A1CC65B41007150C0 /* FMListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMListCell.h; sourceTree = "<group>"; };
 		99D7C03B1CC65B41007150C0 /* FMListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMListCell.m; sourceTree = "<group>"; };
 		99D7C03D1CC66582007150C0 /* FMListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FMListCell.xib; sourceTree = "<group>"; };
-		99D7C03F1CC667DD007150C0 /* ListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListCell.h; sourceTree = "<group>"; };
-		99D7C0401CC667DD007150C0 /* ListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListCell.m; sourceTree = "<group>"; };
-		99D7C0411CC667DD007150C0 /* ListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListCell.xib; sourceTree = "<group>"; };
 		99D7C0441CC66CC5007150C0 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		99D7C0461CC66D2D007150C0 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		99D7C0471CC66E8B007150C0 /* FMDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDetailViewController.h; sourceTree = "<group>"; };
 		99D7C0481CC66E8B007150C0 /* FMDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDetailViewController.m; sourceTree = "<group>"; };
+		99D7C04B1CC68669007150C0 /* FMDistributeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDistributeViewController.h; sourceTree = "<group>"; };
+		99D7C04C1CC68669007150C0 /* FMDistributeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDistributeViewController.m; sourceTree = "<group>"; };
+		99D7C04F1CC71AE7007150C0 /* YFMineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFMineViewController.h; sourceTree = "<group>"; };
+		99D7C0501CC71AE7007150C0 /* YFMineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFMineViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,21 +82,9 @@
 				9950E5AF1CB3BEFD00F13D63 /* AppDelegate.h */,
 				9950E5B01CB3BEFD00F13D63 /* AppDelegate.m */,
 				9950E5B51CB3BEFD00F13D63 /* Main.storyboard */,
-				99745C7E1CB8E5FE0005D137 /* YFFleaMarketViewController.h */,
-				99745C7F1CB8E5FE0005D137 /* YFFleaMarketViewController.m */,
-				99D7C0371CC65AAD007150C0 /* FMListViewController.h */,
-				99D7C0381CC65AAD007150C0 /* FMListViewController.m */,
-				99D7C0471CC66E8B007150C0 /* FMDetailViewController.h */,
-				99D7C0481CC66E8B007150C0 /* FMDetailViewController.m */,
-				99D7C03A1CC65B41007150C0 /* FMListCell.h */,
-				99D7C03B1CC65B41007150C0 /* FMListCell.m */,
-				99D7C03D1CC66582007150C0 /* FMListCell.xib */,
-				99D7C03F1CC667DD007150C0 /* ListCell.h */,
-				99D7C0401CC667DD007150C0 /* ListCell.m */,
-				99D7C0411CC667DD007150C0 /* ListCell.xib */,
-				9950E5BB1CB3BEFD00F13D63 /* Assets.xcassets */,
+				99D7C0521CC71AFF007150C0 /* Mine */,
+				99D7C04E1CC69423007150C0 /* FleaMarket */,
 				9950E5BD1CB3BEFD00F13D63 /* LaunchScreen.storyboard */,
-				9950E5C01CB3BEFD00F13D63 /* Info.plist */,
 				9950E5B81CB3BEFD00F13D63 /* LifeAssistant.xcdatamodeld */,
 				9950E5AC1CB3BEFD00F13D63 /* Supporting Files */,
 			);
@@ -108,8 +97,37 @@
 				99D7C0441CC66CC5007150C0 /* Constants.h */,
 				99D7C0461CC66D2D007150C0 /* PrefixHeader.pch */,
 				9950E5AD1CB3BEFD00F13D63 /* main.m */,
+				9950E5C01CB3BEFD00F13D63 /* Info.plist */,
+				9950E5BB1CB3BEFD00F13D63 /* Assets.xcassets */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		99D7C04E1CC69423007150C0 /* FleaMarket */ = {
+			isa = PBXGroup;
+			children = (
+				99D7C04B1CC68669007150C0 /* FMDistributeViewController.h */,
+				99D7C04C1CC68669007150C0 /* FMDistributeViewController.m */,
+				99745C7E1CB8E5FE0005D137 /* YFFleaMarketViewController.h */,
+				99745C7F1CB8E5FE0005D137 /* YFFleaMarketViewController.m */,
+				99D7C0371CC65AAD007150C0 /* FMListViewController.h */,
+				99D7C0381CC65AAD007150C0 /* FMListViewController.m */,
+				99D7C0471CC66E8B007150C0 /* FMDetailViewController.h */,
+				99D7C0481CC66E8B007150C0 /* FMDetailViewController.m */,
+				99D7C03A1CC65B41007150C0 /* FMListCell.h */,
+				99D7C03B1CC65B41007150C0 /* FMListCell.m */,
+				99D7C03D1CC66582007150C0 /* FMListCell.xib */,
+			);
+			name = FleaMarket;
+			sourceTree = "<group>";
+		};
+		99D7C0521CC71AFF007150C0 /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+				99D7C04F1CC71AE7007150C0 /* YFMineViewController.h */,
+				99D7C0501CC71AE7007150C0 /* YFMineViewController.m */,
+			);
+			name = Mine;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,7 +191,6 @@
 				9950E5BC1CB3BEFD00F13D63 /* Assets.xcassets in Resources */,
 				99D7C03E1CC66582007150C0 /* FMListCell.xib in Resources */,
 				9950E5B71CB3BEFD00F13D63 /* Main.storyboard in Resources */,
-				99D7C0431CC667DD007150C0 /* ListCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,11 +203,12 @@
 			files = (
 				99D7C0491CC66E8B007150C0 /* FMDetailViewController.m in Sources */,
 				99D7C03C1CC65B41007150C0 /* FMListCell.m in Sources */,
-				99D7C0421CC667DD007150C0 /* ListCell.m in Sources */,
 				9950E5BA1CB3BEFD00F13D63 /* LifeAssistant.xcdatamodeld in Sources */,
 				99745C801CB8E5FE0005D137 /* YFFleaMarketViewController.m in Sources */,
 				99D7C0391CC65AAD007150C0 /* FMListViewController.m in Sources */,
 				9950E5B11CB3BEFD00F13D63 /* AppDelegate.m in Sources */,
+				99D7C04D1CC68669007150C0 /* FMDistributeViewController.m in Sources */,
+				99D7C0511CC71AE7007150C0 /* YFMineViewController.m in Sources */,
 				9950E5AE1CB3BEFD00F13D63 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

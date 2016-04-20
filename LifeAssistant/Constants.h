@@ -11,5 +11,12 @@
 
 #define kFMListToDetailSegue @"FMListToDetailSegue"
 
+#define kScreenHeight [[UIScreen mainScreen] bounds].size.height
+#define kScreenWidth [[UIScreen mainScreen] bounds].size.width
+
+#define kTabBarHeight 50
+#define kNavigationBarHeight 64
+
+#define kWEAK __weak typeof(self) weakSelf = self;
 
 #endif /* Constants_h */

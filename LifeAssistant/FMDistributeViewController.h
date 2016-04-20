@@ -1,5 +1,5 @@
 //
-//  ListCell.h
+//  FMDistributeViewController.h
 //  LifeAssistant
 //
 //  Created by YesterdayFinder on 16/4/19.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ListCell : UITableViewCell
+@interface FMDistributeViewController : UIViewController
 
 @end

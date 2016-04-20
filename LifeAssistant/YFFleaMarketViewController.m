@@ -26,11 +26,6 @@
     // Do any additional setup after loading the view.
 }
 
-- (IBAction)distributeAction:(UIButton *)sender {
-    NSLog(@"fabufabufabu");
-}
-
-
 
 #pragma mark -- UICollectionViewDataSource --
 
@@ -49,7 +44,11 @@
 #pragma mark -- UICollectionViewDelegateFlowLayout --
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return CGSizeMake(140, 70);
+    CGFloat width = kScreenWidth/2-15;
+    CGFloat height = kScreenHeight-kTabBarHeight-kNavigationBarHeight;
+    height/=6;
+    height-=12;
+    return CGSizeMake(width, height);
 }
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
