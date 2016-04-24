@@ -8,6 +8,30 @@
 
 #import <UIKit/UIKit.h>
 
+
+#define kFMDistributeTFCell @"FMDistributeTFCell"
+
+@interface FMDistributeTFCell : UITableViewCell
+
+- (NSString *)contentText;
+
+@end
+
+
+
+#define kFMDistributeTVCell @"FMDistributeTVCell"
+@interface FMDistributeTVCell : UITableViewCell
+
+- (NSString *)contentText;
+
+@end
+
+
+
+
 @interface FMDistributeViewController : UIViewController
 
 @end
+
+
+

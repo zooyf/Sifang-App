@@ -20,6 +20,9 @@
 		99D7C0491CC66E8B007150C0 /* FMDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99D7C0481CC66E8B007150C0 /* FMDetailViewController.m */; };
 		99D7C04D1CC68669007150C0 /* FMDistributeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99D7C04C1CC68669007150C0 /* FMDistributeViewController.m */; };
 		99D7C0511CC71AE7007150C0 /* YFMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99D7C0501CC71AE7007150C0 /* YFMineViewController.m */; };
+		99EDC0591CCB30FF0069A788 /* FMDisHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99EDC0581CCB30FF0069A788 /* FMDisHeaderView.xib */; };
+		99EDC05F1CCB68370069A788 /* YFPhotoPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 99EDC05E1CCB68370069A788 /* YFPhotoPickerView.m */; };
+		99EDC0931CCCBBAA0069A788 /* UIViewController+PresentedVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 99EDC0921CCCBBAA0069A788 /* UIViewController+PresentedVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +50,11 @@
 		99D7C04C1CC68669007150C0 /* FMDistributeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDistributeViewController.m; sourceTree = "<group>"; };
 		99D7C04F1CC71AE7007150C0 /* YFMineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFMineViewController.h; sourceTree = "<group>"; };
 		99D7C0501CC71AE7007150C0 /* YFMineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFMineViewController.m; sourceTree = "<group>"; };
+		99EDC0581CCB30FF0069A788 /* FMDisHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FMDisHeaderView.xib; sourceTree = "<group>"; };
+		99EDC05D1CCB68370069A788 /* YFPhotoPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFPhotoPickerView.h; sourceTree = "<group>"; };
+		99EDC05E1CCB68370069A788 /* YFPhotoPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFPhotoPickerView.m; sourceTree = "<group>"; };
+		99EDC0911CCCBBAA0069A788 /* UIViewController+PresentedVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+PresentedVC.h"; sourceTree = "<group>"; };
+		99EDC0921CCCBBAA0069A788 /* UIViewController+PresentedVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+PresentedVC.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +87,8 @@
 		9950E5AB1CB3BEFD00F13D63 /* LifeAssistant */ = {
 			isa = PBXGroup;
 			children = (
+				99EDC0881CCCB3E90069A788 /* Utils */,
+				99EDC05C1CCB68290069A788 /* View */,
 				9950E5AF1CB3BEFD00F13D63 /* AppDelegate.h */,
 				9950E5B01CB3BEFD00F13D63 /* AppDelegate.m */,
 				9950E5B51CB3BEFD00F13D63 /* Main.storyboard */,
@@ -106,10 +116,11 @@
 		99D7C04E1CC69423007150C0 /* FleaMarket */ = {
 			isa = PBXGroup;
 			children = (
-				99D7C04B1CC68669007150C0 /* FMDistributeViewController.h */,
-				99D7C04C1CC68669007150C0 /* FMDistributeViewController.m */,
 				99745C7E1CB8E5FE0005D137 /* YFFleaMarketViewController.h */,
 				99745C7F1CB8E5FE0005D137 /* YFFleaMarketViewController.m */,
+				99D7C04B1CC68669007150C0 /* FMDistributeViewController.h */,
+				99D7C04C1CC68669007150C0 /* FMDistributeViewController.m */,
+				99EDC0581CCB30FF0069A788 /* FMDisHeaderView.xib */,
 				99D7C0371CC65AAD007150C0 /* FMListViewController.h */,
 				99D7C0381CC65AAD007150C0 /* FMListViewController.m */,
 				99D7C0471CC66E8B007150C0 /* FMDetailViewController.h */,
@@ -128,6 +139,24 @@
 				99D7C0501CC71AE7007150C0 /* YFMineViewController.m */,
 			);
 			name = Mine;
+			sourceTree = "<group>";
+		};
+		99EDC05C1CCB68290069A788 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				99EDC05D1CCB68370069A788 /* YFPhotoPickerView.h */,
+				99EDC05E1CCB68370069A788 /* YFPhotoPickerView.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		99EDC0881CCCB3E90069A788 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				99EDC0911CCCBBAA0069A788 /* UIViewController+PresentedVC.h */,
+				99EDC0921CCCBBAA0069A788 /* UIViewController+PresentedVC.m */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,6 +216,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99EDC0591CCB30FF0069A788 /* FMDisHeaderView.xib in Resources */,
 				9950E5BF1CB3BEFD00F13D63 /* LaunchScreen.storyboard in Resources */,
 				9950E5BC1CB3BEFD00F13D63 /* Assets.xcassets in Resources */,
 				99D7C03E1CC66582007150C0 /* FMListCell.xib in Resources */,
@@ -205,10 +235,12 @@
 				99D7C03C1CC65B41007150C0 /* FMListCell.m in Sources */,
 				9950E5BA1CB3BEFD00F13D63 /* LifeAssistant.xcdatamodeld in Sources */,
 				99745C801CB8E5FE0005D137 /* YFFleaMarketViewController.m in Sources */,
+				99EDC05F1CCB68370069A788 /* YFPhotoPickerView.m in Sources */,
 				99D7C0391CC65AAD007150C0 /* FMListViewController.m in Sources */,
 				9950E5B11CB3BEFD00F13D63 /* AppDelegate.m in Sources */,
 				99D7C04D1CC68669007150C0 /* FMDistributeViewController.m in Sources */,
 				99D7C0511CC71AE7007150C0 /* YFMineViewController.m in Sources */,
+				99EDC0931CCCBBAA0069A788 /* UIViewController+PresentedVC.m in Sources */,
 				9950E5AE1CB3BEFD00F13D63 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -11,5 +11,7 @@
 
 #import "Constants.h"
 
+#import "AppDelegate.h"
+#import "UIViewController+PresentedVC.h"
 
 #endif /* PrefixHeader_pch */
