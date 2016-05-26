@@ -6,8 +6,13 @@
 //  Copyright © 2016年 zooyf. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "BaseViewController.h"
 
-@interface YFFleaMarketViewController : UIViewController
+@interface FleaCollectionCell : UICollectionViewCell
+
+@end
+
+
+@interface YFFleaMarketViewController : BaseViewController
 
 @end

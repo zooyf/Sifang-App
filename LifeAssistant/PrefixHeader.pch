@@ -10,7 +10,10 @@
 #define PrefixHeader_pch
 
 #import "Constants.h"
+#import "Extension.h"
+#import <AVOSCloud.h>
 
+#import "AppConfig.h"
 #import "AppDelegate.h"
 #import "UIViewController+PresentedVC.h"
 

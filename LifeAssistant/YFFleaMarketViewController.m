@@ -7,6 +7,20 @@
 //
 
 #import "YFFleaMarketViewController.h"
+#import "WelcomeController.h"
+
+@interface FleaCollectionCell ()
+@property (weak, nonatomic) IBOutlet UIImageView *imgView;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *subLabel;
+
+@end
+
+@implementation FleaCollectionCell
+
+
+
+@end
 
 @interface YFFleaMarketViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UISearchBarDelegate>
 
@@ -17,6 +31,20 @@
 
 @implementation YFFleaMarketViewController
 
+- (NSArray *)cellTitleArr {
+    return @[@"数码配件", @"数码", @"手机", @"电脑",
+             @"校园代步", @"电器", @"运动健身", @"衣物伞冒",
+             @"图书教材", @"租赁", @"生活娱乐", @"其他"];
+}
+
+- (NSArray *)cellSubTitleArr {
+    return @[
+             @"耳机 U盘 键盘", @"iPad 相机 游戏机", @"iphone 小米 三星", @"联想 戴尔 Mac",
+             @"自行车 电动车", @"电扇 台灯 饮水机", @"篮球 足球 球拍", @"上衣 裤子 帽子",
+             @"教材 考研 课外书", @"租房 服装 道具", @"乐器 日常 会员卡", @"可能有你想要的"
+            ];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -26,12 +54,28 @@
     // Do any additional setup after loading the view.
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    if (![AppConfig checkBaseInfo]) {
+        WelcomeController *welcom = [[WelcomeController alloc] initWithNibName:@"WelcomeController" bundle:nil];
+        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:welcom];
+        
+        // 解决
+        dispatch_async(dispatch_get_main_queue(), ^(void){
+//            [self.container presentModalViewController:nc animated:YES];
+            [self.tabBarController presentViewController:nav animated:NO completion:nil];
+        });
+    }
+}
+
 
 #pragma mark -- UICollectionViewDataSource --
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"FleaCell" forIndexPath:indexPath];
+    FleaCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"FleaCell" forIndexPath:indexPath];
+    
+    cell.titleLabel.text = [self cellTitleArr][indexPath.row];
+    cell.subLabel.text = [self cellSubTitleArr][indexPath.row];
     
     return cell;
 }

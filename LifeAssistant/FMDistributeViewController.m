@@ -39,9 +39,9 @@
 
 #pragma mark -- FMDistributeViewController --
 
-@interface FMDistributeViewController ()<UITableViewDelegate, UITableViewDataSource, YFPhotoPickerViewDelegate>
+@interface FMDistributeViewController ()<UITableViewDelegate, UITableViewDataSource, UIPickerViewDataSource, UIPickerViewDelegate, YFPhotoPickerViewDelegate>
 
-@property (nonatomic, strong) NSArray *titleArr;
+@property (nonatomic, strong) NSMutableArray *titleArr;
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
@@ -56,8 +56,30 @@ NSString * const kPhoneNumber    = @"手机号：";
 NSString * const kQQNumber       = @"QQ号：";
 NSString * const kKindName       = @"选择分类：";
 
+NSString * const kPickerName     = @"pickerView";
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [[NSNotificationCenter defaultCenter] addObserverForName:UIKeyboardWillShowNotification object:nil queue:nil usingBlock:^(NSNotification *note) {
+        id _obj = [note.userInfo valueForKey:UIKeyboardFrameEndUserInfoKey];
+        CGRect _keyboardFrame = CGRectNull;
+        if ([_obj respondsToSelector:@selector(getValue:)]) [_obj getValue:&_keyboardFrame];
+        [UIView animateWithDuration:0.25f delay:0.f options:UIViewAnimationOptionCurveEaseInOut animations:^{
+            [_tableView setContentInset:UIEdgeInsetsMake(0.f, 0.f, _keyboardFrame.size.height+10, 0.f)];
+        } completion:nil];
+    }];
+    
+    [[NSNotificationCenter defaultCenter] addObserverForName:UIKeyboardWillHideNotification object:nil queue:nil usingBlock:^(NSNotification *note) {
+        [UIView animateWithDuration:0.25f delay:0.f options:UIViewAnimationOptionCurveEaseInOut animations:^{
+            [_tableView setContentInset:UIEdgeInsetsZero];
+        } completion:nil];
+    }];
     
     UIView *headerView = [[NSBundle mainBundle] loadNibNamed:@"FMDisHeaderView" owner:self options:nil].firstObject;
     [headerView setFrame:CGRectMake(CGRectGetMinX(self.tableView.frame), CGRectGetMinY(self.tableView.frame), kScreenWidth, kScreenWidth/3.0)];
@@ -126,6 +148,12 @@ NSString * const kKindName       = @"选择分类：";
     
     NSString *text = self.titleArr[indexPath.row];
     
+    // picker cell
+    if ([text isEqualToString:kPickerName]) {
+        id cell = [tableView dequeueReusableCellWithIdentifier:@"FMDistributePickerCell"];        
+        return cell;
+    }
+    
     NSString *reuseID = kFMDistributeTFCell;    //textField cell
     
     // textView cell
@@ -153,19 +181,51 @@ NSString * const kKindName       = @"选择分类：";
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [tableView deselectRowAtIndexPath:indexPath animated:NO];
     [self.view endEditing:YES];
     
+    // 是否展示pickerView
+    static BOOL showPickerView = NO;
     if ([self.titleArr[indexPath.row] isEqualToString:kKindName]) {
-        
+        showPickerView = !showPickerView;
+        NSIndexPath *lastIndexPath = [NSIndexPath indexPathForRow:indexPath.row+1 inSection:indexPath.section];
+        if (showPickerView) {
+            [self.titleArr addObject:kPickerName];
+            [tableView insertRowsAtIndexPaths:@[lastIndexPath] withRowAnimation:UITableViewRowAnimationTop];
+            [tableView scrollToRowAtIndexPath:lastIndexPath atScrollPosition:UITableViewScrollPositionBottom animated:YES];
+        } else {
+            [self.titleArr removeLastObject];
+            [tableView deleteRowsAtIndexPaths:@[lastIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+        }
     }
 
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if ([self.titleArr[indexPath.row] isEqualToString:kPickerName]) {
+        return 100;
+    }
+    return 60;
+}
+
+
+#pragma mark -- UIPickerViewDataSource & UIPickerViewDelegate --
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+    return 12;
+}
+
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+    return 1;
+}
+
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    return @"hhh";
 }
 
 
 #pragma mark -- Lazily --
 
-- (NSArray *)titleArr {
+- (NSMutableArray *)titleArr {
     if (!_titleArr) {
         _titleArr = @[
                       kProductName,
@@ -175,7 +235,7 @@ NSString * const kKindName       = @"选择分类：";
                       kPhoneNumber,
                       kQQNumber,
                       kKindName
-                      ];
+                      ].mutableCopy;
     }
     return _titleArr;
 }

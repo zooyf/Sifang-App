@@ -6,8 +6,8 @@
 //  Copyright © 2016年 zooyf. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "BaseViewController.h"
 
-@interface FMDetailViewController : UIViewController
+@interface FMDetailViewController : BaseViewController
 
 @end

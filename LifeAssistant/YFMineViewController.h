@@ -6,7 +6,7 @@
 //  Copyright © 2016年 zooyf. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "BaseViewController.h"
 
 @interface MYHeadCell : UITableViewCell
 #define kMYHeadCell @"MYHeadCell"
@@ -14,6 +14,6 @@
 
 @end
 
-@interface YFMineViewController : UIViewController
+@interface YFMineViewController : BaseViewController
 
 @end

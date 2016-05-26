@@ -6,7 +6,7 @@
 //  Copyright © 2016年 zooyf. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "BaseViewController.h"
 
 
 #define kFMDistributeTFCell @"FMDistributeTFCell"
@@ -29,7 +29,7 @@
 
 
 
-@interface FMDistributeViewController : UIViewController
+@interface FMDistributeViewController : BaseViewController
 
 @end
 
