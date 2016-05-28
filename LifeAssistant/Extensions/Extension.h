@@ -10,6 +10,7 @@
 #define iTrends_Extension_h
 
 
+#import "UIFont+Extension.h"
 #import "UILabel+Extension.h"
 #import "UIColor+Extension.h"
 #import "UIGestureRecognizer+Extension.h"

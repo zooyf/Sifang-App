@@ -12,4 +12,6 @@
 
 + (BOOL)checkBaseInfo;
 
++ (NSArray *)allKind;
+
 @end

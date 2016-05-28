@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "Product.h"
 
 @interface AppDelegate ()
 
@@ -16,9 +17,15 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+//    debug login&reg
+//    if ([AVUser currentUser]) {
+//        [AVUser logOut];
+//    }
     
     [AVOSCloud setApplicationId:@"etOmppkav97C1hXhWki4iyPY-gzGzoHsz" clientKey:@"fDm8UxNGCd3UhKBbHqYm0d8e"];
     
+    [AVBaseModel registerSubclass];
+    [Product registerSubclass];
     
     return YES;
 }

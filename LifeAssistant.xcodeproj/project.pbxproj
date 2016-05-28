@@ -23,6 +23,11 @@
 		99EDC0591CCB30FF0069A788 /* FMDisHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99EDC0581CCB30FF0069A788 /* FMDisHeaderView.xib */; };
 		99EDC05F1CCB68370069A788 /* YFPhotoPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 99EDC05E1CCB68370069A788 /* YFPhotoPickerView.m */; };
 		99EDC0931CCCBBAA0069A788 /* UIViewController+PresentedVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 99EDC0921CCCBBAA0069A788 /* UIViewController+PresentedVC.m */; };
+		99F09C7F1CF7EF760094362A /* YFEasyHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 99F09C7E1CF7EF760094362A /* YFEasyHUD.m */; };
+		99F09C821CF7F0AA0094362A /* YFUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 99F09C811CF7F0AA0094362A /* YFUtils.m */; };
+		99F09C851CF948EB0094362A /* ChooseItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 99F09C841CF948EB0094362A /* ChooseItem.m */; };
+		99F09C881CF949370094362A /* SinglePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 99F09C871CF949370094362A /* SinglePickerView.m */; };
+		99F09C8B1CF953AE0094362A /* UIFont+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 99F09C8A1CF953AE0094362A /* UIFont+Extension.m */; };
 		99F0AD841CD5F65E0041CF63 /* YFMealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99F0AD831CD5F65E0041CF63 /* YFMealViewController.m */; };
 		99F0AD871CD5F6B60041CF63 /* MOStallListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99F0AD861CD5F6B60041CF63 /* MOStallListViewController.m */; };
 		99F0AD8A1CD5F6DF0041CF63 /* MORestaurantListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99F0AD891CD5F6DF0041CF63 /* MORestaurantListViewController.m */; };
@@ -251,6 +256,8 @@
 		99F8C3691CF6C273001C43A0 /* tab_person_s@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 99F8C2AD1CF6C273001C43A0 /* tab_person_s@2x.png */; };
 		99F8C36A1CF6C273001C43A0 /* tab_person_s@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 99F8C2AE1CF6C273001C43A0 /* tab_person_s@3x.png */; };
 		99F8C36E1CF6C49F001C43A0 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99F8C36D1CF6C49F001C43A0 /* BaseViewController.m */; };
+		99F8C3721CF75A38001C43A0 /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 99F8C3711CF75A38001C43A0 /* Product.m */; };
+		99F8C3751CF75AEB001C43A0 /* AVBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 99F8C3741CF75AEB001C43A0 /* AVBaseModel.m */; };
 		C3011615C7AFFADD6F7BF8E7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EB468F0E050684D00D05646 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -287,6 +294,16 @@
 		99EDC05E1CCB68370069A788 /* YFPhotoPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFPhotoPickerView.m; sourceTree = "<group>"; };
 		99EDC0911CCCBBAA0069A788 /* UIViewController+PresentedVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+PresentedVC.h"; sourceTree = "<group>"; };
 		99EDC0921CCCBBAA0069A788 /* UIViewController+PresentedVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+PresentedVC.m"; sourceTree = "<group>"; };
+		99F09C7D1CF7EF760094362A /* YFEasyHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFEasyHUD.h; sourceTree = "<group>"; };
+		99F09C7E1CF7EF760094362A /* YFEasyHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFEasyHUD.m; sourceTree = "<group>"; };
+		99F09C801CF7F0AA0094362A /* YFUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFUtils.h; sourceTree = "<group>"; };
+		99F09C811CF7F0AA0094362A /* YFUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFUtils.m; sourceTree = "<group>"; };
+		99F09C831CF948EB0094362A /* ChooseItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseItem.h; sourceTree = "<group>"; };
+		99F09C841CF948EB0094362A /* ChooseItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseItem.m; sourceTree = "<group>"; };
+		99F09C861CF949370094362A /* SinglePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SinglePickerView.h; sourceTree = "<group>"; };
+		99F09C871CF949370094362A /* SinglePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SinglePickerView.m; sourceTree = "<group>"; };
+		99F09C891CF953AE0094362A /* UIFont+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+Extension.h"; sourceTree = "<group>"; };
+		99F09C8A1CF953AE0094362A /* UIFont+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+Extension.m"; sourceTree = "<group>"; };
 		99F0AD821CD5F65E0041CF63 /* YFMealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFMealViewController.h; sourceTree = "<group>"; };
 		99F0AD831CD5F65E0041CF63 /* YFMealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFMealViewController.m; sourceTree = "<group>"; };
 		99F0AD851CD5F6B60041CF63 /* MOStallListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOStallListViewController.h; sourceTree = "<group>"; };
@@ -552,6 +569,10 @@
 		99F8C2AE1CF6C273001C43A0 /* tab_person_s@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_person_s@3x.png"; sourceTree = "<group>"; };
 		99F8C36C1CF6C49F001C43A0 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		99F8C36D1CF6C49F001C43A0 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		99F8C3701CF75A38001C43A0 /* Product.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
+		99F8C3711CF75A38001C43A0 /* Product.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Product.m; sourceTree = "<group>"; };
+		99F8C3731CF75AEB001C43A0 /* AVBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVBaseModel.h; sourceTree = "<group>"; };
+		99F8C3741CF75AEB001C43A0 /* AVBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVBaseModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -596,6 +617,7 @@
 		9950E5AB1CB3BEFD00F13D63 /* LifeAssistant */ = {
 			isa = PBXGroup;
 			children = (
+				99F8C36F1CF75996001C43A0 /* Model */,
 				99F8C36B1CF6C302001C43A0 /* Base */,
 				99F8C1E61CF6BC02001C43A0 /* Controller */,
 				99EDC0881CCCB3E90069A788 /* Utils */,
@@ -653,8 +675,12 @@
 		99EDC05C1CCB68290069A788 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
+				99F09C7D1CF7EF760094362A /* YFEasyHUD.h */,
+				99F09C7E1CF7EF760094362A /* YFEasyHUD.m */,
 				99EDC05D1CCB68370069A788 /* YFPhotoPickerView.h */,
 				99EDC05E1CCB68370069A788 /* YFPhotoPickerView.m */,
+				99F09C861CF949370094362A /* SinglePickerView.h */,
+				99F09C871CF949370094362A /* SinglePickerView.m */,
 			);
 			name = CustomView;
 			sourceTree = "<group>";
@@ -667,6 +693,8 @@
 				99EDC0921CCCBBAA0069A788 /* UIViewController+PresentedVC.m */,
 				99F8C1E31CF6B73C001C43A0 /* AppConfig.h */,
 				99F8C1E41CF6B73C001C43A0 /* AppConfig.m */,
+				99F09C801CF7F0AA0094362A /* YFUtils.h */,
+				99F09C811CF7F0AA0094362A /* YFUtils.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -737,6 +765,8 @@
 				99F8C1AE1CF6B2C4001C43A0 /* OpenUDID.m */,
 				99F8C1AF1CF6B2C4001C43A0 /* UIButton+Extension.h */,
 				99F8C1B01CF6B2C4001C43A0 /* UIButton+Extension.m */,
+				99F09C891CF953AE0094362A /* UIFont+Extension.h */,
+				99F09C8A1CF953AE0094362A /* UIFont+Extension.m */,
 				99F8C1B11CF6B2C4001C43A0 /* UIColor+Extension.h */,
 				99F8C1B21CF6B2C4001C43A0 /* UIColor+Extension.m */,
 				99F8C1B31CF6B2C4001C43A0 /* UIDevice+Extension.h */,
@@ -1066,6 +1096,19 @@
 				99F8C36D1CF6C49F001C43A0 /* BaseViewController.m */,
 			);
 			name = Base;
+			sourceTree = "<group>";
+		};
+		99F8C36F1CF75996001C43A0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				99F8C3701CF75A38001C43A0 /* Product.h */,
+				99F8C3711CF75A38001C43A0 /* Product.m */,
+				99F8C3731CF75AEB001C43A0 /* AVBaseModel.h */,
+				99F8C3741CF75AEB001C43A0 /* AVBaseModel.m */,
+				99F09C831CF948EB0094362A /* ChooseItem.h */,
+				99F09C841CF948EB0094362A /* ChooseItem.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		C409BB6A50687928BA1EEF85 /* Pods */ = {
@@ -1403,7 +1446,9 @@
 				99D7C03C1CC65B41007150C0 /* FMListCell.m in Sources */,
 				99F8C18A1CF6AE89001C43A0 /* RegController.m in Sources */,
 				99F8C1CF1CF6B2C4001C43A0 /* NSMutableParagraphStyle+Extension.m in Sources */,
+				99F09C851CF948EB0094362A /* ChooseItem.m in Sources */,
 				99F8C36E1CF6C49F001C43A0 /* BaseViewController.m in Sources */,
+				99F09C7F1CF7EF760094362A /* YFEasyHUD.m in Sources */,
 				99F8C1E51CF6B73C001C43A0 /* AppConfig.m in Sources */,
 				99F8C1CA1CF6B2C4001C43A0 /* NSArray+Extension.m in Sources */,
 				9950E5BA1CB3BEFD00F13D63 /* LifeAssistant.xcdatamodeld in Sources */,
@@ -1411,8 +1456,10 @@
 				99745C801CB8E5FE0005D137 /* YFFleaMarketViewController.m in Sources */,
 				99F8C1E11CF6B2C4001C43A0 /* UITextField+Extension.m in Sources */,
 				99F8C1D01CF6B2C4001C43A0 /* NSNotificationCenter+Extension.m in Sources */,
+				99F8C3751CF75AEB001C43A0 /* AVBaseModel.m in Sources */,
 				99EDC05F1CCB68370069A788 /* YFPhotoPickerView.m in Sources */,
 				99F8C1DA1CF6B2C4001C43A0 /* UIImage+Extension.m in Sources */,
+				99F8C3721CF75A38001C43A0 /* Product.m in Sources */,
 				99F8C1CB1CF6B2C4001C43A0 /* NSCache+Extension.m in Sources */,
 				99F8C1D21CF6B2C4001C43A0 /* NSString+Extension.m in Sources */,
 				99D7C0391CC65AAD007150C0 /* FMListViewController.m in Sources */,
@@ -1421,6 +1468,7 @@
 				99F8C1D91CF6B2C4001C43A0 /* UIGestureRecognizer+Extension.m in Sources */,
 				99F8C1CD1CF6B2C4001C43A0 /* NSDate+Extension.m in Sources */,
 				99F8C1D11CF6B2C4001C43A0 /* NSObject+Extention.m in Sources */,
+				99F09C881CF949370094362A /* SinglePickerView.m in Sources */,
 				99F8C1CE1CF6B2C4001C43A0 /* NSDictionary+Extension.m in Sources */,
 				99F8C1E21CF6B2C4001C43A0 /* UIView+Extension.m in Sources */,
 				99D7C04D1CC68669007150C0 /* FMDistributeViewController.m in Sources */,
@@ -1437,8 +1485,10 @@
 				99F8C1D81CF6B2C4001C43A0 /* UIDevice+Extension.m in Sources */,
 				99F8C1C91CF6B2C4001C43A0 /* CLLocation+Extension.m in Sources */,
 				99F0AD841CD5F65E0041CF63 /* YFMealViewController.m in Sources */,
+				99F09C8B1CF953AE0094362A /* UIFont+Extension.m in Sources */,
 				99F8C1DB1CF6B2C4001C43A0 /* UIImage+ImageEffects.m in Sources */,
 				9950E5AE1CB3BEFD00F13D63 /* main.m in Sources */,
+				99F09C821CF7F0AA0094362A /* YFUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

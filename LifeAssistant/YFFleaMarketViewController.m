@@ -31,12 +31,6 @@
 
 @implementation YFFleaMarketViewController
 
-- (NSArray *)cellTitleArr {
-    return @[@"数码配件", @"数码", @"手机", @"电脑",
-             @"校园代步", @"电器", @"运动健身", @"衣物伞冒",
-             @"图书教材", @"租赁", @"生活娱乐", @"其他"];
-}
-
 - (NSArray *)cellSubTitleArr {
     return @[
              @"耳机 U盘 键盘", @"iPad 相机 游戏机", @"iphone 小米 三星", @"联想 戴尔 Mac",
@@ -59,7 +53,7 @@
         WelcomeController *welcom = [[WelcomeController alloc] initWithNibName:@"WelcomeController" bundle:nil];
         UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:welcom];
         
-        // 解决
+        // 解决unbalanced xxx
         dispatch_async(dispatch_get_main_queue(), ^(void){
 //            [self.container presentModalViewController:nc animated:YES];
             [self.tabBarController presentViewController:nav animated:NO completion:nil];
@@ -74,22 +68,22 @@
     
     FleaCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"FleaCell" forIndexPath:indexPath];
     
-    cell.titleLabel.text = [self cellTitleArr][indexPath.row];
+    cell.titleLabel.text = [AppConfig allKind][indexPath.row];
     cell.subLabel.text = [self cellSubTitleArr][indexPath.row];
     
     return cell;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 12;
+    return [self cellSubTitleArr].count;
 }
 
 
 #pragma mark -- UICollectionViewDelegateFlowLayout --
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    CGFloat width = kScreenWidth/2-15;
-    CGFloat height = kScreenHeight-kTabBarHeight-kNavigationBarHeight;
+    CGFloat width = ScreenWidth/2-15;
+    CGFloat height = ScreenHeight-kTabBarHeight-kNavigationBarHeight;
     height/=6;
     height-=12;
     return CGSizeMake(width, height);

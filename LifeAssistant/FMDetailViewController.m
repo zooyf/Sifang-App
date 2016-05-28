@@ -22,7 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-//    [self.tableView setEstimatedRowHeight:kScreenWidth];
+//    [self.tableView setEstimatedRowHeight:ScreenWidth];
 //    self.tableView.rowHeight = UITableViewAutomaticDimension;
     
     // Do any additional setup after loading the view.
@@ -61,7 +61,7 @@
     NSInteger row = indexPath.row;
     if (section == 0) {
         if (row == 0) {
-            return kScreenWidth;
+            return ScreenWidth;
         }
         return 110;
     } else if(section == 1) {

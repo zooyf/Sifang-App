@@ -38,14 +38,17 @@
     NSString *pass = self.passTF.text;
     
     NSError *error = nil;
-    AVUser *user = [AVUser logInWithUsername:account password:pass error:&error];
+    [AVUser logInWithUsername:account password:pass error:&error];
+    
+    [YFEasyHUD showMsg:@"登陆中..."];
     
     if (error) {
-        NSString *des = error.localizedDescription;
+        [YFEasyHUD showMsg:@"login error" details:error.localizedDescription lastTime:1.5];
         return;
     }
     
-    [self.navigationController popToRootViewControllerAnimated:NO];
+    [YFEasyHUD hideHud];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)backAction:(id)sender {

@@ -8,6 +8,8 @@
 
 #import "FMDistributeViewController.h"
 #import "YFPhotoPickerView.h"
+#import "Product.h"
+#import "SinglePickerView.h"
 
 @interface FMDistributeTFCell ()
 @property (weak, nonatomic) IBOutlet UITextField *textField;
@@ -41,9 +43,14 @@
 
 @interface FMDistributeViewController ()<UITableViewDelegate, UITableViewDataSource, UIPickerViewDataSource, UIPickerViewDelegate, YFPhotoPickerViewDelegate>
 
-@property (nonatomic, strong) NSMutableArray *titleArr;
+@property (nonatomic, strong) NSMutableArray    *titleArr;
+@property (nonatomic, strong) NSString          *imageURL;
+@property (nonatomic, strong) YFPhotoPickerView *photoPickerView;
+@property (nonatomic, strong) SinglePickerView  *sView;
+@property (nonatomic, strong) Product           *product;
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+
 
 @end
 
@@ -58,6 +65,13 @@ NSString * const kKindName       = @"选择分类：";
 
 NSString * const kPickerName     = @"pickerView";
 
+- (Product *)product {
+    if (!_product) {
+        _product = [Product object];
+    }
+    return _product;
+}
+
 - (void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
@@ -66,6 +80,7 @@ NSString * const kPickerName     = @"pickerView";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    // 键盘出现表格移动动画
     [[NSNotificationCenter defaultCenter] addObserverForName:UIKeyboardWillShowNotification object:nil queue:nil usingBlock:^(NSNotification *note) {
         id _obj = [note.userInfo valueForKey:UIKeyboardFrameEndUserInfoKey];
         CGRect _keyboardFrame = CGRectNull;
@@ -82,12 +97,12 @@ NSString * const kPickerName     = @"pickerView";
     }];
     
     UIView *headerView = [[NSBundle mainBundle] loadNibNamed:@"FMDisHeaderView" owner:self options:nil].firstObject;
-    [headerView setFrame:CGRectMake(CGRectGetMinX(self.tableView.frame), CGRectGetMinY(self.tableView.frame), kScreenWidth, kScreenWidth/3.0)];
+    [headerView setFrame:CGRectMake(CGRectGetMinX(self.tableView.frame), CGRectGetMinY(self.tableView.frame), ScreenWidth, ScreenWidth/3.0)];
     self.tableView.tableHeaderView = headerView;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
-    YFPhotoPickerView *pickerView = headerView.subviews.firstObject;
-    pickerView.delegate = self;
+    self.photoPickerView = headerView.subviews.firstObject;
+    self.photoPickerView.delegate = self;
     
     
     [self.tableView setKeyboardDismissMode:UIScrollViewKeyboardDismissModeOnDrag];
@@ -130,13 +145,72 @@ NSString * const kPickerName     = @"pickerView";
 
 - (IBAction)distributeAction:(id)sender {
     [self.view endEditing:YES];
+    
+    if (!self.imageURL) {
+        [YFEasyHUD showMsg:@"请选择图片" details:nil lastTime:1.5];
+        return;
+    }
 
+    NSMutableArray *array = [NSMutableArray arrayWithCapacity:self.titleArr.count];
+    for (int i = 0; i < self.titleArr.count; i++) {
+        id cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
+        
+        NSString *inputStr = nil;
+        if ([cell respondsToSelector:@selector(textView)]) {
+            inputStr = [cell textView].text;
+        } else if ([cell respondsToSelector:@selector(textField)]) {
+            inputStr = [cell textField].text;
+        } else {
+            
+        }
+        
+        if (StringIsNullOrEmpty(inputStr)) {
+            NSString *title = [cell titleLabel].text;
+            [YFEasyHUD showMsg:S(@"请输入%@", title) details:nil lastTime:1.5];
+            return;
+        }
+        
+        [array addObject:inputStr];
+    }
+    
+    [YFEasyHUD showMsg:@"发布中..."];
+    
+    Product *pro = self.product;
+    pro.title           = array[0];
+    pro.price           = array[1];
+    pro.describe        = array[2];
+    pro.deal_location   = array[3];
+    pro.phone_num       = array[4];
+    pro.qq              = array[5];
+    pro.imageUrl        = self.imageURL;
+    IMP_BLOCK_SELF(FMDistributeViewController)
+    [pro saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (error) {
+            [YFEasyHUD showMsg:@"发布失败" details:@"请重试" lastTime:1.5];
+            return ;
+        }
+        
+        [YFEasyHUD hideHud];
+        
+        [block_self dismissViewControllerAnimated:NO completion:nil];
+    }];
+    
 }
 
 - (IBAction)tapToEndEditing:(id)sender {
     [self.view endEditing:YES];
 }
 
+- (void)photoPickerSavedInDefaults:(UIImage *)selectedImage {
+    AVFile *file = [AVFile fileWithData:self.photoPickerView.compressedData];
+    
+    IMP_BLOCK_SELF(FMDistributeViewController)
+    [file saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            block_self.imageURL = file.url;
+        }
+    }];
+}
 
 #pragma mark -- UITableViewDelegate & UITableViewDataSource --
 
@@ -183,19 +257,45 @@ NSString * const kPickerName     = @"pickerView";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [self.view endEditing:YES];
     
-    // 是否展示pickerView
-    static BOOL showPickerView = NO;
+    IMP_BLOCK_SELF(FMDistributeViewController)
+    
+//    // 是否展示pickerView
+//    static BOOL showPickerView = NO;
     if ([self.titleArr[indexPath.row] isEqualToString:kKindName]) {
-        showPickerView = !showPickerView;
-        NSIndexPath *lastIndexPath = [NSIndexPath indexPathForRow:indexPath.row+1 inSection:indexPath.section];
-        if (showPickerView) {
-            [self.titleArr addObject:kPickerName];
-            [tableView insertRowsAtIndexPaths:@[lastIndexPath] withRowAnimation:UITableViewRowAnimationTop];
-            [tableView scrollToRowAtIndexPath:lastIndexPath atScrollPosition:UITableViewScrollPositionBottom animated:YES];
-        } else {
-            [self.titleArr removeLastObject];
-            [tableView deleteRowsAtIndexPaths:@[lastIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+        
+        id cell = [tableView cellForRowAtIndexPath:indexPath];
+        NSArray *sexAry = @[[ChooseItem itemWithCode:0 name:@"分类1"],
+                            [ChooseItem itemWithCode:1 name:@"分类2"]];
+        if(!self.sView)
+        {
+            self.sView = [[SinglePickerView alloc] init];
         }
+        self.sView.aryItems = sexAry;
+        self.sView.title = @"性别";
+        self.sView.sureHandler = ^(ChooseItem * kind)
+        {
+            @try {
+                [cell textField].text = kind.name;
+            } @catch (NSException *exception) {
+                [cell textView].text = kind.name;
+            } @finally {
+                block_self.product.kind = @(kind.code+1);
+            }
+            [block_self.sView closeAction];
+        };
+        [self.sView show];
+
+        
+//        showPickerView = !showPickerView;
+//        NSIndexPath *lastIndexPath = [NSIndexPath indexPathForRow:indexPath.row+1 inSection:indexPath.section];
+//        if (showPickerView) {
+//            [self.titleArr addObject:kPickerName];
+//            [tableView insertRowsAtIndexPaths:@[lastIndexPath] withRowAnimation:UITableViewRowAnimationTop];
+//            [tableView scrollToRowAtIndexPath:lastIndexPath atScrollPosition:UITableViewScrollPositionBottom animated:YES];
+//        } else {
+//            [self.titleArr removeLastObject];
+//            [tableView deleteRowsAtIndexPaths:@[lastIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+//        }
     }
 
 }
