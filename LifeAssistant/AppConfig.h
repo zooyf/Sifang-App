@@ -12,6 +12,11 @@
 
 + (BOOL)checkBaseInfo;
 
+/**
+ *  返回所有分类信息
+ *
+ *  @return NSArray. include NSString Objects.
+ */
 + (NSArray *)allKind;
 
 @end

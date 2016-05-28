@@ -259,18 +259,24 @@ NSString * const kPickerName     = @"pickerView";
     
     IMP_BLOCK_SELF(FMDistributeViewController)
     
-//    // 是否展示pickerView
-//    static BOOL showPickerView = NO;
+    // 分类选择器
     if ([self.titleArr[indexPath.row] isEqualToString:kKindName]) {
         
         id cell = [tableView cellForRowAtIndexPath:indexPath];
-        NSArray *sexAry = @[[ChooseItem itemWithCode:0 name:@"分类1"],
-                            [ChooseItem itemWithCode:1 name:@"分类2"]];
+        
+        NSArray *allKindArray = [AppConfig allKind];
+        NSMutableArray *aryItems = [NSMutableArray arrayWithCapacity:allKindArray.count];
+        for (int i = 0; i < allKindArray.count; i++) {
+            
+            
+            [aryItems addObject:[ChooseItem itemWithCode:i name:allKindArray[i]]];
+        }
+        
         if(!self.sView)
         {
             self.sView = [[SinglePickerView alloc] init];
         }
-        self.sView.aryItems = sexAry;
+        self.sView.aryItems = aryItems;
         self.sView.title = @"性别";
         self.sView.sureHandler = ^(ChooseItem * kind)
         {
@@ -284,18 +290,6 @@ NSString * const kPickerName     = @"pickerView";
             [block_self.sView closeAction];
         };
         [self.sView show];
-
-        
-//        showPickerView = !showPickerView;
-//        NSIndexPath *lastIndexPath = [NSIndexPath indexPathForRow:indexPath.row+1 inSection:indexPath.section];
-//        if (showPickerView) {
-//            [self.titleArr addObject:kPickerName];
-//            [tableView insertRowsAtIndexPaths:@[lastIndexPath] withRowAnimation:UITableViewRowAnimationTop];
-//            [tableView scrollToRowAtIndexPath:lastIndexPath atScrollPosition:UITableViewScrollPositionBottom animated:YES];
-//        } else {
-//            [self.titleArr removeLastObject];
-//            [tableView deleteRowsAtIndexPaths:@[lastIndexPath] withRowAnimation:UITableViewRowAnimationFade];
-//        }
     }
 
 }
