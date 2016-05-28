@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "Product.h"
+#import "Restaurant.h"
+#import "Stall.h"
 
 @interface AppDelegate ()
 
@@ -23,9 +25,12 @@
 //    }
     
     [AVOSCloud setApplicationId:@"etOmppkav97C1hXhWki4iyPY-gzGzoHsz" clientKey:@"fDm8UxNGCd3UhKBbHqYm0d8e"];
+    [AVOSCloud setAllLogsEnabled:YES];
     
     [AVBaseModel registerSubclass];
     [Product registerSubclass];
+    [Restaurant registerSubclass];
+    [Stall registerSubclass];
     
     return YES;
 }

@@ -17,6 +17,9 @@
 		99D7C0391CC65AAD007150C0 /* FMListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99D7C0381CC65AAD007150C0 /* FMListViewController.m */; };
 		99D7C04D1CC68669007150C0 /* FMDistributeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99D7C04C1CC68669007150C0 /* FMDistributeViewController.m */; };
 		99D7C0511CC71AE7007150C0 /* YFMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99D7C0501CC71AE7007150C0 /* YFMineViewController.m */; };
+		99DA178B1CF9F0C000A6A1B7 /* Restaurant.m in Sources */ = {isa = PBXBuildFile; fileRef = 99DA178A1CF9F0C000A6A1B7 /* Restaurant.m */; };
+		99DA178E1CF9F11600A6A1B7 /* Stall.m in Sources */ = {isa = PBXBuildFile; fileRef = 99DA178D1CF9F11600A6A1B7 /* Stall.m */; };
+		99DA17911CFA026200A6A1B7 /* InputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99DA17901CFA026200A6A1B7 /* InputViewController.m */; };
 		99EDC0591CCB30FF0069A788 /* FMDisHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99EDC0581CCB30FF0069A788 /* FMDisHeaderView.xib */; };
 		99EDC05F1CCB68370069A788 /* YFPhotoPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 99EDC05E1CCB68370069A788 /* YFPhotoPickerView.m */; };
 		99EDC0931CCCBBAA0069A788 /* UIViewController+PresentedVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 99EDC0921CCCBBAA0069A788 /* UIViewController+PresentedVC.m */; };
@@ -284,6 +287,12 @@
 		99D7C04C1CC68669007150C0 /* FMDistributeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDistributeViewController.m; sourceTree = "<group>"; };
 		99D7C04F1CC71AE7007150C0 /* YFMineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFMineViewController.h; sourceTree = "<group>"; };
 		99D7C0501CC71AE7007150C0 /* YFMineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFMineViewController.m; sourceTree = "<group>"; };
+		99DA17891CF9F0C000A6A1B7 /* Restaurant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Restaurant.h; sourceTree = "<group>"; };
+		99DA178A1CF9F0C000A6A1B7 /* Restaurant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Restaurant.m; sourceTree = "<group>"; };
+		99DA178C1CF9F11600A6A1B7 /* Stall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stall.h; sourceTree = "<group>"; };
+		99DA178D1CF9F11600A6A1B7 /* Stall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stall.m; sourceTree = "<group>"; };
+		99DA178F1CFA026200A6A1B7 /* InputViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputViewController.h; sourceTree = "<group>"; };
+		99DA17901CFA026200A6A1B7 /* InputViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputViewController.m; sourceTree = "<group>"; };
 		99EDC0581CCB30FF0069A788 /* FMDisHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FMDisHeaderView.xib; sourceTree = "<group>"; };
 		99EDC05D1CCB68370069A788 /* YFPhotoPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFPhotoPickerView.h; sourceTree = "<group>"; };
 		99EDC05E1CCB68370069A788 /* YFPhotoPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFPhotoPickerView.m; sourceTree = "<group>"; };
@@ -1094,6 +1103,8 @@
 				99F8C36D1CF6C49F001C43A0 /* BaseViewController.m */,
 				99F09C8C1CF97AE90094362A /* BaseTableViewController.h */,
 				99F09C8D1CF97AE90094362A /* BaseTableViewController.m */,
+				99DA178F1CFA026200A6A1B7 /* InputViewController.h */,
+				99DA17901CFA026200A6A1B7 /* InputViewController.m */,
 			);
 			name = Base;
 			sourceTree = "<group>";
@@ -1101,14 +1112,18 @@
 		99F8C36F1CF75996001C43A0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				99F8C3701CF75A38001C43A0 /* Product.h */,
-				99F8C3711CF75A38001C43A0 /* Product.m */,
-				99F8C3731CF75AEB001C43A0 /* AVBaseModel.h */,
-				99F8C3741CF75AEB001C43A0 /* AVBaseModel.m */,
-				99F09C831CF948EB0094362A /* ChooseItem.h */,
-				99F09C841CF948EB0094362A /* ChooseItem.m */,
 				99F09C961CF9AE0E0094362A /* AVUser+Extension.h */,
 				99F09C971CF9AE0E0094362A /* AVUser+Extension.m */,
+				99F8C3731CF75AEB001C43A0 /* AVBaseModel.h */,
+				99F8C3741CF75AEB001C43A0 /* AVBaseModel.m */,
+				99F8C3701CF75A38001C43A0 /* Product.h */,
+				99F8C3711CF75A38001C43A0 /* Product.m */,
+				99DA17891CF9F0C000A6A1B7 /* Restaurant.h */,
+				99DA178A1CF9F0C000A6A1B7 /* Restaurant.m */,
+				99DA178C1CF9F11600A6A1B7 /* Stall.h */,
+				99DA178D1CF9F11600A6A1B7 /* Stall.m */,
+				99F09C831CF948EB0094362A /* ChooseItem.h */,
+				99F09C841CF948EB0094362A /* ChooseItem.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1444,6 +1459,7 @@
 				99F8C1DF1CF6B2C4001C43A0 /* UITableView+Extension.m in Sources */,
 				99F0AD871CD5F6B60041CF63 /* MOStallListViewController.m in Sources */,
 				99F8C18A1CF6AE89001C43A0 /* RegController.m in Sources */,
+				99DA178B1CF9F0C000A6A1B7 /* Restaurant.m in Sources */,
 				99F8C1CF1CF6B2C4001C43A0 /* NSMutableParagraphStyle+Extension.m in Sources */,
 				99F09C851CF948EB0094362A /* ChooseItem.m in Sources */,
 				99F8C36E1CF6C49F001C43A0 /* BaseViewController.m in Sources */,
@@ -1468,6 +1484,7 @@
 				99F8C1CD1CF6B2C4001C43A0 /* NSDate+Extension.m in Sources */,
 				99F8C1D11CF6B2C4001C43A0 /* NSObject+Extention.m in Sources */,
 				99F09C881CF949370094362A /* SinglePickerView.m in Sources */,
+				99DA17911CFA026200A6A1B7 /* InputViewController.m in Sources */,
 				99F8C1CE1CF6B2C4001C43A0 /* NSDictionary+Extension.m in Sources */,
 				99F8C1E21CF6B2C4001C43A0 /* UIView+Extension.m in Sources */,
 				99D7C04D1CC68669007150C0 /* FMDistributeViewController.m in Sources */,
@@ -1486,6 +1503,7 @@
 				99F8C1D81CF6B2C4001C43A0 /* UIDevice+Extension.m in Sources */,
 				99F8C1C91CF6B2C4001C43A0 /* CLLocation+Extension.m in Sources */,
 				99F0AD841CD5F65E0041CF63 /* YFMealViewController.m in Sources */,
+				99DA178E1CF9F11600A6A1B7 /* Stall.m in Sources */,
 				99F09C8B1CF953AE0094362A /* UIFont+Extension.m in Sources */,
 				99F8C1DB1CF6B2C4001C43A0 /* UIImage+ImageEffects.m in Sources */,
 				99F09C921CF97CA80094362A /* FMDetailTableViewController.m in Sources */,

@@ -19,4 +19,11 @@
  */
 + (NSArray *)allKind;
 
+/**
+ *  检查当前用户是否是管理员用户
+ *
+ *  @return YES:是; NO:否.
+ */
++ (BOOL)isManagerUser;
+
 @end

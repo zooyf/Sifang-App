@@ -20,7 +20,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="PRC-OJ-AHn">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="WFw-GO-Rop">
                                     <size key="itemSize" width="302" height="129"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -782,10 +782,10 @@
             </objects>
             <point key="canvasLocation" x="2787" y="-794"/>
         </scene>
-        <!--restaurant list-->
+        <!--餐厅列表-->
         <scene sceneID="aN0-r3-bZq">
             <objects>
-                <viewController title="restaurant list" id="6oH-pg-ma2" sceneMemberID="viewController">
+                <viewController title="餐厅列表" id="6oH-pg-ma2" customClass="MORestaurantListViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1WO-IK-NLs"/>
                         <viewControllerLayoutGuide type="bottom" id="gfw-m9-tha"/>
@@ -797,6 +797,10 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="F8z-qt-Tl4">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="6oH-pg-ma2" id="suw-yn-vQN"/>
+                                    <outlet property="delegate" destination="6oH-pg-ma2" id="B3o-ZM-B65"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -807,6 +811,9 @@
                             <constraint firstItem="F8z-qt-Tl4" firstAttribute="top" secondItem="7EO-8n-2xb" secondAttribute="top" id="bw9-C2-ciR"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="F8z-qt-Tl4" id="e3H-6Z-n8c"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ixq-07-cox" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -829,7 +836,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MOStallsListCell" rowHeight="70" id="YG8-0M-20V">
-                                        <rect key="frame" x="0.0" y="28" width="600" height="70"/>
+                                        <rect key="frame" x="0.0" y="92" width="600" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YG8-0M-20V" id="0CZ-1B-sPL">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="69"/>
@@ -907,7 +914,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MOFoodListCell" textLabel="gzk-zE-JOi" style="IBUITableViewCellStyleDefault" id="B6K-X8-nI1">
-                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="B6K-X8-nI1" id="OLd-T8-d5S">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -951,6 +958,6 @@
         <image name="tab_my" width="19" height="23"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="gcQ-AT-UJf"/>
+        <segue reference="ets-CE-4X8"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -20,4 +20,8 @@
              @"图书教材", @"租赁", @"生活娱乐", @"其他"];
 }
 
++ (BOOL)isManagerUser {
+    return [[[AVUser currentUser] objectForKey:@"manager"] boolValue];
+}
+
 @end

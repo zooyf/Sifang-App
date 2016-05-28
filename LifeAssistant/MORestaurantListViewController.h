@@ -8,6 +8,10 @@
 
 #import "BaseViewController.h"
 
+@class Restaurant;
+
 @interface MORestaurantListViewController : BaseViewController
+
+@property(nonatomic, copy) void(^selectionBlock)(Restaurant *restaurant);
 
 @end

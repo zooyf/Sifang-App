@@ -9,7 +9,6 @@
 #import "MOStallListViewController.h"
 
 @interface MOStallListViewController ()<UITableViewDataSource, UITableViewDelegate>
-
 @end
 
 @implementation MOStallListViewController
@@ -42,8 +41,9 @@
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    UIViewController *destiVC = segue.destinationViewController;
+    id destiVC = segue.destinationViewController;
     [destiVC setHidesBottomBarWhenPushed:YES];
+    
 }
 
 @end

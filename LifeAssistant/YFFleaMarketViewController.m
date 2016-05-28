@@ -45,7 +45,7 @@
     
     [self.collectionView setKeyboardDismissMode:UIScrollViewKeyboardDismissModeOnDrag];
     
-    
+    [self.tabBarController.tabBar setTranslucent:NO];
     // Do any additional setup after loading the view.
 }
 
