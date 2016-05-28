@@ -8,6 +8,8 @@
 
 #import "AVBaseModel.h"
 
+#define kAVProductName @"Product"
+
 @interface Product : AVBaseModel
 
 @property(nonatomic, strong) NSString *title;
@@ -17,7 +19,8 @@
 @property(nonatomic, strong) NSString *describe;
 @property(nonatomic, strong) NSString *price;
 @property(nonatomic, strong) NSString *deal_location;
-@property(nonatomic, strong) NSString *seller;
 @property(nonatomic, strong) NSNumber *kind;
+
+@property(nonatomic, strong) AVUser *seller;
 
 @end

@@ -8,6 +8,7 @@
 
 #import "YFFleaMarketViewController.h"
 #import "WelcomeController.h"
+#import "FMListViewController.h"
 
 @interface FleaCollectionCell ()
 @property (weak, nonatomic) IBOutlet UIImageView *imgView;
@@ -77,7 +78,9 @@
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return [self cellSubTitleArr].count;
 }
-
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+}
 
 #pragma mark -- UICollectionViewDelegateFlowLayout --
 
@@ -105,6 +108,13 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     [segue.destinationViewController setHidesBottomBarWhenPushed:YES];
+    
+    if ([sender isKindOfClass:[FleaCollectionCell class]]) {
+        NSIndexPath *indexPath = [self.collectionView indexPathForCell:sender];
+        FMListViewController *listVC = segue.destinationViewController;
+        listVC.kind = @(indexPath.row+1);
+    }
+    
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }

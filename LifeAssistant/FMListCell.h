@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Product.h"
 
 #define kFMListCell @"FMListCell"
 
 @interface FMListCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property(nonatomic, strong) Product *product;
 
 @end

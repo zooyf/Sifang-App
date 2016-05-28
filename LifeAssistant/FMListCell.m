@@ -10,6 +10,7 @@
 
 @interface FMListCell ()
 
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *imgView;
 @property (weak, nonatomic) IBOutlet UILabel *detailLabel;
 @property (weak, nonatomic) IBOutlet UILabel *priceLabel;
@@ -18,15 +19,21 @@
 
 @implementation FMListCell
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    // Initialization code
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+- (void)setProduct:(Product *)product {
+    
+    _product = product;
+    
+    self.titleLabel.text = product.title;
+    self.detailLabel.text = product.describe;
+    self.priceLabel.text = product.price;
+    
+    IMP_BLOCK_SELF(FMListCell)
+    AVFile *file = [AVFile fileWithURL:product.imageUrl];
+    
+    [file getThumbnail:YES width:100 height:100 withBlock:^(UIImage *image, NSError *error) {
+        [block_self.imgView setImage:image];
+        NSLog(@"%@", image);
+    }];
 }
 
 @end

@@ -183,6 +183,11 @@ NSString * const kPickerName     = @"pickerView";
     pro.phone_num       = array[4];
     pro.qq              = array[5];
     pro.imageUrl        = self.imageURL;
+    AVUser *user = [AVUser currentUser];
+    user.name = @"烦烦烦烦烦烦烦";
+    [user save];
+    pro.seller = [AVUser currentUser];
+    
     IMP_BLOCK_SELF(FMDistributeViewController)
     [pro saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (error) {
@@ -277,7 +282,7 @@ NSString * const kPickerName     = @"pickerView";
             self.sView = [[SinglePickerView alloc] init];
         }
         self.sView.aryItems = aryItems;
-        self.sView.title = @"性别";
+        self.sView.title = @"请选择分类";
         self.sView.sureHandler = ^(ChooseItem * kind)
         {
             @try {

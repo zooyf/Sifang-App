@@ -12,6 +12,7 @@
 #import "Constants.h"
 #import "Extension.h"
 #import <AVOSCloud.h>
+#import "AVUser+Extension.h"
 
 #import "YFEasyHUD.h"
 

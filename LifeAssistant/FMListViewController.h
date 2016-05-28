@@ -7,7 +7,20 @@
 //
 
 #import "BaseViewController.h"
+#import "Product.h"
+
+#define kFMListCell @"FMListCell"
+
+@interface FMListCell : UITableViewCell
+
+@property(nonatomic, strong) Product *product;
+
+@end
+
+
 
 @interface FMListViewController : BaseViewController
+
+@property(nonatomic, strong) NSNumber *kind;
 
 @end
