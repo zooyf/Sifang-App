@@ -10,4 +10,12 @@
 
 @implementation Stall
 
+@dynamic phone;
+@dynamic name;
+@dynamic image_url;
+@dynamic major_business;
+@dynamic restaurant;
+@dynamic number;
+@dynamic address;
+
 @end

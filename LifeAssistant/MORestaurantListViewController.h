@@ -13,5 +13,6 @@
 @interface MORestaurantListViewController : BaseViewController
 
 @property(nonatomic, copy) void(^selectionBlock)(Restaurant *restaurant);
+@property(nonatomic, assign) BOOL forceSelect;
 
 @end

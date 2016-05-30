@@ -14,13 +14,13 @@
 		9950E5BC1CB3BEFD00F13D63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9950E5BB1CB3BEFD00F13D63 /* Assets.xcassets */; };
 		9950E5BF1CB3BEFD00F13D63 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9950E5BD1CB3BEFD00F13D63 /* LaunchScreen.storyboard */; };
 		99745C801CB8E5FE0005D137 /* YFFleaMarketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99745C7F1CB8E5FE0005D137 /* YFFleaMarketViewController.m */; };
+		99921CA71CFC24F000D10C20 /* MOAddStallController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99921CA61CFC24F000D10C20 /* MOAddStallController.m */; };
 		99D7C0391CC65AAD007150C0 /* FMListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99D7C0381CC65AAD007150C0 /* FMListViewController.m */; };
 		99D7C04D1CC68669007150C0 /* FMDistributeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99D7C04C1CC68669007150C0 /* FMDistributeViewController.m */; };
 		99D7C0511CC71AE7007150C0 /* YFMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99D7C0501CC71AE7007150C0 /* YFMineViewController.m */; };
 		99DA178B1CF9F0C000A6A1B7 /* Restaurant.m in Sources */ = {isa = PBXBuildFile; fileRef = 99DA178A1CF9F0C000A6A1B7 /* Restaurant.m */; };
 		99DA178E1CF9F11600A6A1B7 /* Stall.m in Sources */ = {isa = PBXBuildFile; fileRef = 99DA178D1CF9F11600A6A1B7 /* Stall.m */; };
 		99DA17911CFA026200A6A1B7 /* InputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99DA17901CFA026200A6A1B7 /* InputViewController.m */; };
-		99EDC0591CCB30FF0069A788 /* FMDisHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99EDC0581CCB30FF0069A788 /* FMDisHeaderView.xib */; };
 		99EDC05F1CCB68370069A788 /* YFPhotoPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 99EDC05E1CCB68370069A788 /* YFPhotoPickerView.m */; };
 		99EDC0931CCCBBAA0069A788 /* UIViewController+PresentedVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 99EDC0921CCCBBAA0069A788 /* UIViewController+PresentedVC.m */; };
 		99F09C7F1CF7EF760094362A /* YFEasyHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 99F09C7E1CF7EF760094362A /* YFEasyHUD.m */; };
@@ -279,6 +279,9 @@
 		9950E5C01CB3BEFD00F13D63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		99745C7E1CB8E5FE0005D137 /* YFFleaMarketViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFFleaMarketViewController.h; sourceTree = "<group>"; };
 		99745C7F1CB8E5FE0005D137 /* YFFleaMarketViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFFleaMarketViewController.m; sourceTree = "<group>"; };
+		99921CA51CFC24F000D10C20 /* MOAddStallController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOAddStallController.h; sourceTree = "<group>"; };
+		99921CA61CFC24F000D10C20 /* MOAddStallController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOAddStallController.m; sourceTree = "<group>"; };
+		99921CA91CFC4E3C00D10C20 /* ConstStr.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConstStr.h; sourceTree = "<group>"; };
 		99D7C0371CC65AAD007150C0 /* FMListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMListViewController.h; sourceTree = "<group>"; };
 		99D7C0381CC65AAD007150C0 /* FMListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMListViewController.m; sourceTree = "<group>"; };
 		99D7C0441CC66CC5007150C0 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
@@ -293,7 +296,6 @@
 		99DA178D1CF9F11600A6A1B7 /* Stall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stall.m; sourceTree = "<group>"; };
 		99DA178F1CFA026200A6A1B7 /* InputViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputViewController.h; sourceTree = "<group>"; };
 		99DA17901CFA026200A6A1B7 /* InputViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputViewController.m; sourceTree = "<group>"; };
-		99EDC0581CCB30FF0069A788 /* FMDisHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FMDisHeaderView.xib; sourceTree = "<group>"; };
 		99EDC05D1CCB68370069A788 /* YFPhotoPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFPhotoPickerView.h; sourceTree = "<group>"; };
 		99EDC05E1CCB68370069A788 /* YFPhotoPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFPhotoPickerView.m; sourceTree = "<group>"; };
 		99EDC0911CCCBBAA0069A788 /* UIViewController+PresentedVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+PresentedVC.h"; sourceTree = "<group>"; };
@@ -646,6 +648,7 @@
 			isa = PBXGroup;
 			children = (
 				99D7C0441CC66CC5007150C0 /* Constants.h */,
+				99921CA91CFC4E3C00D10C20 /* ConstStr.h */,
 				99D7C0461CC66D2D007150C0 /* PrefixHeader.pch */,
 				9950E5AD1CB3BEFD00F13D63 /* main.m */,
 				9950E5C01CB3BEFD00F13D63 /* Info.plist */,
@@ -661,7 +664,6 @@
 				99745C7F1CB8E5FE0005D137 /* YFFleaMarketViewController.m */,
 				99D7C04B1CC68669007150C0 /* FMDistributeViewController.h */,
 				99D7C04C1CC68669007150C0 /* FMDistributeViewController.m */,
-				99EDC0581CCB30FF0069A788 /* FMDisHeaderView.xib */,
 				99D7C0371CC65AAD007150C0 /* FMListViewController.h */,
 				99D7C0381CC65AAD007150C0 /* FMListViewController.m */,
 				99F09C901CF97CA80094362A /* FMDetailTableViewController.h */,
@@ -717,6 +719,8 @@
 				99F0AD891CD5F6DF0041CF63 /* MORestaurantListViewController.m */,
 				99F0AD8B1CD601FA0041CF63 /* MOFoodListViewController.h */,
 				99F0AD8C1CD601FA0041CF63 /* MOFoodListViewController.m */,
+				99921CA51CFC24F000D10C20 /* MOAddStallController.h */,
+				99921CA61CFC24F000D10C20 /* MOAddStallController.m */,
 			);
 			name = Meal;
 			sourceTree = "<group>";
@@ -1283,7 +1287,6 @@
 				99F8C30F1CF6C273001C43A0 /* icon_check@3x.png in Resources */,
 				99F8C3301CF6C273001C43A0 /* ToolViewInputText@2x.png in Resources */,
 				99F8C2EF1CF6C273001C43A0 /* Expression_67@2x.png in Resources */,
-				99EDC0591CCB30FF0069A788 /* FMDisHeaderView.xib in Resources */,
 				99F8C35A1CF6C273001C43A0 /* deleteAudio_4@2x.png in Resources */,
 				99F8C31A1CF6C273001C43A0 /* icon_user@2x.png in Resources */,
 				99F8C2B11CF6C273001C43A0 /* Expression_10@2x.png in Resources */,
@@ -1468,6 +1471,7 @@
 				99F8C1CA1CF6B2C4001C43A0 /* NSArray+Extension.m in Sources */,
 				9950E5BA1CB3BEFD00F13D63 /* LifeAssistant.xcdatamodeld in Sources */,
 				99F8C18C1CF6AE89001C43A0 /* WelcomeController.m in Sources */,
+				99921CA71CFC24F000D10C20 /* MOAddStallController.m in Sources */,
 				99745C801CB8E5FE0005D137 /* YFFleaMarketViewController.m in Sources */,
 				99F8C1E11CF6B2C4001C43A0 /* UITextField+Extension.m in Sources */,
 				99F8C1D01CF6B2C4001C43A0 /* NSNotificationCenter+Extension.m in Sources */,

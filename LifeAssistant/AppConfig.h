@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Restaurant.h"
 
 @interface AppConfig : NSObject
 
@@ -25,5 +26,18 @@
  *  @return YES:是; NO:否.
  */
 + (BOOL)isManagerUser;
+
+/**
+ *  缓存当前餐厅
+ *
+ *  @param restaurant 当前餐厅对象
+ */
++ (void)setCurrentRestaurant:(Restaurant *)restaurant;
+/**
+ *  获取缓存餐厅
+ *
+ *  @return 缓存的餐厅对象
+ */
++ (Restaurant *)currentRestaurant;
 
 @end

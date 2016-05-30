@@ -41,10 +41,13 @@
     }];
 
     if ([AppConfig isManagerUser]) {
-        UIBarButtonItem *rightBI = [[UIBarButtonItem alloc] initWithTitle:@"添加" style:UIBarButtonItemStylePlain target:self action:@selector(addRestaurant)];
+        UIBarButtonItem *rightBI = [[UIBarButtonItem alloc] initWithTitle:@"添加餐厅" style:UIBarButtonItemStylePlain target:self action:@selector(addRestaurant)];
         self.navigationItem.rightBarButtonItem = rightBI;
     }
     
+    if (self.forceSelect) {
+        [YFEasyHUD showMsg:@"选择餐厅" details:@"您还未选择餐厅，请选择" lastTime:2.0];
+    }
     
     // Do any additional setup after loading the view.
 }

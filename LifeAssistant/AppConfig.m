@@ -24,4 +24,15 @@
     return [[[AVUser currentUser] objectForKey:@"manager"] boolValue];
 }
 
++ (Restaurant *)currentRestaurant {
+    NSDictionary *objDic = [[NSUserDefaults standardUserDefaults] objectForKey:kCurrentRestaurant];
+    Restaurant *res = (Restaurant *)[Restaurant objectWithDictionary:objDic];
+    return res;
+}
+
++ (void)setCurrentRestaurant:(Restaurant *)restaurant {
+    [[NSUserDefaults standardUserDefaults] setObject:[restaurant dictionaryForObject] forKey:kCurrentRestaurant];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
 @end

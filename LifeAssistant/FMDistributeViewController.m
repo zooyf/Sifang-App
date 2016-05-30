@@ -96,10 +96,15 @@ NSString * const kPickerName     = @"pickerView";
         } completion:nil];
     }];
     
-    UIView *headerView = [[NSBundle mainBundle] loadNibNamed:@"FMDisHeaderView" owner:self options:nil].firstObject;
-    [headerView setFrame:CGRectMake(CGRectGetMinX(self.tableView.frame), CGRectGetMinY(self.tableView.frame), ScreenWidth, ScreenWidth/3.0)];
+    // 添加图片视图
+    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(CGRectGetMinX(self.tableView.frame), CGRectGetMinY(self.tableView.frame), ScreenWidth, ScreenWidth/3.0)];
+    CGFloat pickerViewBorder = headerView.frame.size.height * 0.8;
+    self.photoPickerView = [[YFPhotoPickerView alloc] initWithFrame:CGRectMake(0, 0, pickerViewBorder, pickerViewBorder)];
+    [self.photoPickerView setImage:[UIImage imageNamed:@"take_photo"]];
+    self.photoPickerView.center = headerView.center;
+    [headerView addSubview:self.photoPickerView];
+    
     self.tableView.tableHeaderView = headerView;
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     self.photoPickerView = headerView.subviews.firstObject;
     self.photoPickerView.delegate = self;
@@ -183,9 +188,6 @@ NSString * const kPickerName     = @"pickerView";
     pro.phone_num       = array[4];
     pro.qq              = array[5];
     pro.imageUrl        = self.imageURL;
-    AVUser *user = [AVUser currentUser];
-    user.name = @"烦烦烦烦烦烦烦";
-    [user save];
     pro.seller = [AVUser currentUser];
     
     IMP_BLOCK_SELF(FMDistributeViewController)
