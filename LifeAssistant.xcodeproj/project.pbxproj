@@ -722,10 +722,10 @@
 			children = (
 				99F0AD821CD5F65E0041CF63 /* YFMealViewController.h */,
 				99F0AD831CD5F65E0041CF63 /* YFMealViewController.m */,
-				99F0AD851CD5F6B60041CF63 /* MOStallListViewController.h */,
-				99F0AD861CD5F6B60041CF63 /* MOStallListViewController.m */,
 				99F0AD881CD5F6DF0041CF63 /* MORestaurantListViewController.h */,
 				99F0AD891CD5F6DF0041CF63 /* MORestaurantListViewController.m */,
+				99F0AD851CD5F6B60041CF63 /* MOStallListViewController.h */,
+				99F0AD861CD5F6B60041CF63 /* MOStallListViewController.m */,
 				99F0AD8B1CD601FA0041CF63 /* MOFoodListViewController.h */,
 				99F0AD8C1CD601FA0041CF63 /* MOFoodListViewController.m */,
 				99921CA51CFC24F000D10C20 /* MOAddStallController.h */,

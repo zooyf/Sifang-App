@@ -9,6 +9,8 @@
 #import "AVBaseModel.h"
 #import "Restaurant.h"
 
+#define kStallName @"Stall"
+
 @interface Stall : AVBaseModel
 
 @property(nonatomic, strong) NSString       *phone;

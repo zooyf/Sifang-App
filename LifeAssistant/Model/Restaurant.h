@@ -8,6 +8,8 @@
 
 #import "AVBaseModel.h"
 
+#define kRestaurantName @"Restaurant"
+
 @interface Restaurant : AVBaseModel
 
 @property(nonatomic, strong) NSString *name;

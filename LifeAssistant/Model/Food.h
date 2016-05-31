@@ -9,6 +9,8 @@
 #import "AVBaseModel.h"
 @class Stall;
 
+#define kFoodName @"Food"
+
 @interface Food : AVBaseModel
 
 @property(nonatomic, strong) NSString *name;

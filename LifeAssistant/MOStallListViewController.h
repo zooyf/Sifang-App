@@ -10,4 +10,9 @@
 
 @interface MOStallListViewController : BaseViewController
 
+/**
+ *  判断是否是点击收藏进来的
+ */
+@property(nonatomic, assign) BOOL favourite;
+
 @end

@@ -30,10 +30,9 @@
 @implementation MOFoodListCell
 
 - (void)awakeFromNib {
-    BOOL isManager = [AppConfig isManagerUser];
     
     self.addBtn.hidden = YES;
-    [self setHiddenOfCancelBtn:true completeBtn:true editBtn:!isManager];
+    [self setHiddenOfCancelBtn:true completeBtn:true editBtn:![AppConfig isManagerUser]];
 }
 
 - (Food *)food {
@@ -49,6 +48,7 @@
     self.nameTF.text = food.name;
     self.priceTF.text= S(@"%@", food.price ? : @"");
     
+    [self setHiddenOfCancelBtn:YES completeBtn:YES editBtn:![AppConfig isManagerUser]];
 }
 
 - (void)setHiddenOfCancelBtn:(BOOL)cancelHidden completeBtn:(BOOL)completeHidden editBtn:(BOOL)editHidden {
@@ -59,9 +59,7 @@
     self.editBtn.hidden = editHidden;
     
     BOOL addBtnDisplaying = cancelHidden && completeHidden && editHidden;
-    if (addBtnDisplaying) {
-        self.addBtn.hidden = NO;
-    }
+    self.addBtn.hidden = !addBtnDisplaying;
     
     self.nameTF.enabled = !cancelHidden || addBtnDisplaying;
     self.priceTF.enabled = !cancelHidden || addBtnDisplaying;
@@ -159,7 +157,30 @@
         self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:self action:@selector(back)];
     }
     [self.tableView setAllowsSelection:NO];
+    
+    [self loadData];
     // Do any additional setup after loading the view.
+}
+
+- (void)loadData {
+    [YFEasyHUD showIndicator];
+    
+    AVQuery *query = [AVQuery queryWithClassName:kFoodName];
+    [query whereKey:@"stall" equalTo:self.stall];
+    
+    IMP_BLOCK_SELF(MOFoodListViewController)
+    
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        [YFEasyHUD hideHud];
+        if (error) {
+            [YFEasyHUD showMsg:@"请求失败" details:@"请检查网络" lastTime:1.5];
+        }
+        
+        [block_self.dataList addObjectsFromArray:objects];
+        [block_self.tableView reloadData];
+    }];
+    
+    
 }
 
 - (void)back {

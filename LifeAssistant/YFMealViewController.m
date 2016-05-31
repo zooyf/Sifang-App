@@ -8,6 +8,7 @@
 
 #import "YFMealViewController.h"
 #import "MORestaurantListViewController.h"
+#import "MOStallListViewController.h"
 #import "MOAddStallController.h"
 #import "Restaurant.h"
 
@@ -42,14 +43,32 @@
     if (self.restaurant) {
         self.title = self.restaurant.name;
     } else {
-        self.title = @"未选择餐厅";
-        [self performSegueWithIdentifier:@"MEAL2RESLIST" sender:@YES];
+        [self requestRestaurant];
     }
     
     // Do any additional setup after loading the view.
 }
 
+- (void)requestRestaurant {
+    AVQuery *query = [AVQuery queryWithClassName:kRestaurantName];
+    query.limit = 1;
+    
+    [YFEasyHUD showIndicator];
+    
+    NSError *error = nil;
+    NSArray *arr = [query findObjects:&error];
+    if (error) {
+        [YFEasyHUD showMsg:@"获取失败" details:@"请检查您的网络" lastTime:2];
+        return;
+    }
+    
+    [YFEasyHUD hideHud];
+    self.restaurant = arr.firstObject;
+    
+}
+
 - (void)addStall {
+    
     [self performSegueWithIdentifier:@"MEAL2ADDSTALL" sender:nil];
 }
 
@@ -77,6 +96,10 @@
     
     if ([destiVC isKindOfClass:[MOAddStallController class]]) {
         [destiVC setCurrentRestaurant:self.restaurant];
+    }
+    
+    if ([segue.identifier isEqualToString:@"MEAL2FAVOURITE"]) {
+        [destiVC setFavourite:YES];
     }
 }
 
