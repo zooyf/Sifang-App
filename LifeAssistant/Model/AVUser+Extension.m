@@ -13,9 +13,15 @@
 - (void)setName:(NSString *)name {
     [self setObject:name forKey:@"name"];
 }
-
 - (NSString *)name {
     return [self objectForKey:@"name"];
+}
+
+- (void)setDepartment:(NSString *)department {
+    [self setObject:department forKey:@"department"];
+}
+- (NSString *)department {
+    return [self objectForKey:@"department"];
 }
 
 - (void)setGrade:(NSString *)grade {
@@ -28,9 +34,15 @@
 - (void)setAvatar:(AVFile *)avatarFile {
     [self setObject:avatarFile forKey:@"avatar"];
 }
-
 - (AVFile *)avatar {
     return [self objectForKey:@"avatar"];
+}
+
+- (void)setQQNumber:(NSString *)qq {
+    [self setObject:qq forKey:@"qqNumber"];
+}
+- (NSString *)qqNumber {
+    return [self objectForKey:@"qqNumber"];
 }
 
 @end

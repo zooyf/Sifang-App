@@ -7,7 +7,16 @@
 //
 
 #import "BaseViewController.h"
+#import "Stall.h"
+
+@interface MOFoodListCell : UITableViewCell
+
+@end
+
 
 @interface MOFoodListViewController : BaseViewController
+
+@property(nonatomic, strong) Stall *stall;
+@property(nonatomic, copy) void(^doneBlock)();
 
 @end

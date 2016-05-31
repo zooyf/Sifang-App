@@ -10,6 +10,9 @@
 #import "Product.h"
 #import "Restaurant.h"
 #import "Stall.h"
+#import "Food.h"
+#import "Department.h"
+#import "Contact.h"
 
 @interface AppDelegate ()
 
@@ -31,6 +34,9 @@
     [Product registerSubclass];
     [Restaurant registerSubclass];
     [Stall registerSubclass];
+    [Food registerSubclass];
+    [Department registerSubclass];
+    [Contact registerSubclass];
     
     return YES;
 }

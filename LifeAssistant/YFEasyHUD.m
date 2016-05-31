@@ -14,6 +14,23 @@ static MBProgressHUD *_hud;
 
 @implementation YFEasyHUD
 
++ (void)showIndicator {
+    [_hud hide:YES];
+    _hud = nil;
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:[YFUtils topView] animated:YES];
+    hud.removeFromSuperViewOnHide = YES;
+    _hud = hud;
+}
+
++ (void)showIndicatorViewWithMsg:(NSString *)msg {
+    [_hud hide:YES];
+    _hud = nil;
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:[YFUtils topView] animated:YES];
+    hud.labelText = msg;
+    hud.removeFromSuperViewOnHide = YES;
+    _hud = hud;
+}
+
 + (void)showMsg:(NSString *)msg details:(NSString *)details lastTime:(NSTimeInterval)delay {
     [_hud hide:YES];
     _hud = nil;

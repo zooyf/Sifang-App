@@ -15,6 +15,9 @@
 		9950E5BF1CB3BEFD00F13D63 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9950E5BD1CB3BEFD00F13D63 /* LaunchScreen.storyboard */; };
 		99745C801CB8E5FE0005D137 /* YFFleaMarketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99745C7F1CB8E5FE0005D137 /* YFFleaMarketViewController.m */; };
 		99921CA71CFC24F000D10C20 /* MOAddStallController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99921CA61CFC24F000D10C20 /* MOAddStallController.m */; };
+		99921CD81CFDC0BC00D10C20 /* Food.m in Sources */ = {isa = PBXBuildFile; fileRef = 99921CD71CFDC0BC00D10C20 /* Food.m */; };
+		99921CDB1CFDCC3D00D10C20 /* Department.m in Sources */ = {isa = PBXBuildFile; fileRef = 99921CDA1CFDCC3D00D10C20 /* Department.m */; };
+		99921CDE1CFDCCC700D10C20 /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = 99921CDD1CFDCCC700D10C20 /* Contact.m */; };
 		99D7C0391CC65AAD007150C0 /* FMListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99D7C0381CC65AAD007150C0 /* FMListViewController.m */; };
 		99D7C04D1CC68669007150C0 /* FMDistributeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99D7C04C1CC68669007150C0 /* FMDistributeViewController.m */; };
 		99D7C0511CC71AE7007150C0 /* YFMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99D7C0501CC71AE7007150C0 /* YFMineViewController.m */; };
@@ -282,6 +285,12 @@
 		99921CA51CFC24F000D10C20 /* MOAddStallController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOAddStallController.h; sourceTree = "<group>"; };
 		99921CA61CFC24F000D10C20 /* MOAddStallController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOAddStallController.m; sourceTree = "<group>"; };
 		99921CA91CFC4E3C00D10C20 /* ConstStr.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConstStr.h; sourceTree = "<group>"; };
+		99921CD61CFDC0BC00D10C20 /* Food.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Food.h; sourceTree = "<group>"; };
+		99921CD71CFDC0BC00D10C20 /* Food.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Food.m; sourceTree = "<group>"; };
+		99921CD91CFDCC3D00D10C20 /* Department.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Department.h; sourceTree = "<group>"; };
+		99921CDA1CFDCC3D00D10C20 /* Department.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Department.m; sourceTree = "<group>"; };
+		99921CDC1CFDCCC700D10C20 /* Contact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Contact.h; sourceTree = "<group>"; };
+		99921CDD1CFDCCC700D10C20 /* Contact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contact.m; sourceTree = "<group>"; };
 		99D7C0371CC65AAD007150C0 /* FMListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMListViewController.h; sourceTree = "<group>"; };
 		99D7C0381CC65AAD007150C0 /* FMListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMListViewController.m; sourceTree = "<group>"; };
 		99D7C0441CC66CC5007150C0 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
@@ -1126,6 +1135,12 @@
 				99DA178A1CF9F0C000A6A1B7 /* Restaurant.m */,
 				99DA178C1CF9F11600A6A1B7 /* Stall.h */,
 				99DA178D1CF9F11600A6A1B7 /* Stall.m */,
+				99921CD61CFDC0BC00D10C20 /* Food.h */,
+				99921CD71CFDC0BC00D10C20 /* Food.m */,
+				99921CD91CFDCC3D00D10C20 /* Department.h */,
+				99921CDA1CFDCC3D00D10C20 /* Department.m */,
+				99921CDC1CFDCCC700D10C20 /* Contact.h */,
+				99921CDD1CFDCCC700D10C20 /* Contact.m */,
 				99F09C831CF948EB0094362A /* ChooseItem.h */,
 				99F09C841CF948EB0094362A /* ChooseItem.m */,
 			);
@@ -1482,6 +1497,7 @@
 				99F8C1CB1CF6B2C4001C43A0 /* NSCache+Extension.m in Sources */,
 				99F8C1D21CF6B2C4001C43A0 /* NSString+Extension.m in Sources */,
 				99D7C0391CC65AAD007150C0 /* FMListViewController.m in Sources */,
+				99921CDE1CFDCCC700D10C20 /* Contact.m in Sources */,
 				99F0AD8D1CD601FA0041CF63 /* MOFoodListViewController.m in Sources */,
 				9950E5B11CB3BEFD00F13D63 /* AppDelegate.m in Sources */,
 				99F8C1D91CF6B2C4001C43A0 /* UIGestureRecognizer+Extension.m in Sources */,
@@ -1499,12 +1515,14 @@
 				99F8C1D41CF6B2C4001C43A0 /* NSURL+Extension.m in Sources */,
 				99F8C1DC1CF6B2C4001C43A0 /* UILabel+Extension.m in Sources */,
 				99F8C1881CF6AE89001C43A0 /* LoginController.m in Sources */,
+				99921CD81CFDC0BC00D10C20 /* Food.m in Sources */,
 				99F09C981CF9AE0E0094362A /* AVUser+Extension.m in Sources */,
 				99D7C0511CC71AE7007150C0 /* YFMineViewController.m in Sources */,
 				99F8C1CC1CF6B2C4001C43A0 /* NSData+Extension.m in Sources */,
 				99EDC0931CCCBBAA0069A788 /* UIViewController+PresentedVC.m in Sources */,
 				99F8C1D31CF6B2C4001C43A0 /* NSTimer+Extension.m in Sources */,
 				99F8C1D81CF6B2C4001C43A0 /* UIDevice+Extension.m in Sources */,
+				99921CDB1CFDCC3D00D10C20 /* Department.m in Sources */,
 				99F8C1C91CF6B2C4001C43A0 /* CLLocation+Extension.m in Sources */,
 				99F0AD841CD5F65E0041CF63 /* YFMealViewController.m in Sources */,
 				99DA178E1CF9F11600A6A1B7 /* Stall.m in Sources */,

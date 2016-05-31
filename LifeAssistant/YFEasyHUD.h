@@ -10,6 +10,10 @@
 
 @interface YFEasyHUD : NSObject
 
++ (void)showIndicator;
+
++ (void)showIndicatorViewWithMsg:(NSString *)msg;
+
 + (void)showMsg:(NSString *)msg details:(NSString *)details lastTime:(NSTimeInterval)delay;
 
 + (void)showMsg:(NSString *)msg;
