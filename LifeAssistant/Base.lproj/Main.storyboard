@@ -1163,16 +1163,29 @@
                                     <outlet property="delegate" destination="3uA-CQ-NVw" id="3hr-ql-tvL"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="该餐厅暂无档口" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0w0-m0-xUM">
+                                <rect key="frame" x="0.0" y="285" width="600" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="TVB-N6-uGO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="EEQ-CU-5eP" secondAttribute="trailing" id="2pe-Qw-Eme"/>
+                            <constraint firstItem="0w0-m0-xUM" firstAttribute="centerY" secondItem="g7c-bY-atE" secondAttribute="centerY" id="4Wa-p3-acJ"/>
+                            <constraint firstAttribute="trailing" secondItem="0w0-m0-xUM" secondAttribute="trailing" id="FIw-GB-fPv"/>
+                            <constraint firstItem="0w0-m0-xUM" firstAttribute="leading" secondItem="g7c-bY-atE" secondAttribute="leading" id="HSH-eI-36z"/>
                             <constraint firstAttribute="bottom" secondItem="EEQ-CU-5eP" secondAttribute="bottom" id="Inc-Nr-vfg"/>
                             <constraint firstItem="EEQ-CU-5eP" firstAttribute="top" secondItem="g7c-bY-atE" secondAttribute="top" id="MUh-Hh-Vif"/>
                             <constraint firstItem="EEQ-CU-5eP" firstAttribute="leading" secondItem="g7c-bY-atE" secondAttribute="leading" id="X8b-yd-UiK"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="noStallLabel" destination="0w0-m0-xUM" id="HiJ-iJ-dsP"/>
                         <outlet property="tableView" destination="EEQ-CU-5eP" id="zBz-Tm-Wrt"/>
                     </connections>
                 </viewController>
@@ -1334,6 +1347,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="ets-CE-4X8"/>
-        <segue reference="kbO-8c-uDa"/>
+        <segue reference="pgq-3V-wfn"/>
     </inferredMetricsTieBreakers>
 </document>

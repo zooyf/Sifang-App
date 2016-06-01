@@ -31,9 +31,14 @@
     self.tableView.rowHeight = 100;
     
     IMP_BLOCK_SELF(MORestaurantListViewController)
-    
+    [YFEasyHUD showIndicator];
     AVQuery *query = [AVQuery queryWithClassName:@"Restaurant"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        [YFEasyHUD hideHud];
+        if (error) {
+            [YFEasyHUD showMsg:@"获取列表失败" details:@"请检查您的网络" lastTime:2];
+            return ;
+        }
         if (objects && objects.count) {
             [block_self.dataList addObjectsFromArray:objects];
             [block_self.tableView reloadData];

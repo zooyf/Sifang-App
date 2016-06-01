@@ -122,13 +122,14 @@
 
 @interface MOStallListViewController ()<UITableViewDataSource, UITableViewDelegate>
 
+@property (weak, nonatomic) IBOutlet UILabel *noStallLabel;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *dataList;
 
 @property (nonatomic, strong) Restaurant *currentRestaurant;
 @end
 
-static int limit = 10;
+static int limit = 15;
 static int skip = 0;
 
 @implementation MOStallListViewController
@@ -149,8 +150,7 @@ static int skip = 0;
         [block_self requestData];
     }];
     
-    self.tableView.mj_footer = [MJRefreshAutoFooter footerWithRefreshingBlock:^{
-        skip += limit;
+    self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
         [block_self requestData];
     }];
     
@@ -166,11 +166,14 @@ static int skip = 0;
 - (void)requestData {
     AVQuery *query = [AVQuery queryWithClassName:kStallName];
     [query whereKey:@"restaurant" equalTo:self.currentRestaurant];
-//    //喜欢
+//    //查找我的收藏逻辑未完成
 //    if (self.favourite) {
 //        [query whereKey:@"seller" equalTo:[AVUser currentUser]];
 //    }
     IMP_BLOCK_SELF(MOStallListViewController)
+    
+    query.limit = limit;
+    query.skip = skip;
     
     [YFEasyHUD showIndicator];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
@@ -192,7 +195,9 @@ static int skip = 0;
         
         if (objects.count < limit) {
             [block_self.tableView.mj_footer endRefreshingWithNoMoreData];
+            return;
         }
+        skip += limit;
     }];
 }
 
@@ -205,7 +210,9 @@ static int skip = 0;
 #pragma mark -- UITableViewDataSource & UITableViewDelegate --
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.dataList.count;
+    NSUInteger count = self.dataList.count;
+    self.noStallLabel.hidden = count;
+    return count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

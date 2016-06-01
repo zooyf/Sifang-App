@@ -52,48 +52,48 @@
 
 - (void)saveStall {
     
-//    if (StringIsNullOrEmpty(self.imageURL)) {
-//        [YFEasyHUD showMsg:@"保存失败" details:@"请上传图片" lastTime:1.5];
-//        return;
-//    }
-//    if (StringIsNullOrEmpty(self.stallAddressTF.text)) {
-//        [YFEasyHUD showMsg:@"保存失败" details:@"请输入地址" lastTime:1.5];
-//        return;
-//    }
-//    if (StringIsNullOrEmpty(self.stallDescribeTF.text)) {
-//        [YFEasyHUD showMsg:@"保存失败" details:@"请输入主营项目" lastTime:1.5];
-//        return;
-//    }
-//    if (StringIsNullOrEmpty(self.stallNumberTF.text)) {
-//        [YFEasyHUD showMsg:@"保存失败" details:@"请输入档口编号" lastTime:1.5];
-//        return;
-//    }
-//    if (StringIsNullOrEmpty(self.stallNameTF.text)) {
-//        [YFEasyHUD showMsg:@"保存失败" details:@"请输入档口名称" lastTime:1.5];
-//        return;
-//    }
-//    if (StringIsNullOrEmpty(self.stallPhoneTF.text)) {
-//        [YFEasyHUD showMsg:@"保存失败" details:@"请输入手机号码" lastTime:1.5];
-//        return;
-//    }
-//
-//    
-//    Stall *stall = [Stall object];
-//    stall.name = self.stallNameTF.text;
-//    stall.number = @([self.stallNumberTF.text integerValue]);
-//    stall.major_business = self.stallDescribeTF.text;
-//    stall.address = self.stallAddressTF.text;
-//    stall.restaurant = self.currentRestaurant;
-//    stall.image_url = self.imageURL;
-//    
-//    NSError *error = nil;
-//    [stall save:&error];
-//    
-//    if (error) {
-//        return;
-//    }
-//    
-    [self performSegueWithIdentifier:@"ADDSTALL2ADDFOOD" sender:nil];
+    if (StringIsNullOrEmpty(self.imageURL)) {
+        [YFEasyHUD showMsg:@"保存失败" details:@"请上传图片" lastTime:1.5];
+        return;
+    }
+    if (StringIsNullOrEmpty(self.stallAddressTF.text)) {
+        [YFEasyHUD showMsg:@"保存失败" details:@"请输入地址" lastTime:1.5];
+        return;
+    }
+    if (StringIsNullOrEmpty(self.stallDescribeTF.text)) {
+        [YFEasyHUD showMsg:@"保存失败" details:@"请输入主营项目" lastTime:1.5];
+        return;
+    }
+    if (StringIsNullOrEmpty(self.stallNumberTF.text)) {
+        [YFEasyHUD showMsg:@"保存失败" details:@"请输入档口编号" lastTime:1.5];
+        return;
+    }
+    if (StringIsNullOrEmpty(self.stallNameTF.text)) {
+        [YFEasyHUD showMsg:@"保存失败" details:@"请输入档口名称" lastTime:1.5];
+        return;
+    }
+    if (StringIsNullOrEmpty(self.stallPhoneTF.text)) {
+        [YFEasyHUD showMsg:@"保存失败" details:@"请输入手机号码" lastTime:1.5];
+        return;
+    }
+
+    
+    Stall *stall = [Stall object];
+    stall.name = self.stallNameTF.text;
+    stall.number = @([self.stallNumberTF.text integerValue]);
+    stall.major_business = self.stallDescribeTF.text;
+    stall.address = self.stallAddressTF.text;
+    stall.restaurant = self.currentRestaurant;
+    stall.image_url = self.imageURL;
+    
+    NSError *error = nil;
+    [stall save:&error];
+    
+    if (error) {
+        return;
+    }
+    
+    [self performSegueWithIdentifier:@"ADDSTALL2ADDFOOD" sender:stall];
 }
 
 
