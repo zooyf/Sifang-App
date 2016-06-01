@@ -12,8 +12,6 @@
 #import "Restaurant.h"
 #import "Stall.h"
 
-#import <MJRefresh.h>
-
 @interface MOStallListCell : UITableViewCell {
     Stall *_stall;
 }
@@ -29,7 +27,6 @@
 @end
 
 @implementation MOStallListCell
-
 - (void)setStall:(Stall *)stall {
     _stall = stall;
     
@@ -120,19 +117,26 @@
 
 @end
 
+
+#pragma mark ---------- MOStallListViewController ----------
+
 @interface MOStallListViewController ()<UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *noStallLabel;
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *dataList;
 
-@property (nonatomic, strong) Restaurant *currentRestaurant;
 @end
 
 static int limit = 15;
 static int skip = 0;
 
 @implementation MOStallListViewController
+- (void)setCurrentRestaurant:(Restaurant *)currentRestaurant {
+    _currentRestaurant = currentRestaurant;
+    
+    [self.tableView.mj_header beginRefreshing];
+}
+
 - (NSMutableArray *)dataList {
     if (!_dataList) {
         _dataList = [NSMutableArray array];
@@ -157,15 +161,18 @@ static int skip = 0;
     // Do any additional setup after loading the view.
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    self.currentRestaurant = [AppConfig currentRestaurant];
-    
-    [self.tableView.mj_header beginRefreshing];
-}
-
 - (void)requestData {
     AVQuery *query = [AVQuery queryWithClassName:kStallName];
-    [query whereKey:@"restaurant" equalTo:self.currentRestaurant];
+    
+    if (!self.favourite) {
+        if (self.currentRestaurant) {
+            [query whereKey:@"restaurant" equalTo:self.currentRestaurant];
+        } else {
+            [self.tableView.mj_header endRefreshing];
+            [self.tableView.mj_footer setHidden:YES];
+            return;
+        }
+    }
 //    //查找我的收藏逻辑未完成
 //    if (self.favourite) {
 //        [query whereKey:@"seller" equalTo:[AVUser currentUser]];
@@ -184,7 +191,10 @@ static int skip = 0;
         
         if (error) {
             [YFEasyHUD showMsg:@"请求失败" details:@"请检查网络" lastTime:1.5];
+            [block_self.tableView.mj_footer setHidden:YES];
             return ;
+        } else {
+            [block_self.tableView.mj_footer setHidden:NO];
         }
         
         if (skip == 0) {

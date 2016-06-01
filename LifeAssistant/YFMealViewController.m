@@ -15,14 +15,34 @@
 @interface YFMealViewController ()
 @property (nonatomic, strong) Restaurant *restaurant;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *myFavAction;
+
+@property (nonatomic, strong) MOStallListViewController *stallListVC;
+
 @end
 
 @implementation YFMealViewController
+- (MOStallListViewController *)stallListVC {
+    if (!_stallListVC) {
+        NSArray *childVCs = self.childViewControllers;
+        for (id childController in childVCs) {
+            if ([childController isKindOfClass:[MOStallListViewController class]]) {
+                _stallListVC = childVCs.firstObject;
+                _stallListVC.favourite = NO;
+                break;
+            }
+        }
+    }
+    return _stallListVC;
+}
+
 - (void)setRestaurant:(Restaurant *)restaurant {
     _restaurant = restaurant;
-    
-    [AppConfig setCurrentRestaurant:restaurant];
     self.title = restaurant.name;
+    
+    [self.navigationItem.rightBarButtonItem setEnabled:YES];
+    
+    [self.stallListVC setCurrentRestaurant:restaurant];
+    [AppConfig setCurrentRestaurant:restaurant];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -32,6 +52,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setCurrentRestaurant:) name:kPostNotificationStallListRefresh object:self.restaurant];
     
     if ([AppConfig isManagerUser]) {
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"添加档口" style:UIBarButtonItemStylePlain target:self action:@selector(addStall)];
@@ -55,16 +77,18 @@
     
     [YFEasyHUD showIndicator];
     
-    NSError *error = nil;
-    NSArray *arr = [query findObjects:&error];
-    if (error) {
-        [YFEasyHUD showMsg:@"获取失败" details:@"请检查您的网络" lastTime:2];
-        return;
-    }
+    IMP_BLOCK_SELF(YFMealViewController)
     
-    [YFEasyHUD hideHud];
-    self.restaurant = arr.firstObject;
-    
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        [YFEasyHUD hideHud];
+        
+        if (error) {
+            [YFEasyHUD showMsg:@"请求失败" details:@"请检查网络" lastTime:2];
+            [block_self.navigationItem.rightBarButtonItem setEnabled:NO];
+            return;
+        }
+        self.restaurant = objects.firstObject;
+    }];
 }
 
 - (void)addStall {
@@ -101,6 +125,11 @@
     if ([segue.identifier isEqualToString:@"MEAL2FAVOURITE"]) {
         [destiVC setFavourite:YES];
     }
+}
+
+- (void)dealloc
+{
+    [self removeObserver:self forKeyPath:kPostNotificationStallListRefresh];
 }
 
 @end

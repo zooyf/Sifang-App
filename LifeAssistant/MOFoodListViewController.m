@@ -184,6 +184,7 @@
 }
 
 - (void)back {
+    [[NSNotificationCenter defaultCenter] postNotificationName:kPostNotificationStallListRefresh object:nil];
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 

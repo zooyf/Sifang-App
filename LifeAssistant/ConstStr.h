@@ -11,4 +11,6 @@
 
 #define kCurrentRestaurant @"kCurrentRestaurant"
 
+#define kPostNotificationStallListRefresh @"kPostNotificationStallListRefresh"
+
 #endif /* ConstStr_h */

@@ -24,6 +24,7 @@
     [self.view addSubview:txtField];
     txtField.placeholder = self.placeHolder;
     self.tfSingle = txtField;
+    [self.tfSingle becomeFirstResponder];
     
     UIBarButtonItem *backBI= [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:self action:@selector(backAction)];
     UIBarButtonItem *saveBI = [[UIBarButtonItem alloc] initWithTitle:@"保存" style:UIBarButtonItemStylePlain target:self action:@selector(saveAction)];
@@ -45,9 +46,14 @@
         return;
     }
     
-    BlockCallWithOneArg(self.rightActionBlock, self.tfSingle.text)
+    BOOL canPop = true;
+    if (self.rightActionBlock) {
+        canPop = self.rightActionBlock(self.tfSingle.text);
+    }
     
-    [self.navigationController popViewControllerAnimated:YES];
+    if (canPop) {
+        [self.navigationController popViewControllerAnimated:NO];
+    }
 }
 
 @end

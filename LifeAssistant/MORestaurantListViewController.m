@@ -9,6 +9,7 @@
 #import "MORestaurantListViewController.h"
 #import "InputViewController.h"
 #import "Restaurant.h"
+#import <MJRefresh.h>
 
 @interface MORestaurantListViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -17,6 +18,7 @@
 
 @end
 
+static skip = 0;
 @implementation MORestaurantListViewController
 - (NSMutableArray *)dataList {
     if (!_dataList) {
@@ -31,19 +33,11 @@
     self.tableView.rowHeight = 100;
     
     IMP_BLOCK_SELF(MORestaurantListViewController)
-    [YFEasyHUD showIndicator];
-    AVQuery *query = [AVQuery queryWithClassName:@"Restaurant"];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        [YFEasyHUD hideHud];
-        if (error) {
-            [YFEasyHUD showMsg:@"获取列表失败" details:@"请检查您的网络" lastTime:2];
-            return ;
-        }
-        if (objects && objects.count) {
-            [block_self.dataList addObjectsFromArray:objects];
-            [block_self.tableView reloadData];
-        }
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [block_self requestData];
     }];
+    
+    [self.tableView.mj_header beginRefreshing];
 
     if ([AppConfig isManagerUser]) {
         UIBarButtonItem *rightBI = [[UIBarButtonItem alloc] initWithTitle:@"添加餐厅" style:UIBarButtonItemStylePlain target:self action:@selector(addRestaurant)];
@@ -57,13 +51,38 @@
     // Do any additional setup after loading the view.
 }
 
+- (void)requestData {
+    
+    IMP_BLOCK_SELF(MORestaurantListViewController)
+    [YFEasyHUD showIndicator];
+    AVQuery *query = [AVQuery queryWithClassName:@"Restaurant"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        [YFEasyHUD hideHud];
+        [block_self.tableView.mj_header endRefreshing];
+        if (error) {
+            [YFEasyHUD showMsg:@"获取列表失败" details:@"请检查您的网络" lastTime:2];
+            [block_self.navigationItem.rightBarButtonItem setEnabled:NO];
+            return ;
+        }
+        
+        [block_self.navigationItem.rightBarButtonItem setEnabled:YES];
+        if (skip == 0) {
+            [block_self.dataList removeAllObjects];
+        }
+        if (objects && objects.count) {
+            [block_self.dataList addObjectsFromArray:objects];
+            [block_self.tableView reloadData];
+        }
+    }];
+}
+
 - (void)addRestaurant {
     
     IMP_BLOCK_SELF(MORestaurantListViewController)
     
     InputViewController *inputVC = [[InputViewController alloc] init];
     inputVC.placeHolder = @"请输入餐厅名称";
-    [inputVC setRightActionBlock:^(NSString *str) {
+    [inputVC setRightActionBlock:^BOOL(NSString *str) {
         Restaurant *restaurant = [Restaurant object];
         restaurant.name = str;
         restaurant.rCode = @(arc4random() % 65536);
@@ -72,11 +91,14 @@
         
         if (error) {
             [YFEasyHUD showMsg:@"添加失败" details:@"请检查网络" lastTime:1.5];
-            return ;
+            return false;
         }
         
+        [YFEasyHUD showMsg:@"添加成功" details:nil lastTime:1.5];
         [block_self.dataList addObject:restaurant];
         [block_self.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:[block_self.tableView numberOfRowsInSection:0] inSection:0]] withRowAnimation:UITableViewRowAnimationTop];
+        [block_self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:block_self.dataList.count-1 inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:YES];
+        return true;
     }];
     
     [self.navigationController pushViewController:inputVC animated:YES];
@@ -126,14 +148,20 @@
     if (editingStyle == UITableViewCellEditingStyleDelete)
     {
         Restaurant *deleting = self.dataList[indexPath.row];
-        NSError *error = nil;
-        [deleting delete:&error];
-        if (error) {
-            [YFEasyHUD showMsg:@"删除失败,请重试!" details:nil lastTime:1.5];
-            return;
-        }
-        [self.dataList removeObjectAtIndex:indexPath.row];
-        [tableView deleteRowsAtIndexPaths:@[indexPath]withRowAnimation:UITableViewRowAnimationAutomatic];
+        IMP_BLOCK_SELF(MORestaurantListViewController)
+        [YFEasyHUD showIndicator];
+        [deleting deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            [YFEasyHUD hideHud];
+            
+            if (error) {
+                [YFEasyHUD showMsg:@"删除失败,请重试!" details:nil lastTime:1.5];
+                return;
+            }
+            
+            [YFEasyHUD showMsg:@"删除成功" details:nil lastTime:1.5];
+            [block_self.dataList removeObjectAtIndex:indexPath.row];
+            [tableView deleteRowsAtIndexPaths:@[indexPath]withRowAnimation:UITableViewRowAnimationAutomatic];
+        }];
     }
 }
 

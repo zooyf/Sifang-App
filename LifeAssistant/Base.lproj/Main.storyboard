@@ -560,7 +560,7 @@
             </objects>
             <point key="canvasLocation" x="3393" y="-606"/>
         </scene>
-        <!--食堂-->
+        <!--食堂(未选择)-->
         <scene sceneID="VUF-fd-zqx">
             <objects>
                 <viewController id="s6T-WK-LC8" customClass="YFMealViewController" sceneMemberID="viewController">
@@ -587,7 +587,7 @@
                             <constraint firstAttribute="trailing" secondItem="QQc-Yk-jfG" secondAttribute="trailing" id="yVw-he-guC"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="食堂" id="tTJ-zf-5Cm">
+                    <navigationItem key="navigationItem" title="食堂(未选择)" id="tTJ-zf-5Cm">
                         <barButtonItem key="leftBarButtonItem" title="切换餐厅" id="oW4-mP-4jF">
                             <connections>
                                 <segue destination="6oH-pg-ma2" kind="show" identifier="MEAL2RESLIST" id="SJw-In-4fb"/>
@@ -1347,6 +1347,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="ets-CE-4X8"/>
-        <segue reference="pgq-3V-wfn"/>
+        <segue reference="kbO-8c-uDa"/>
     </inferredMetricsTieBreakers>
 </document>
