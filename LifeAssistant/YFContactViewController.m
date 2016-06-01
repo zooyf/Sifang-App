@@ -6,7 +6,7 @@
 //  Copyright © 2016年 zooyf. All rights reserved.
 //
 
-#import "YFMineViewController.h"
+#import "YFContactViewController.h"
 
 @interface MYHeadCell ()
 @property (weak, nonatomic) IBOutlet UIImageView *avatarImgView;
@@ -22,12 +22,12 @@
 
 #pragma mark -- YFMineVC implementation --
 
-@interface YFMineViewController ()<UITableViewDelegate, UITableViewDataSource>
+@interface YFContactViewController ()<UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
-@implementation YFMineViewController
+@implementation YFContactViewController
 
 - (NSArray *)arrCellName {
     return @[@[@"avatar"], @[@"我的发布", @"我的收藏"], @[@"美食收藏"]];

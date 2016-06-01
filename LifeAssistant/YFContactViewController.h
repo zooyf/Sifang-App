@@ -8,12 +8,13 @@
 
 #import "BaseViewController.h"
 
-@interface MYHeadCell : UITableViewCell
 #define kMYHeadCell @"MYHeadCell"
+
+@interface MYHeadCell : UITableViewCell
 
 
 @end
 
-@interface YFMineViewController : BaseViewController
+@interface YFContactViewController : BaseViewController
 
 @end

@@ -37,8 +37,7 @@
 
 - (void)setRestaurant:(Restaurant *)restaurant {
     _restaurant = restaurant;
-    self.title = restaurant.name;
-    
+    [self.navigationItem setTitle:restaurant.name];
     [self.navigationItem.rightBarButtonItem setEnabled:YES];
     
     [self.stallListVC setCurrentRestaurant:restaurant];
@@ -52,9 +51,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setCurrentRestaurant:) name:kPostNotificationStallListRefresh object:self.restaurant];
-    
+
     if ([AppConfig isManagerUser]) {
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"添加档口" style:UIBarButtonItemStylePlain target:self action:@selector(addStall)];
     } else {
@@ -63,7 +60,7 @@
     
     self.restaurant = [AppConfig currentRestaurant];
     if (self.restaurant) {
-        self.title = self.restaurant.name;
+        self.navigationItem.title = self.restaurant.name;
     } else {
         [self requestRestaurant];
     }
@@ -125,11 +122,6 @@
     if ([segue.identifier isEqualToString:@"MEAL2FAVOURITE"]) {
         [destiVC setFavourite:YES];
     }
-}
-
-- (void)dealloc
-{
-    [self removeObserver:self forKeyPath:kPostNotificationStallListRefresh];
 }
 
 @end

@@ -18,9 +18,10 @@
 		99921CD81CFDC0BC00D10C20 /* Food.m in Sources */ = {isa = PBXBuildFile; fileRef = 99921CD71CFDC0BC00D10C20 /* Food.m */; };
 		99921CDB1CFDCC3D00D10C20 /* Department.m in Sources */ = {isa = PBXBuildFile; fileRef = 99921CDA1CFDCC3D00D10C20 /* Department.m */; };
 		99921CDE1CFDCCC700D10C20 /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = 99921CDD1CFDCCC700D10C20 /* Contact.m */; };
+		99921CE11CFECCF400D10C20 /* YFMineInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99921CE01CFECCF400D10C20 /* YFMineInfoViewController.m */; };
 		99D7C0391CC65AAD007150C0 /* FMListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99D7C0381CC65AAD007150C0 /* FMListViewController.m */; };
 		99D7C04D1CC68669007150C0 /* FMDistributeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99D7C04C1CC68669007150C0 /* FMDistributeViewController.m */; };
-		99D7C0511CC71AE7007150C0 /* YFMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99D7C0501CC71AE7007150C0 /* YFMineViewController.m */; };
+		99D7C0511CC71AE7007150C0 /* YFContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99D7C0501CC71AE7007150C0 /* YFContactViewController.m */; };
 		99DA178B1CF9F0C000A6A1B7 /* Restaurant.m in Sources */ = {isa = PBXBuildFile; fileRef = 99DA178A1CF9F0C000A6A1B7 /* Restaurant.m */; };
 		99DA178E1CF9F11600A6A1B7 /* Stall.m in Sources */ = {isa = PBXBuildFile; fileRef = 99DA178D1CF9F11600A6A1B7 /* Stall.m */; };
 		99DA17911CFA026200A6A1B7 /* InputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99DA17901CFA026200A6A1B7 /* InputViewController.m */; };
@@ -291,14 +292,16 @@
 		99921CDA1CFDCC3D00D10C20 /* Department.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Department.m; sourceTree = "<group>"; };
 		99921CDC1CFDCCC700D10C20 /* Contact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Contact.h; sourceTree = "<group>"; };
 		99921CDD1CFDCCC700D10C20 /* Contact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contact.m; sourceTree = "<group>"; };
+		99921CDF1CFECCF400D10C20 /* YFMineInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFMineInfoViewController.h; sourceTree = "<group>"; };
+		99921CE01CFECCF400D10C20 /* YFMineInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFMineInfoViewController.m; sourceTree = "<group>"; };
 		99D7C0371CC65AAD007150C0 /* FMListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMListViewController.h; sourceTree = "<group>"; };
 		99D7C0381CC65AAD007150C0 /* FMListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMListViewController.m; sourceTree = "<group>"; };
 		99D7C0441CC66CC5007150C0 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		99D7C0461CC66D2D007150C0 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		99D7C04B1CC68669007150C0 /* FMDistributeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDistributeViewController.h; sourceTree = "<group>"; };
 		99D7C04C1CC68669007150C0 /* FMDistributeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDistributeViewController.m; sourceTree = "<group>"; };
-		99D7C04F1CC71AE7007150C0 /* YFMineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFMineViewController.h; sourceTree = "<group>"; };
-		99D7C0501CC71AE7007150C0 /* YFMineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFMineViewController.m; sourceTree = "<group>"; };
+		99D7C04F1CC71AE7007150C0 /* YFContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFContactViewController.h; sourceTree = "<group>"; };
+		99D7C0501CC71AE7007150C0 /* YFContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFContactViewController.m; sourceTree = "<group>"; };
 		99DA17891CF9F0C000A6A1B7 /* Restaurant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Restaurant.h; sourceTree = "<group>"; };
 		99DA178A1CF9F0C000A6A1B7 /* Restaurant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Restaurant.m; sourceTree = "<group>"; };
 		99DA178C1CF9F11600A6A1B7 /* Stall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stall.h; sourceTree = "<group>"; };
@@ -666,6 +669,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		99921CE21CFECD3900D10C20 /* Contact */ = {
+			isa = PBXGroup;
+			children = (
+				99D7C04F1CC71AE7007150C0 /* YFContactViewController.h */,
+				99D7C0501CC71AE7007150C0 /* YFContactViewController.m */,
+			);
+			name = Contact;
+			sourceTree = "<group>";
+		};
 		99D7C04E1CC69423007150C0 /* First */ = {
 			isa = PBXGroup;
 			children = (
@@ -684,8 +696,8 @@
 		99D7C0521CC71AFF007150C0 /* Mine */ = {
 			isa = PBXGroup;
 			children = (
-				99D7C04F1CC71AE7007150C0 /* YFMineViewController.h */,
-				99D7C0501CC71AE7007150C0 /* YFMineViewController.m */,
+				99921CDF1CFECCF400D10C20 /* YFMineInfoViewController.h */,
+				99921CE01CFECCF400D10C20 /* YFMineInfoViewController.m */,
 			);
 			name = Mine;
 			sourceTree = "<group>";
@@ -820,6 +832,7 @@
 			children = (
 				99D7C04E1CC69423007150C0 /* First */,
 				99F0AD811CD5F6230041CF63 /* Meal */,
+				99921CE21CFECD3900D10C20 /* Contact */,
 				99D7C0521CC71AFF007150C0 /* Mine */,
 				99F8C1751CF6A996001C43A0 /* Login */,
 			);
@@ -1487,6 +1500,7 @@
 				9950E5BA1CB3BEFD00F13D63 /* LifeAssistant.xcdatamodeld in Sources */,
 				99F8C18C1CF6AE89001C43A0 /* WelcomeController.m in Sources */,
 				99921CA71CFC24F000D10C20 /* MOAddStallController.m in Sources */,
+				99921CE11CFECCF400D10C20 /* YFMineInfoViewController.m in Sources */,
 				99745C801CB8E5FE0005D137 /* YFFleaMarketViewController.m in Sources */,
 				99F8C1E11CF6B2C4001C43A0 /* UITextField+Extension.m in Sources */,
 				99F8C1D01CF6B2C4001C43A0 /* NSNotificationCenter+Extension.m in Sources */,
@@ -1517,7 +1531,7 @@
 				99F8C1881CF6AE89001C43A0 /* LoginController.m in Sources */,
 				99921CD81CFDC0BC00D10C20 /* Food.m in Sources */,
 				99F09C981CF9AE0E0094362A /* AVUser+Extension.m in Sources */,
-				99D7C0511CC71AE7007150C0 /* YFMineViewController.m in Sources */,
+				99D7C0511CC71AE7007150C0 /* YFContactViewController.m in Sources */,
 				99F8C1CC1CF6B2C4001C43A0 /* NSData+Extension.m in Sources */,
 				99EDC0931CCCBBAA0069A788 /* UIViewController+PresentedVC.m in Sources */,
 				99F8C1D31CF6B2C4001C43A0 /* NSTimer+Extension.m in Sources */,

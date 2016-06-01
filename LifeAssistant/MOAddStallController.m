@@ -116,6 +116,7 @@
     
     if ([segue.identifier isEqualToString:@"ADDSTALL2ADDFOOD"]) {
         [destiVC setStall:sender];
+        [destiVC setAfterAddNewStall:YES];
     }
 }
 

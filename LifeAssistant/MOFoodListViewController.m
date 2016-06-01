@@ -153,7 +153,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    if ([AppConfig isManagerUser]) {
+    if ([AppConfig isManagerUser] && self.afterAddNewStall) {
         self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:self action:@selector(back)];
     }
     [self.tableView setAllowsSelection:NO];
@@ -184,8 +184,8 @@
 }
 
 - (void)back {
-    [[NSNotificationCenter defaultCenter] postNotificationName:kPostNotificationStallListRefresh object:nil];
     [self.navigationController popToRootViewControllerAnimated:YES];
+    [[NSNotificationCenter defaultCenter] postNotificationName:kPostNotificationStallListRefresh object:self.stall.restaurant];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -19,4 +19,6 @@
 @property(nonatomic, strong) Stall *stall;
 @property(nonatomic, copy) void(^doneBlock)();
 
+@property(nonatomic, assign) BOOL afterAddNewStall;
+
 @end

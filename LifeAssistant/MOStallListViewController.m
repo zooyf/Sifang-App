@@ -24,9 +24,25 @@
 @property (weak, nonatomic) IBOutlet UILabel *numberLB;
 
 @property (nonatomic, strong) Stall *stall;
+
+@property (nonatomic, strong) UITableView *tableView;
+
 @end
 
 @implementation MOStallListCell
+- (UITableView *)tableView {
+    if (!_tableView) {
+        id view = [self superview];
+        
+        while (view && [view isKindOfClass:[UITableView class]] == NO) {
+            view = [view superview];
+        }
+
+        _tableView = view;
+    }
+    return _tableView;
+}
+
 - (void)setStall:(Stall *)stall {
     _stall = stall;
     
@@ -54,6 +70,10 @@
 
 - (IBAction)editAction:(id)sender {
     [self.editBtn setTitle:@"完成" forState:UIControlStateNormal];
+    
+    [self.tableView setAllowsSelection:NO];
+    
+    [self setSelected:NO];
     
     self.nameTF.enabled = YES;
     self.desTF.enabled = YES;
@@ -95,7 +115,8 @@
     
     [self.editBtn removeTarget:self action:@selector(completeAction) forControlEvents:UIControlEventTouchUpInside];
     [self.editBtn addTarget:self action:@selector(editAction:) forControlEvents:UIControlEventTouchUpInside];
-    
+
+    [self.tableView setAllowsSelection:YES];
 }
 
 - (IBAction)cancelAction:(id)sender {
@@ -113,6 +134,8 @@
     
     self.nameTF.enabled = NO;
     self.desTF.enabled = NO;
+    
+    [self.tableView setAllowsSelection:YES];
 }
 
 @end
@@ -146,6 +169,8 @@ static int skip = 0;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(requestData) name:kPostNotificationStallListRefresh object:nil];
     
     IMP_BLOCK_SELF(MOStallListViewController)
     
@@ -233,6 +258,10 @@ static int skip = 0;
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
 
 #pragma mark - Navigation
 
@@ -246,6 +275,11 @@ static int skip = 0;
         [destiVC setStall:[sender stall]];
     }
     
+}
+
+- (void)dealloc
+{
+    [self removeObserver:self forKeyPath:kPostNotificationStallListRefresh];
 }
 
 @end
