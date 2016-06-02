@@ -183,6 +183,7 @@ static int skip = 0;
         [block_self requestData];
     }];
     
+    self.tableView.tableFooterView = [UIView new];
     // Do any additional setup after loading the view.
 }
 
@@ -275,11 +276,6 @@ static int skip = 0;
         [destiVC setStall:[sender stall]];
     }
     
-}
-
-- (void)dealloc
-{
-    [self removeObserver:self forKeyPath:kPostNotificationStallListRefresh];
 }
 
 @end

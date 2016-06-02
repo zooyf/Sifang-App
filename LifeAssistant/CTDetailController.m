@@ -69,7 +69,7 @@
     self.editBtn.hidden = editHidden;
     
     BOOL addBtnDisplaying = cancelHidden && editHidden;
-    self.addBtn.hidden = !addBtnDisplaying && [AppConfig isManagerUser];
+    self.addBtn.hidden = [AppConfig isManagerUser] ? !addBtnDisplaying : YES;
     
     self.nameTF.enabled = !cancelHidden || addBtnDisplaying;
     self.phoneTF.enabled = !cancelHidden || addBtnDisplaying;
@@ -135,6 +135,7 @@
     
     self.contact.name = self.nameTF.text;
     self.contact.phone = self.phoneTF.text;
+    self.contact.department = self.detailDepartment;
     
     [self.contentView endEditing:YES];
     
@@ -173,12 +174,43 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self requestContacts];
     // Do any additional setup after loading the view.
+}
+
+- (void)requestContacts {
+    AVQuery *query = [AVQuery queryWithClassName:[Contact parseClassName]];
+    [query whereKey:@"department" equalTo:self.currentDepartment];
+    
+    IMP_BLOCK_SELF(CTDetailController)
+    [YFEasyHUD showIndicator];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        [YFEasyHUD hideHud];
+        
+        if (error) {
+            [YFEasyHUD showMsg:@"请求失败" details:@"请检查网络" lastTime:2];
+            return ;
+        }
+        
+        if (objects && objects.count) {
+            [block_self.dataList addObjectsFromArray:objects];
+            [block_self.tableView reloadData];
+        }
+    }];
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+#pragma mark -- UITableViewDelegate --
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.dataList.count + [AppConfig isManagerUser];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -202,8 +234,25 @@
     return cell;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.dataList.count + [AppConfig isManagerUser];
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    Contact *contact = self.dataList[indexPath.row];
+    
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"否" style:UIAlertActionStyleCancel handler:nil];
+    __weak typeof(contact) weakContact = contact;
+    UIAlertAction *confirm = [UIAlertAction actionWithTitle:@"是" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel://%@", weakContact.phone]]];
+    }];
+    UIAlertController *alertCall = [UIAlertController alertControllerWithTitle:@"拨打电话" message:S(@"是否给%@拨打电话?", contact.phone) preferredStyle:UIAlertControllerStyleAlert];
+    [alertCall addAction:cancel];
+    [alertCall addAction:confirm];
+    
+    [self presentViewController:alertCall animated:YES completion:nil];
+}
+
+- (BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath {
+    return !(self.dataList.count == indexPath.row);
 }
 
 /*

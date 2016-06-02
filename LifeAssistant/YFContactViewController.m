@@ -37,7 +37,7 @@
     
     self.departmentTF.text = department.name;
     
-    self.editBtn.hidden = NO;
+    self.editBtn.hidden = ![AppConfig isManagerUser];
     self.addBtn.hidden = YES;
     [self setHiddenOfCancelBtn:YES];
 }

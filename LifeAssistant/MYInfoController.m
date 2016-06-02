@@ -20,10 +20,14 @@
 
 - (IBAction)logoutAction:(id)sender;
 
+@property (nonatomic, strong) AVUser *currentUser;
+
 @end
 
 @implementation MYInfoController
-
+- (AVUser *)currentUser {
+    return [AVUser currentUser];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -34,11 +38,13 @@
     self.tableView.tableFooterView = self.footerView;
     
     self.selEditAction = @selector(editInfoAction:);
+    
+    [self textFieldsChangEnable:NO];
     // Do any additional setup after loading the view.
 }
 
 - (void)editInfoAction:(UIBarButtonItem *)item {
-    [self textFieldsEnableChanged:YES];
+    [self textFieldsChangEnable:YES];
     [item setAction:@selector(doneEditAction:)];
     [self.nameTF becomeFirstResponder];
     [item setTitle:@"完成"];
@@ -46,12 +52,12 @@
 
 - (void)doneEditAction:(UIBarButtonItem *)item {
     [self.view endEditing:YES];
-    [self textFieldsEnableChanged:NO];
+    [self textFieldsChangEnable:NO];
     [item setAction:@selector(editInfoAction:)];
     [item setTitle:@"编辑"];
 }
 
-- (void)textFieldsEnableChanged:(BOOL)enable {
+- (void)textFieldsChangEnable:(BOOL)enable {
     self.qqTF.enabled = enable;
     self.nameTF.enabled = enable;
     self.gradeTF.enabled = enable;
@@ -91,4 +97,5 @@
     [AVUser logOut];
     BlockCallWithVoidArg(self.logoutBlock);
 }
+
 @end
