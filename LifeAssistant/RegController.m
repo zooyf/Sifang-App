@@ -42,7 +42,7 @@
 }
 
 - (IBAction)signAction: (id)sender {
-    
+    [YFEasyHUD showIndicator];
     [self.view endEditing:YES];
     
     AVUser *user = [AVUser user];
@@ -51,8 +51,6 @@
     
     NSError *error = nil;
     [user signUp:&error];
-    
-    [YFEasyHUD showMsg:@"登陆中..."];
     
     if (error) {
         [YFEasyHUD showMsg:@"login error" details:error.localizedDescription lastTime:1.5];

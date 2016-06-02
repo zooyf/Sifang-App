@@ -43,15 +43,13 @@
 
 
 - (IBAction)loginAction:(id)sender {
-    
+    [YFEasyHUD showIndicator];
     NSString *account = self.accountTF.text;
     NSString *pass = self.passTF.text;
     
     NSError *error = nil;
     [AVUser logInWithUsername:account password:pass error:&error];
-    
-    [YFEasyHUD showMsg:@"登陆中..."];
-    
+        
     if (error) {
         [YFEasyHUD showMsg:@"login error" details:error.localizedDescription lastTime:1.5];
         return;
