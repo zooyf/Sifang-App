@@ -88,7 +88,7 @@
 }
 
 - (void)completeAction {
-    
+    [YFEasyHUD showIndicator];
     if (StringIsNullOrEmpty(self.desTF.text)) {
         [YFEasyHUD showMsg:@"修改失败" details:@"请输入档口简介" lastTime:1.5];
         return;

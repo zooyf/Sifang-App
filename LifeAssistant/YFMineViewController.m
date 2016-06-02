@@ -28,6 +28,7 @@
     void(^changeView)() = ^() {
         self.loggedView.hidden = !self.loggedView.hidden;
         self.unLoginView.hidden = !self.unLoginView.hidden;
+        [self.view endEditing:YES];
         if (self.navigationItem.leftBarButtonItem) {
             self.navigationItem.leftBarButtonItem = nil;
         } else {
