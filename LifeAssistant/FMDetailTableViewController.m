@@ -44,13 +44,13 @@
     self.timeLabel.text = [product.createdAt stringDateWithFormat:@"y-M-d hh:mm"];
     self.addressLabel.text = product.deal_location;
     
-    
     AVUser *user = product.seller;
     AVQuery *query = [AVQuery queryWithClassName:@"_User"];
     
     [query getObjectInBackgroundWithId:user.objectId block:^(AVObject *object, NSError *error) {
         AVUser *user = (AVUser *)object;
         block_self.sellerNameLabel.text = user.name;
+        block_self.gradeLabel.text = user.grade;
     }];
     
     [user.avatar getThumbnail:YES width:50 height:50 withBlock:^(UIImage *image, NSError *error) {

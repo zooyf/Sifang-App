@@ -59,7 +59,7 @@
     self.editBtn.hidden = editHidden;
     
     BOOL addBtnDisplaying = cancelHidden && completeHidden && editHidden;
-    self.addBtn.hidden = !addBtnDisplaying;
+    self.addBtn.hidden = !addBtnDisplaying && [AppConfig isManagerUser];
     
     self.nameTF.enabled = !cancelHidden || addBtnDisplaying;
     self.priceTF.enabled = !cancelHidden || addBtnDisplaying;

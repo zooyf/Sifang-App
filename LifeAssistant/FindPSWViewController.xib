@@ -4,7 +4,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
@@ -23,7 +22,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vfZ-XC-wk1" userLabel="Container View">
-                    <rect key="frame" x="0.0" y="74" width="600" height="165"/>
+                    <rect key="frame" x="0.0" y="20" width="600" height="165"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FOu-y7-jeu" userLabel="phone">
                             <rect key="frame" x="0.0" y="0.0" width="600" height="55"/>
@@ -166,62 +165,16 @@
                         <constraint firstItem="tFA-dk-dM7" firstAttribute="top" secondItem="FOu-y7-jeu" secondAttribute="bottom" id="rgw-we-uSD"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bGf-09-aUS">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="重置密码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wcW-9B-5FQ">
-                            <rect key="frame" x="266" y="32" width="68" height="21"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" red="0.078431372550000003" green="0.71764705880000002" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LaY-W6-Gar">
-                            <rect key="frame" x="10" y="31" width="22" height="22"/>
-                            <state key="normal" image="icon_back_btn.png"/>
-                            <connections>
-                                <action selector="backAction:" destination="-1" eventType="touchUpInside" id="z7A-dG-pDA"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WPK-S5-xQW">
-                            <rect key="frame" x="570" y="31" width="22" height="22"/>
-                            <state key="normal" image="icon_check.png"/>
-                            <connections>
-                                <action selector="submitAction:" destination="-1" eventType="touchUpInside" id="2EZ-P5-8Ax"/>
-                            </connections>
-                        </button>
-                    </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstItem="wcW-9B-5FQ" firstAttribute="centerX" secondItem="bGf-09-aUS" secondAttribute="centerX" id="3FH-cx-MmC"/>
-                        <constraint firstItem="WPK-S5-xQW" firstAttribute="top" secondItem="LaY-W6-Gar" secondAttribute="top" id="Q7C-17-sGy"/>
-                        <constraint firstItem="LaY-W6-Gar" firstAttribute="centerY" secondItem="bGf-09-aUS" secondAttribute="centerY" constant="10" id="Rbp-mQ-s7N"/>
-                        <constraint firstItem="wcW-9B-5FQ" firstAttribute="centerY" secondItem="bGf-09-aUS" secondAttribute="centerY" constant="10" id="VGq-XF-de1"/>
-                        <constraint firstItem="LaY-W6-Gar" firstAttribute="leading" secondItem="bGf-09-aUS" secondAttribute="leading" constant="10" id="aUb-1X-yfl"/>
-                        <constraint firstItem="WPK-S5-xQW" firstAttribute="trailing" secondItem="bGf-09-aUS" secondAttribute="trailingMargin" id="cHK-jg-AwQ"/>
-                        <constraint firstAttribute="height" constant="64" id="eZt-Ns-HP7"/>
-                        <constraint firstItem="wcW-9B-5FQ" firstAttribute="centerY" secondItem="bGf-09-aUS" secondAttribute="centerY" id="i0u-im-xwL"/>
-                    </constraints>
-                    <variation key="default">
-                        <mask key="constraints">
-                            <exclude reference="i0u-im-xwL"/>
-                        </mask>
-                    </variation>
-                </view>
             </subviews>
             <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="bGf-09-aUS" firstAttribute="leading" secondItem="9JQ-OM-tO9" secondAttribute="leading" id="2V4-cy-dcV"/>
                 <constraint firstAttribute="trailing" secondItem="vfZ-XC-wk1" secondAttribute="trailing" id="3iE-7W-KJU"/>
                 <constraint firstItem="vfZ-XC-wk1" firstAttribute="leading" secondItem="9JQ-OM-tO9" secondAttribute="leading" id="FIv-Nx-RiA"/>
-                <constraint firstAttribute="trailing" secondItem="bGf-09-aUS" secondAttribute="trailing" id="LCV-hd-3L6"/>
-                <constraint firstItem="bGf-09-aUS" firstAttribute="top" secondItem="9JQ-OM-tO9" secondAttribute="top" id="QqW-1g-B7z"/>
-                <constraint firstItem="vfZ-XC-wk1" firstAttribute="top" secondItem="9JQ-OM-tO9" secondAttribute="top" constant="74" id="fZp-3z-DZm"/>
+                <constraint firstItem="vfZ-XC-wk1" firstAttribute="top" secondItem="9JQ-OM-tO9" secondAttribute="top" constant="20" id="fZp-3z-DZm"/>
             </constraints>
         </view>
     </objects>
     <resources>
-        <image name="icon_back_btn.png" width="22" height="22"/>
-        <image name="icon_check.png" width="22" height="22"/>
         <image name="icon_password.png" width="22" height="22"/>
         <image name="icon_signin_phone.png" width="22" height="22"/>
         <image name="icon_signin_securitycode.png" width="22" height="22"/>

@@ -18,7 +18,7 @@
 
 @end
 
-static skip = 0;
+static int skip = 0;
 @implementation MORestaurantListViewController
 - (NSMutableArray *)dataList {
     if (!_dataList) {

@@ -8,6 +8,10 @@
 
 #import "BaseTableViewController.h"
 
-@interface YFMineInfoViewController : BaseTableViewController
+@interface MYInfoController : BaseTableViewController
+
+@property(nonatomic, copy) void(^logoutBlock)();
+
+@property(nonatomic, assign) SEL selEditAction;
 
 @end

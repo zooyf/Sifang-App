@@ -8,6 +8,7 @@
 
 #import "LoginController.h"
 #import "FindPSWViewController.h"
+#import "RegController.h"
 #import <AVUser.h>
 
 @interface LoginController ()
@@ -16,13 +17,22 @@
 @property (weak, nonatomic) IBOutlet UITextField *passTF;
 
 @property (weak, nonatomic) IBOutlet UIButton *loginBtn;
+- (IBAction)regAction:(id)sender;
 
 @end
 
 @implementation LoginController
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        self.hidesBottomBarWhenPushed = YES;
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"登陆";
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -48,11 +58,6 @@
     }
     
     [YFEasyHUD hideHud];
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (IBAction)backAction:(id)sender {
-    
     [self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -68,4 +73,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)regAction:(id)sender {
+    RegController *reg = [[RegController alloc] initWithNibName:@"RegController" bundle:nil];
+    [self.navigationController pushViewController:reg animated:YES];
+}
 @end

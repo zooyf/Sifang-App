@@ -9,21 +9,23 @@
 #import "RegController.h"
 #import <AVUser.h>
 
-@interface RegController () {
-    int count;
-}
+@interface RegController ()
 
 @property (weak, nonatomic) IBOutlet UITextField *phoneTF;
 @property (weak, nonatomic) IBOutlet UITextField *pwdTF;
-@property (weak, nonatomic) IBOutlet UITextField *verCodeTF;
-
-@property (weak, nonatomic) IBOutlet UIButton *btnVer;
 @property (weak, nonatomic) IBOutlet UIButton *btnComplete;
 
 @property (nonatomic, strong) NSTimer *timer;
 @end
 
 @implementation RegController
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        self.hidesBottomBarWhenPushed = YES;
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -58,40 +60,6 @@
     }
     
     [YFEasyHUD hideHud];
-    
-    [self dismissViewControllerAnimated:NO completion:nil];
-}
-- (IBAction)sendVerAction:(UIButton *)sender {
-    
-    
-    [self countTimeAction];
-    sender.enabled = NO;
-}
-
-- (void)countTimeAction {
-    
-    if (!self.timer) {
-        self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(countTimeAction) userInfo:nil repeats:YES];
-        count = 60;
-        return;
-    }
-    
-    if (!count) {
-        [self.btnVer setEnabled:YES];
-        [self.btnVer setTitle:S(@"获取验证码") forState:UIControlStateNormal];
-        [self.btnVer setTitleColor:[UIColor colorWithRed:0.078 green:0.718 blue:0.973 alpha:1.000] forState:UIControlStateNormal];
-        [self.timer invalidate];
-        self.timer = nil;
-        return;
-    }
-    
-    [self.btnVer setTitle:S(@"%d", count) forState:UIControlStateNormal];
-    [self.btnVer setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
-    count--;
-    
-}
-
-- (IBAction)backAction:(id)sender {
     
     [self.navigationController popViewControllerAnimated:YES];
 }

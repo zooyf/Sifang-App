@@ -9,6 +9,8 @@
 #ifndef ConstStr_h
 #define ConstStr_h
 
+#define kSegueMarket2Distribute @"MARKET2DISTRIBUTE"
+
 #define kCurrentRestaurant @"kCurrentRestaurant"
 
 #define kPostNotificationStallListRefresh @"kPostNotificationStallListRefresh"

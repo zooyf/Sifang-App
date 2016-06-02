@@ -40,4 +40,9 @@
  */
 + (Restaurant *)currentRestaurant;
 
+/**
+ *  退出登录
+ */
++ (void)logout;
+
 @end

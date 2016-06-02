@@ -18,7 +18,9 @@
 		99921CD81CFDC0BC00D10C20 /* Food.m in Sources */ = {isa = PBXBuildFile; fileRef = 99921CD71CFDC0BC00D10C20 /* Food.m */; };
 		99921CDB1CFDCC3D00D10C20 /* Department.m in Sources */ = {isa = PBXBuildFile; fileRef = 99921CDA1CFDCC3D00D10C20 /* Department.m */; };
 		99921CDE1CFDCCC700D10C20 /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = 99921CDD1CFDCCC700D10C20 /* Contact.m */; };
-		99921CE11CFECCF400D10C20 /* YFMineInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99921CE01CFECCF400D10C20 /* YFMineInfoViewController.m */; };
+		99921CE11CFECCF400D10C20 /* MYInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99921CE01CFECCF400D10C20 /* MYInfoController.m */; };
+		99921CE51CFFE50000D10C20 /* YFMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99921CE41CFFE50000D10C20 /* YFMineViewController.m */; };
+		99921CE81CFFE96B00D10C20 /* MYUnLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99921CE71CFFE96B00D10C20 /* MYUnLoginController.m */; };
 		99D7C0391CC65AAD007150C0 /* FMListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99D7C0381CC65AAD007150C0 /* FMListViewController.m */; };
 		99D7C04D1CC68669007150C0 /* FMDistributeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99D7C04C1CC68669007150C0 /* FMDistributeViewController.m */; };
 		99D7C0511CC71AE7007150C0 /* YFContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99D7C0501CC71AE7007150C0 /* YFContactViewController.m */; };
@@ -292,8 +294,12 @@
 		99921CDA1CFDCC3D00D10C20 /* Department.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Department.m; sourceTree = "<group>"; };
 		99921CDC1CFDCCC700D10C20 /* Contact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Contact.h; sourceTree = "<group>"; };
 		99921CDD1CFDCCC700D10C20 /* Contact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contact.m; sourceTree = "<group>"; };
-		99921CDF1CFECCF400D10C20 /* YFMineInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFMineInfoViewController.h; sourceTree = "<group>"; };
-		99921CE01CFECCF400D10C20 /* YFMineInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFMineInfoViewController.m; sourceTree = "<group>"; };
+		99921CDF1CFECCF400D10C20 /* MYInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYInfoController.h; sourceTree = "<group>"; };
+		99921CE01CFECCF400D10C20 /* MYInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYInfoController.m; sourceTree = "<group>"; };
+		99921CE31CFFE50000D10C20 /* YFMineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFMineViewController.h; sourceTree = "<group>"; };
+		99921CE41CFFE50000D10C20 /* YFMineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFMineViewController.m; sourceTree = "<group>"; };
+		99921CE61CFFE96B00D10C20 /* MYUnLoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYUnLoginController.h; sourceTree = "<group>"; };
+		99921CE71CFFE96B00D10C20 /* MYUnLoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYUnLoginController.m; sourceTree = "<group>"; };
 		99D7C0371CC65AAD007150C0 /* FMListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMListViewController.h; sourceTree = "<group>"; };
 		99D7C0381CC65AAD007150C0 /* FMListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMListViewController.m; sourceTree = "<group>"; };
 		99D7C0441CC66CC5007150C0 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
@@ -696,8 +702,12 @@
 		99D7C0521CC71AFF007150C0 /* Mine */ = {
 			isa = PBXGroup;
 			children = (
-				99921CDF1CFECCF400D10C20 /* YFMineInfoViewController.h */,
-				99921CE01CFECCF400D10C20 /* YFMineInfoViewController.m */,
+				99921CE31CFFE50000D10C20 /* YFMineViewController.h */,
+				99921CE41CFFE50000D10C20 /* YFMineViewController.m */,
+				99921CDF1CFECCF400D10C20 /* MYInfoController.h */,
+				99921CE01CFECCF400D10C20 /* MYInfoController.m */,
+				99921CE61CFFE96B00D10C20 /* MYUnLoginController.h */,
+				99921CE71CFFE96B00D10C20 /* MYUnLoginController.m */,
 			);
 			name = Mine;
 			sourceTree = "<group>";
@@ -1500,12 +1510,13 @@
 				9950E5BA1CB3BEFD00F13D63 /* LifeAssistant.xcdatamodeld in Sources */,
 				99F8C18C1CF6AE89001C43A0 /* WelcomeController.m in Sources */,
 				99921CA71CFC24F000D10C20 /* MOAddStallController.m in Sources */,
-				99921CE11CFECCF400D10C20 /* YFMineInfoViewController.m in Sources */,
+				99921CE11CFECCF400D10C20 /* MYInfoController.m in Sources */,
 				99745C801CB8E5FE0005D137 /* YFFleaMarketViewController.m in Sources */,
 				99F8C1E11CF6B2C4001C43A0 /* UITextField+Extension.m in Sources */,
 				99F8C1D01CF6B2C4001C43A0 /* NSNotificationCenter+Extension.m in Sources */,
 				99F8C3751CF75AEB001C43A0 /* AVBaseModel.m in Sources */,
 				99EDC05F1CCB68370069A788 /* YFPhotoPickerView.m in Sources */,
+				99921CE51CFFE50000D10C20 /* YFMineViewController.m in Sources */,
 				99F8C1DA1CF6B2C4001C43A0 /* UIImage+Extension.m in Sources */,
 				99F8C3721CF75A38001C43A0 /* Product.m in Sources */,
 				99F8C1CB1CF6B2C4001C43A0 /* NSCache+Extension.m in Sources */,
@@ -1530,6 +1541,7 @@
 				99F8C1DC1CF6B2C4001C43A0 /* UILabel+Extension.m in Sources */,
 				99F8C1881CF6AE89001C43A0 /* LoginController.m in Sources */,
 				99921CD81CFDC0BC00D10C20 /* Food.m in Sources */,
+				99921CE81CFFE96B00D10C20 /* MYUnLoginController.m in Sources */,
 				99F09C981CF9AE0E0094362A /* AVUser+Extension.m in Sources */,
 				99D7C0511CC71AE7007150C0 /* YFContactViewController.m in Sources */,
 				99F8C1CC1CF6B2C4001C43A0 /* NSData+Extension.m in Sources */,

@@ -7,7 +7,7 @@
 //
 
 #import "YFFleaMarketViewController.h"
-#import "WelcomeController.h"
+#import "LoginController.h"
 #import "FMListViewController.h"
 
 @interface FleaCollectionCell ()
@@ -45,21 +45,38 @@
     
     [self.collectionView setKeyboardDismissMode:UIScrollViewKeyboardDismissModeOnDrag];
     
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"发布" style:UIBarButtonItemStylePlain target:self action:@selector(distributeAction)];
+    
     [self.tabBarController.tabBar setTranslucent:NO];
     // Do any additional setup after loading the view.
 }
 
-- (void)viewWillAppear:(BOOL)animated {
+- (void)distributeAction {
     if (![AppConfig checkBaseInfo]) {
-        WelcomeController *welcom = [[WelcomeController alloc] initWithNibName:@"WelcomeController" bundle:nil];
-        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:welcom];
+        UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
         
-        // 解决unbalanced xxx
-        dispatch_async(dispatch_get_main_queue(), ^(void){
-//            [self.container presentModalViewController:nc animated:YES];
-            [self.tabBarController presentViewController:nav animated:NO completion:nil];
-        });
+        IMP_BLOCK_SELF(YFFleaMarketViewController)
+        UIAlertAction *confirm = [UIAlertAction actionWithTitle:@"登陆" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            
+            LoginController *login = [[LoginController alloc] initWithNibName:@"LoginController" bundle:nil];
+            
+            // 解决unbalanced xxx
+            dispatch_async(dispatch_get_main_queue(), ^(void){
+                [block_self.navigationController pushViewController:login animated:YES];
+            });
+        }];
+        
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"无法发布商品" message:@"您还未登陆，是否登陆？" preferredStyle:UIAlertControllerStyleAlert];
+        
+        [alert addAction:cancel];
+        [alert addAction:confirm];
+        
+        [self presentViewController:alert animated:YES completion:nil];
+        
+    } else {
+        [self performSegueWithIdentifier:kSegueMarket2Distribute sender:nil];
     }
+    
 }
 
 
@@ -107,14 +124,16 @@
 
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    [segue.destinationViewController setHidesBottomBarWhenPushed:YES];
+    id destinationController = segue.destinationViewController;
+    
+    [destinationController setHidesBottomBarWhenPushed:YES];
     
     if ([sender isKindOfClass:[FleaCollectionCell class]]) {
         NSIndexPath *indexPath = [self.collectionView indexPathForCell:sender];
         FMListViewController *listVC = segue.destinationViewController;
         listVC.kind = @(indexPath.row+1);
     }
-    
+        
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }

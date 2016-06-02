@@ -35,4 +35,8 @@
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
++ (void)logout {
+    [AVUser logOut];
+}
+
 @end
