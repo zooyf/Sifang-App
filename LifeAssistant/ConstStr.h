@@ -10,6 +10,8 @@
 #define ConstStr_h
 
 #define kSegueMarket2Distribute @"MARKET2DISTRIBUTE"
+#define kSegueCONTACT2DETAIL @"CONTACT2DETAIL"
+
 
 #define kCurrentRestaurant @"kCurrentRestaurant"
 

@@ -7,9 +7,10 @@
 //
 
 #import "BaseTableViewController.h"
+#import "Department.h"
 
 @interface CTDetailController : BaseTableViewController
 
-
+@property(nonatomic, strong) Department *currentDepartment;
 
 @end

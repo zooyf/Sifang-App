@@ -7,6 +7,7 @@
 //
 
 #import "YFContactViewController.h"
+#import "CTDetailController.h"
 #import "Department.h"
 #import <MJRefresh/MJRefresh.h>
 
@@ -228,6 +229,13 @@
 
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    id destinationController = segue.destinationViewController;
+    
+    [destinationController setHidesBottomBarWhenPushed:YES];
+    
+    if ([segue.identifier isEqualToString:kSegueCONTACT2DETAIL]) {
+        [destinationController setCurrentDepartment:(Department *)[sender department]];
+    }
 }
 
 @end

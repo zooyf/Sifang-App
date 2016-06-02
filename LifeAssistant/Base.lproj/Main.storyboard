@@ -678,7 +678,7 @@
                                             <outlet property="cancelBtn" destination="cgm-3b-ZyL" id="XWU-Da-tJy"/>
                                             <outlet property="departmentTF" destination="lnU-3D-fP7" id="I1m-z1-7dy"/>
                                             <outlet property="editBtn" destination="FDc-Ya-nrH" id="YWy-JH-cDf"/>
-                                            <segue destination="eL2-pe-uCe" kind="show" id="g8E-Bi-sTx"/>
+                                            <segue destination="eL2-pe-uCe" kind="show" identifier="CONTACT2DETAIL" id="g8E-Bi-sTx"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -705,16 +705,16 @@
             </objects>
             <point key="canvasLocation" x="1950" y="3217"/>
         </scene>
-        <!--Detail Controller-->
+        <!--联系人-->
         <scene sceneID="6Vr-O4-18K">
             <objects>
-                <tableViewController id="eL2-pe-uCe" customClass="CTDetailController" sceneMemberID="viewController">
+                <tableViewController title="联系人" id="eL2-pe-uCe" customClass="CTDetailController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" id="hGA-fM-JQM">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CTDetailEditCell" rowHeight="60" id="aBA-Eg-Bt8">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CTDetailEditCell" rowHeight="60" id="aBA-Eg-Bt8" customClass="CTDetailListCell">
                                 <rect key="frame" x="0.0" y="92" width="600" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aBA-Eg-Bt8" id="nmY-ex-0tZ">
@@ -777,6 +777,13 @@
                                         <constraint firstItem="nu7-VN-iK2" firstAttribute="leading" secondItem="nmY-ex-0tZ" secondAttribute="centerX" id="wwA-w6-8fd"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="addBtn" destination="j6d-TJ-pZO" id="WQ0-QN-Vuf"/>
+                                    <outlet property="cancelBtn" destination="hrV-XX-7JC" id="8BY-Y4-ptJ"/>
+                                    <outlet property="editBtn" destination="Ypl-dw-AAg" id="HuU-XH-BW0"/>
+                                    <outlet property="nameTF" destination="zqR-Sz-9X3" id="vb1-v3-qmp"/>
+                                    <outlet property="phoneTF" destination="nu7-VN-iK2" id="6GT-6L-K3P"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
