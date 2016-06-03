@@ -71,8 +71,8 @@
     BOOL addBtnDisplaying = cancelHidden && editHidden;
     self.addBtn.hidden = [AppConfig isManagerUser] ? !addBtnDisplaying : YES;
     
-    self.nameTF.enabled = !cancelHidden || addBtnDisplaying;
-    self.phoneTF.enabled = !cancelHidden || addBtnDisplaying;
+    self.nameTF.enabled = (!cancelHidden || addBtnDisplaying) && [AppConfig isManagerUser];
+    self.phoneTF.enabled = (!cancelHidden || addBtnDisplaying) && [AppConfig isManagerUser];
 }
 
 - (void)cancelAction:(id)sender {

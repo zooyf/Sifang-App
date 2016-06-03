@@ -39,7 +39,7 @@
                                         <constraint firstAttribute="width" secondItem="QAB-1x-l5z" secondAttribute="height" multiplier="1:1" id="6cv-Pg-9OY"/>
                                     </constraints>
                                 </imageView>
-                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入手机号" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I0D-pc-HYL">
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入账号" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I0D-pc-HYL">
                                     <rect key="frame" x="60" y="13" width="520" height="30"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="30" id="A2h-Zg-Xh7"/>

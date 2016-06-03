@@ -57,34 +57,40 @@
     // 信息不完善或未登录
     if (![AppConfig checkBaseInfo]) {
         
+        IMP_BLOCK_SELF(YFFleaMarketViewController)
+        NSString *confirmString;
+        UIAlertAction *confirmAction;
         if ([AVUser currentUser]) {
-            //信息不完善
-            [self.navigationController pushViewController:[YFUtils infoController] animated:YES];
-            
-            return;
+            // 信息不完善
+            confirmString = @"信息不完善，点击确定去完善信息";
+            confirmAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                
+                dispatch_async(dispatch_get_main_queue(), ^(void){
+                    [block_self.navigationController pushViewController:[YFUtils infoController] animated:YES];
+                });
+            }];
+        } else {
+            // 未登录
+            confirmString = @"您还未登陆，是否登陆？";
+            confirmAction = [UIAlertAction actionWithTitle:@"登陆" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                
+                LoginController *login = [[LoginController alloc] initWithNibName:@"LoginController" bundle:nil];
+                
+                // 解决unbalanced xxx
+                dispatch_async(dispatch_get_main_queue(), ^(void){
+                    [block_self.navigationController pushViewController:login animated:YES];
+                });
+            }];
         }
         
-        //未登录
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"无法发布商品" message:confirmString preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
-        
-        IMP_BLOCK_SELF(YFFleaMarketViewController)
-        UIAlertAction *confirm = [UIAlertAction actionWithTitle:@"登陆" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-            
-            LoginController *login = [[LoginController alloc] initWithNibName:@"LoginController" bundle:nil];
-            
-            // 解决unbalanced xxx
-            dispatch_async(dispatch_get_main_queue(), ^(void){
-                [block_self.navigationController pushViewController:login animated:YES];
-            });
-        }];
-        
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"无法发布商品" message:@"您还未登陆，是否登陆？" preferredStyle:UIAlertControllerStyleAlert];
-        
         [alert addAction:cancel];
-        [alert addAction:confirm];
+        [alert addAction:confirmAction];
         
         [self presentViewController:alert animated:YES completion:nil];
         
+        return;
     } else {
         //信息完善&已登录
         [self performSegueWithIdentifier:kSegueMarket2Distribute sender:nil];

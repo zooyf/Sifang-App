@@ -28,6 +28,9 @@
     void(^changeView)() = ^() {
         self.loggedView.hidden = !self.loggedView.hidden;
         self.unLoginView.hidden = !self.unLoginView.hidden;
+        if (self.unLoginView.hidden == NO) {
+            [self.unloginController viewWillAppear:YES];
+        }
         [self.view endEditing:YES];
         if (self.navigationItem.leftBarButtonItem) {
             self.navigationItem.leftBarButtonItem = nil;
@@ -47,7 +50,7 @@
     BOOL baseInfoComplete = [AppConfig checkBaseInfo];
     self.loggedView.hidden = !baseInfoComplete;
     self.unLoginView.hidden = !self.loggedView.hidden;
-    if ([AppConfig isManagerUser] && baseInfoComplete) {
+    if ([AVUser currentUser] && baseInfoComplete) {
         self.navigationItem.leftBarButtonItem = self.item;
     } else {
         self.navigationItem.leftBarButtonItem = nil;

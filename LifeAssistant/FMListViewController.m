@@ -146,10 +146,20 @@
     if (self.kind) {
         [query whereKey:@"kind" equalTo:self.kind];
     }
-    
+    [YFEasyHUD showIndicator];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        [block_self.dataList addObjectsFromArray:objects];
-        [block_self.tableView reloadData];
+        [YFEasyHUD hideHud];
+        
+        if (error) {
+            [YFEasyHUD showMsg:@"请求失败" details:@"请检查网络" lastTime:2];
+            return ;
+        }
+        if (objects && objects.count) {
+            [block_self.dataList addObjectsFromArray:objects];
+            [block_self.tableView reloadData];
+            return;
+        }
+        [YFEasyHUD showMsg:@"暂无数据" details:nil lastTime:2];
     }];
 
 }

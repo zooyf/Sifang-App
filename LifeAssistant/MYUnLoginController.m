@@ -60,4 +60,11 @@
     [self.navigationController pushViewController:[YFUtils infoController] animated:YES];
 }
 
+- (IBAction)logoutAction:(id)sender {
+    
+    [AVUser logOut];
+    
+    [self viewWillAppear:YES];
+    
+}
 @end

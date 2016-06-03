@@ -179,10 +179,6 @@ static int skip = 0;
         [block_self requestData];
     }];
     
-    self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
-        [block_self requestData];
-    }];
-    
     self.tableView.tableFooterView = [UIView new];
     // Do any additional setup after loading the view.
 }
@@ -226,9 +222,17 @@ static int skip = 0;
         if (skip == 0) {
             [block_self.dataList removeAllObjects];
         }
+        
         [block_self.dataList addObjectsFromArray:objects];
         [block_self.tableView reloadData];
         
+        if (block_self.dataList.count == 0) {
+            block_self.tableView.mj_footer = nil;
+            return;
+        }
+        if (!block_self.tableView.mj_footer) {
+            self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:block_self refreshingAction:@selector(requestData)];
+        }
         if (objects.count < limit) {
             [block_self.tableView.mj_footer endRefreshingWithNoMoreData];
             return;

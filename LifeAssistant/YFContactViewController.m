@@ -167,6 +167,12 @@
     // Do any additional setup after loading the view.
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    if (!self.dataList.count) {
+        [self requestData];
+    }
+}
+
 - (void)requestData {
     NSString *depstr = [Department parseClassName];
     NSLog(@"%@", depstr);
