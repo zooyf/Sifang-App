@@ -40,6 +40,55 @@
 @end
 
 
+
+#pragma mark -- DistributeCell --
+
+
+@interface MYDistributeCell : UITableViewCell
+
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *imgView;
+@property (weak, nonatomic) IBOutlet UILabel *detailLabel;
+
+@property (weak, nonatomic) IBOutlet UIButton *distributeBtn;
+@property (weak, nonatomic) IBOutlet UIButton *editBtn;
+
+@property (nonatomic, strong) Product *product;
+
+@end
+
+@implementation MYDistributeCell
+- (void)awakeFromNib {
+    self.titleLabel.text = self.product.title;
+    switch (self.product.onSale) {
+        case ProductStatusOnSale:{
+            self.detailLabel.text = @"正在出售";
+            [self.detailLabel setTextColor:[UIColor greenColor]];
+            break;
+        }
+         
+        case ProductStatusOffSale: {
+            self.detailLabel.text = @"已下架";
+            [self.detailLabel setTextColor:[UIColor lightGrayColor]];
+            break;
+        }
+            
+        case ProductStatusSoldOut: {
+            self.detailLabel.text = @"已售出";
+            [self.detailLabel setTextColor:[UIColor lightGrayColor]];
+            break;
+        }
+            
+        default:
+            break;
+    }
+}
+
+
+@end
+
+
+
 #pragma mark -- FMListViewController --
 
 @interface FMListViewController ()<UITableViewDelegate, UITableViewDataSource>

@@ -10,6 +10,12 @@
 
 #define kAVProductName @"Product"
 
+typedef enum : NSUInteger {
+    ProductStatusOffSale,
+    ProductStatusOnSale,
+    ProductStatusSoldOut,
+} ProductStatus;
+
 @interface Product : AVBaseModel
 
 @property(nonatomic, strong) NSString *title;
@@ -20,6 +26,7 @@
 @property(nonatomic, strong) NSString *price;
 @property(nonatomic, strong) NSString *deal_location;
 @property(nonatomic, strong) NSNumber *kind;
+@property(nonatomic, assign) ProductStatus onSale;
 
 @property(nonatomic, strong) AVUser *seller;
 

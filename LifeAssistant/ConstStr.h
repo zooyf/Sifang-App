@@ -13,6 +13,9 @@
 #define kSegueCONTACT2DETAIL @"CONTACT2DETAIL"
 
 
+#define kMYInfoController @"kMYInfoController"
+
+
 #define kCurrentRestaurant @"kCurrentRestaurant"
 
 #define kPostNotificationStallListRefresh @"kPostNotificationStallListRefresh"

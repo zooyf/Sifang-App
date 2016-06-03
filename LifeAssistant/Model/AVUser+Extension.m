@@ -38,7 +38,7 @@
     return [self objectForKey:@"avatar"];
 }
 
-- (void)setQQNumber:(NSString *)qq {
+- (void)setQqNumber:(NSString *)qq {
     [self setObject:qq forKey:@"qqNumber"];
 }
 - (NSString *)qqNumber {

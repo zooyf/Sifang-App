@@ -10,8 +10,19 @@
 
 @interface MYInfoController : BaseTableViewController
 
+/**
+ *  退出登录的block
+ */
 @property(nonatomic, copy) void(^logoutBlock)();
 
+/**
+ *  selector 编辑按钮的方法
+ */
 @property(nonatomic, assign) SEL selEditAction;
+
+/**
+ *  注册后必须立刻完善信息
+ */
+@property(nonatomic, assign) BOOL afterReg;
 
 @end

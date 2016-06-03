@@ -11,7 +11,27 @@
 @implementation AppConfig
 
 + (BOOL)checkBaseInfo {
-    return [AVUser currentUser];
+    AVUser *user = [AVUser currentUser];
+    if (!user) {
+        return NO;
+    }
+    if (StringIsNullOrEmpty(user.name)) {
+        return NO;
+    }
+    if (StringIsNullOrEmpty(user.mobilePhoneNumber)) {
+        return NO;
+    }
+    if (StringIsNullOrEmpty(user.grade)) {
+        return NO;
+    }
+    if (StringIsNullOrEmpty(user.department)) {
+        return NO;
+    }
+//    if (StringIsNullOrEmpty(user.avatar.url)) {
+//        return NO;
+//    }
+    
+    return YES;;
 }
 
 + (NSArray *)allKind {

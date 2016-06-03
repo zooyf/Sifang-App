@@ -39,15 +39,15 @@
     self.infoController.logoutBlock = changeView;
     
     self.item = [[UIBarButtonItem alloc] initWithTitle:@"编辑" style:UIBarButtonItemStylePlain target:self.infoController action:self.infoController.selEditAction];
-    self.navigationItem.leftBarButtonItem = self.item;
-
+    
     // Do any additional setup after loading the view.
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    self.loggedView.hidden = ![AVUser currentUser];
-    self.unLoginView.hidden = [AVUser currentUser];
-    if ([AppConfig isManagerUser]) {
+    BOOL baseInfoComplete = [AppConfig checkBaseInfo];
+    self.loggedView.hidden = !baseInfoComplete;
+    self.unLoginView.hidden = !self.loggedView.hidden;
+    if ([AppConfig isManagerUser] && baseInfoComplete) {
         self.navigationItem.leftBarButtonItem = self.item;
     } else {
         self.navigationItem.leftBarButtonItem = nil;

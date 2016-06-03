@@ -102,7 +102,7 @@
         UIImageWriteToSavedPhotosAlbum(originalImage, nil, nil, nil);
     }
     
-    [picker dismissViewControllerAnimated:YES completion:nil];
+    [picker dismissViewControllerAnimated:NO completion:nil];
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {

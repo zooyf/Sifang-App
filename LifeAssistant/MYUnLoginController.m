@@ -21,7 +21,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     // Do any additional setup after loading the view.
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    //未登录显示 登录/注册按钮
+    self.loginView.hidden = [AVUser currentUser];
+    self.completeView.hidden = !self.loginView.hidden;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -40,9 +49,15 @@
     LoginController *login = [[LoginController alloc] initWithNibName:@"LoginController" bundle:nil];
     [self.navigationController pushViewController:login animated:YES];
 }
+
 - (IBAction)regAction:(id)sender {
     
     RegController *reg = [[RegController alloc] initWithNibName:@"RegController" bundle:nil];
     [self.navigationController pushViewController:reg animated:YES];
 }
+
+- (IBAction)completeAction:(id)sender {
+    [self.navigationController pushViewController:[YFUtils infoController] animated:YES];
+}
+
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "YFUtils.h"
+#import "MYInfoController.h"
 
 @implementation YFUtils
 
@@ -31,6 +32,14 @@
     } else {
         return rootViewController;
     }
+}
+
++ (UIViewController *)infoController {
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    MYInfoController *info = [mainStoryboard instantiateViewControllerWithIdentifier:kMYInfoController];
+    info.afterReg = YES;
+    info.hidesBottomBarWhenPushed = YES;
+    return info;
 }
 
 @end

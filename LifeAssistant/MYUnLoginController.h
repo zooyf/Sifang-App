@@ -10,4 +10,7 @@
 
 @interface MYUnLoginController : BaseViewController
 
+@property (weak, nonatomic) IBOutlet UIView *loginView;
+@property (weak, nonatomic) IBOutlet UIView *completeView;
+
 @end

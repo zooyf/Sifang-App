@@ -9,6 +9,7 @@
 #import "YFFleaMarketViewController.h"
 #import "LoginController.h"
 #import "FMListViewController.h"
+#import "MYInfoController.h"
 
 @interface FleaCollectionCell ()
 @property (weak, nonatomic) IBOutlet UIImageView *imgView;
@@ -52,7 +53,18 @@
 }
 
 - (void)distributeAction {
+    
+    // 信息不完善或未登录
     if (![AppConfig checkBaseInfo]) {
+        
+        if ([AVUser currentUser]) {
+            //信息不完善
+            [self.navigationController pushViewController:[YFUtils infoController] animated:YES];
+            
+            return;
+        }
+        
+        //未登录
         UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
         
         IMP_BLOCK_SELF(YFFleaMarketViewController)
@@ -74,7 +86,9 @@
         [self presentViewController:alert animated:YES completion:nil];
         
     } else {
+        //信息完善&已登录
         [self performSegueWithIdentifier:kSegueMarket2Distribute sender:nil];
+        
     }
     
 }

@@ -43,6 +43,8 @@
 
 
 - (IBAction)loginAction:(id)sender {
+    [self.view endEditing:YES];
+    
     [YFEasyHUD showIndicator];
     NSString *account = self.accountTF.text;
     NSString *pass = self.passTF.text;
@@ -60,7 +62,8 @@
 }
 
 - (IBAction)findPassAction:(id)sender {
-    
+    [self.view endEditing:YES];
+
     FindPSWViewController * find = [[FindPSWViewController alloc] initWithNibName:@"FindPSWViewController" bundle:nil];
     [self.navigationController pushViewController:find animated:YES];
 }
@@ -72,6 +75,7 @@
 }
 
 - (IBAction)regAction:(id)sender {
+    [self.view endEditing:YES];
     RegController *reg = [[RegController alloc] initWithNibName:@"RegController" bundle:nil];
     [self.navigationController pushViewController:reg animated:YES];
 }

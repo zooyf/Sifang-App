@@ -47,7 +47,7 @@
  *
  *  @param qq qq号
  */
-- (void)setQQNumber:(NSString *)qq;
+- (void)setQqNumber:(NSString *)qq;
 - (NSString *)qqNumber;
 
 @end

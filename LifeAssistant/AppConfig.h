@@ -11,6 +11,11 @@
 
 @interface AppConfig : NSObject
 
+/**
+ *  检查信息是否完善
+ *
+ *  @return YES:完善.NO:不完善
+ */
 + (BOOL)checkBaseInfo;
 
 /**
@@ -44,5 +49,6 @@
  *  退出登录
  */
 + (void)logout;
+
 
 @end
