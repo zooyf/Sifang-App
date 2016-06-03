@@ -190,6 +190,8 @@ NSString * const kPickerName     = @"pickerView";
     pro.imageUrl        = self.imageURL;
     pro.seller = [AVUser currentUser];
     
+    pro.saleStatus = [NSNumber numberWithInt:ProductStatusOnSale];
+    
     IMP_BLOCK_SELF(FMDistributeViewController)
     [pro saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (error) {

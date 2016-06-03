@@ -146,6 +146,7 @@
         NSIndexPath *indexPath = [self.collectionView indexPathForCell:sender];
         FMListViewController *listVC = segue.destinationViewController;
         listVC.kind = @(indexPath.row+1);
+        listVC.myDistributeProduct = NO;
     }
         
     // Get the new view controller using [segue destinationViewController].

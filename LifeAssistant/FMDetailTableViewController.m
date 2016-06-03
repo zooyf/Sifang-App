@@ -17,8 +17,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *sellerNameLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *sellerAvatarView;
 @property (weak, nonatomic) IBOutlet UILabel *gradeLabel;
-@property (weak, nonatomic) IBOutlet UITableViewCell *detailCell;
-
+@property (weak, nonatomic) IBOutlet UILabel *detailLabel;
 
 @end
 
@@ -41,7 +40,7 @@
     Product *product = self.product;
     self.proName.text = product.title;
     self.priceLabel.text = product.price;
-    self.timeLabel.text = [product.createdAt stringDateWithFormat:@"y-M-d hh:mm"];
+    self.timeLabel.text = [product.createdAt stringDateWithFormat:@"yy年M月d日"];
     self.addressLabel.text = product.deal_location;
     
     AVUser *user = product.seller;
@@ -51,6 +50,9 @@
         AVUser *user = (AVUser *)object;
         block_self.sellerNameLabel.text = user.name;
         block_self.gradeLabel.text = user.grade;
+        block_self.gradeLabel.text = user.grade;
+        self.detailLabel.text = self.product.describe;
+        [block_self.tableView reloadData];
     }];
     
     [user.avatar getThumbnail:YES width:50 height:50 withBlock:^(UIImage *image, NSError *error) {
@@ -59,14 +61,69 @@
         }
     }];
     
-    self.gradeLabel.text = @"大一";
-    self.detailCell.textLabel.text = product.describe;
-    
+    self.detailLabel.text = self.product.describe;
     // Do any additional setup after loading the view.
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    return 20;
+    if (section == 0) {
+        return 20;
+    }
+    return 0;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return section == 2 ? 30: 0;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 30)];
+    view.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(20, 5, 100, 20)];
+    [label setFont:[UIFont systemFontOfSize:14]];
+    [view addSubview:label];
+    
+    if (section == 1) {
+        label.text = @"卖家信息";
+        return view;
+
+    }
+    if (section == 2) {
+        label.text = @"商品详情";
+        return view;
+    }
+    return nil;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 0) {
+        switch (indexPath.row) {
+            case 0:
+                return 220;
+                break;
+                
+            case 1:
+                return 110;
+                break;
+                
+            default:
+                return 60;
+                break;
+        }
+        
+    }
+    if (indexPath.section == 1) {
+        return 55;
+    }
+    
+    if (indexPath.section == 2) {
+        UILabel *label = self.detailLabel;
+        CGRect rect = [NSString heightForString:self.product.describe Size:CGSizeMake(ScreenWidth - 40, 400) Font:label.font];
+        return rect.size.height + 25;
+    }
+    
+    return 40;
 }
 
 - (void)didReceiveMemoryWarning {

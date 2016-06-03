@@ -11,7 +11,7 @@
 #define kAVProductName @"Product"
 
 typedef enum : NSUInteger {
-    ProductStatusOffSale,
+    ProductStatusOffSale = 0,
     ProductStatusOnSale,
     ProductStatusSoldOut,
 } ProductStatus;
@@ -26,7 +26,7 @@ typedef enum : NSUInteger {
 @property(nonatomic, strong) NSString *price;
 @property(nonatomic, strong) NSString *deal_location;
 @property(nonatomic, strong) NSNumber *kind;
-@property(nonatomic, assign) ProductStatus onSale;
+@property(nonatomic, assign) NSNumber *saleStatus;
 
 @property(nonatomic, strong) AVUser *seller;
 

@@ -8,6 +8,7 @@
 
 #import "MYInfoController.h"
 #import "YFPhotoPickerView.h"
+#import "FMListViewController.h"
 
 @interface MYInfoController ()<YFPhotoPickerViewDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *logoutBtn;
@@ -64,12 +65,15 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    
+    // set avatar
     if (!self.avatarImage) {
         UIImage *image = [UIImage imageWithData:self.avatarFile.getData];
         self.avatarImage = image ? :[UIImage imageNamed:@"placeholder_avatar"];
     }
     self.avatarImageView.image = self.avatarImage;
-
+    
+    // set other info
     AVUser *currentUser = self.currentUser;
     self.nameTF.text = currentUser.name;
     self.phoneTF.text = currentUser.mobilePhoneNumber;
@@ -143,11 +147,6 @@
     
 }
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
-}
-
 - (IBAction)logoutAction:(id)sender {
     //完善信息
     if (self.afterReg) {
@@ -207,7 +206,8 @@
         [YFEasyHUD showMsg:@"保存成功" details:nil lastTime:1.5];
         return YES;
     } else {
-        [YFEasyHUD showMsg:@"保存失败" details:@"请重试" lastTime:1.5];
+        
+        [YFEasyHUD showMsg:@"save error" details:error.localizedDescription lastTime:1.5];
         return NO;
     }
     
@@ -233,6 +233,19 @@
         
     }];
 
+}
+
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    id destiVC = segue.destinationViewController;
+    
+    [destiVC setHidesBottomBarWhenPushed:YES];
+    
+    if ([destiVC isKindOfClass:[FMListViewController class]]) {
+        [destiVC setMyDistributeProduct:YES];
+    }
+    
 }
 
 @end

@@ -12,6 +12,7 @@
 #define kSegueMarket2Distribute @"MARKET2DISTRIBUTE"
 #define kSegueCONTACT2DETAIL @"CONTACT2DETAIL"
 
+#define kFMList2DetailSegue @"kFMList2DetailSegue"
 
 #define kMYInfoController @"kMYInfoController"
 
