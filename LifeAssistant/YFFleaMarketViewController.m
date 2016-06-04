@@ -10,16 +10,35 @@
 #import "LoginController.h"
 #import "FMListViewController.h"
 #import "MYInfoController.h"
+#import "MarketClassification.h"
+#import <UIImageView+WebCache.h>
 
 @interface FleaCollectionCell ()
 @property (weak, nonatomic) IBOutlet UIImageView *imgView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *subLabel;
 
+@property (nonatomic, strong) MarketClassification *classification;
 @end
 
 @implementation FleaCollectionCell
-
+- (void)setClassification:(MarketClassification *)classification {
+    _classification = classification;
+    
+    self.titleLabel.text = classification.category;
+    self.subLabel.text = classification.describe;
+    
+    [self.imgView sd_setImageWithURL:URL(classification.image.url) placeholderImage:[UIImage imageNamed:@"placeholder_null"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+        
+    }];
+//    IMP_BLOCK_SELF(FleaCollectionCell)
+//    [classification.image getThumbnail:NO width:100 height:100 withBlock:^(UIImage *image, NSError *error) {
+//        if (image) {
+//            [block_self.imgView setImage:image];
+//        }
+//    }];
+    
+}
 
 
 @end
@@ -27,11 +46,23 @@
 @interface YFFleaMarketViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UISearchBarDelegate>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
-
+@property (nonatomic, strong) NSMutableArray *dataList;
 
 @end
 
 @implementation YFFleaMarketViewController
+- (NSMutableArray *)dataList {
+    if (!_dataList) {
+        NSMutableArray *arr = [[NSUserDefaults standardUserDefaults] objectForKey:kMarketClassificationCacheData];
+        _dataList = [NSMutableArray arrayWithCapacity:12];
+        if (arr.count) {
+            for (NSDictionary * obj in arr) {
+                [_dataList addObject:[MarketClassification objectWithDictionary:obj]];
+            }
+        }
+    }
+    return _dataList;
+}
 
 - (NSArray *)cellSubTitleArr {
     return @[
@@ -49,7 +80,49 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"发布" style:UIBarButtonItemStylePlain target:self action:@selector(distributeAction)];
     
     [self.tabBarController.tabBar setTranslucent:NO];
+    
+    if (!self.dataList.count) {
+        [self requestMarketClassification];
+    }
     // Do any additional setup after loading the view.
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    id obj = [[NSUserDefaults standardUserDefaults] objectForKey:kMarketClassificationCacheData];
+    if (!obj) {
+        NSLog(@"%@", obj);
+    }
+}
+
+- (void)requestMarketClassification {
+    IMP_BLOCK_SELF(YFFleaMarketViewController)
+    AVQuery *marketQuery = [AVQuery queryWithClassName:[MarketClassification parseClassName]];
+    [marketQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (error || !objects || !objects.count) {
+            return ;
+        }
+        [block_self.dataList addObjectsFromArray:objects];
+        [block_self.dataList sortUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
+            return [[obj1 kind] compare:[obj2 kind] options:NSNumericSearch];
+        }];
+        [block_self.collectionView reloadData];
+        [block_self cacheData];
+    }];
+    
+}
+
+- (void)cacheData {
+    IMP_BLOCK_SELF(YFFleaMarketViewController)
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+        NSMutableArray *cacheArr = [NSMutableArray array];
+        for (id classification in block_self.dataList) {
+            if ([classification respondsToSelector:@selector(dictionaryForObject)]) {
+                [cacheArr addObject:[classification dictionaryForObject]];
+            }
+        }
+        [[NSUserDefaults standardUserDefaults] setObject:cacheArr forKey:kMarketClassificationCacheData];
+//        [[NSUserDefaults standardUserDefaults]synchronize];
+    });
 }
 
 - (void)distributeAction {
@@ -106,18 +179,21 @@
     
     FleaCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"FleaCell" forIndexPath:indexPath];
     
-    cell.titleLabel.text = [AppConfig allKind][indexPath.row];
-    cell.subLabel.text = [self cellSubTitleArr][indexPath.row];
+    if (self.dataList.count) {
+        MarketClassification *classification = self.dataList[indexPath.row];
+        [cell setClassification:classification];
+    } else {
+        cell.titleLabel.text = [AppConfig allKind][indexPath.row];
+        cell.subLabel.text = [self cellSubTitleArr][indexPath.row];
+    }
     
     return cell;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return [self cellSubTitleArr].count;
+    return self.dataList.count ? : [self cellSubTitleArr].count;
 }
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    
-}
+
 
 #pragma mark -- UICollectionViewDelegateFlowLayout --
 

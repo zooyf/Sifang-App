@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "tab_food.png",
+      "filename" : "sy_jjqz_icon@2x-2.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "healthy_food_54.698305084746px_1192945_easyicon.net.png",
+      "filename" : "sy_jjqz_icon@2x-1.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "healthy_food_82.047457627119px_1192945_easyicon.net.png",
+      "filename" : "sy_jjqz_icon@2x.png",
       "scale" : "3x"
     }
   ],

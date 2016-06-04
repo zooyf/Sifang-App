@@ -268,6 +268,7 @@
 		99F8C36E1CF6C49F001C43A0 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99F8C36D1CF6C49F001C43A0 /* BaseViewController.m */; };
 		99F8C3721CF75A38001C43A0 /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 99F8C3711CF75A38001C43A0 /* Product.m */; };
 		99F8C3751CF75AEB001C43A0 /* AVBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 99F8C3741CF75AEB001C43A0 /* AVBaseModel.m */; };
+		99FB7FB11D01D51E00EB186F /* MarketClassification.m in Sources */ = {isa = PBXBuildFile; fileRef = 99FB7FB01D01D51E00EB186F /* MarketClassification.m */; };
 		C3011615C7AFFADD6F7BF8E7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EB468F0E050684D00D05646 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -606,6 +607,8 @@
 		99F8C3711CF75A38001C43A0 /* Product.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Product.m; sourceTree = "<group>"; };
 		99F8C3731CF75AEB001C43A0 /* AVBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVBaseModel.h; sourceTree = "<group>"; };
 		99F8C3741CF75AEB001C43A0 /* AVBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVBaseModel.m; sourceTree = "<group>"; };
+		99FB7FAF1D01D51E00EB186F /* MarketClassification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarketClassification.h; sourceTree = "<group>"; };
+		99FB7FB01D01D51E00EB186F /* MarketClassification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarketClassification.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1157,6 +1160,8 @@
 				99F09C971CF9AE0E0094362A /* AVUser+Extension.m */,
 				99F8C3731CF75AEB001C43A0 /* AVBaseModel.h */,
 				99F8C3741CF75AEB001C43A0 /* AVBaseModel.m */,
+				99FB7FAF1D01D51E00EB186F /* MarketClassification.h */,
+				99FB7FB01D01D51E00EB186F /* MarketClassification.m */,
 				99F8C3701CF75A38001C43A0 /* Product.h */,
 				99F8C3711CF75A38001C43A0 /* Product.m */,
 				99DA17891CF9F0C000A6A1B7 /* Restaurant.h */,
@@ -1522,6 +1527,7 @@
 				99F8C3751CF75AEB001C43A0 /* AVBaseModel.m in Sources */,
 				99EDC05F1CCB68370069A788 /* YFPhotoPickerView.m in Sources */,
 				99921CE51CFFE50000D10C20 /* YFMineViewController.m in Sources */,
+				99FB7FB11D01D51E00EB186F /* MarketClassification.m in Sources */,
 				99F8C1DA1CF6B2C4001C43A0 /* UIImage+Extension.m in Sources */,
 				99F8C3721CF75A38001C43A0 /* Product.m in Sources */,
 				99F8C1CB1CF6B2C4001C43A0 /* NSCache+Extension.m in Sources */,

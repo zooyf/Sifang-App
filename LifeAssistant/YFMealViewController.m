@@ -21,19 +21,6 @@
 @end
 
 @implementation YFMealViewController
-- (MOStallListViewController *)stallListVC {
-    if (!_stallListVC) {
-        NSArray *childVCs = self.childViewControllers;
-        for (id childController in childVCs) {
-            if ([childController isKindOfClass:[MOStallListViewController class]]) {
-                _stallListVC = childVCs.firstObject;
-                _stallListVC.favourite = NO;
-                break;
-            }
-        }
-    }
-    return _stallListVC;
-}
 
 - (void)setRestaurant:(Restaurant *)restaurant {
     _restaurant = restaurant;
@@ -121,6 +108,12 @@
     
     if ([segue.identifier isEqualToString:@"MEAL2FAVOURITE"]) {
         [destiVC setFavourite:YES];
+    }
+    
+    if ([destiVC isKindOfClass:[MOStallListViewController class]]) {
+        self.stallListVC = destiVC;
+        self.stallListVC.favourite = NO;
+        
     }
 }
 

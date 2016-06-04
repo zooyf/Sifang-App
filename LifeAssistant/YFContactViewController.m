@@ -58,6 +58,7 @@
     self.editBtn.hidden = editHidden;
     self.addBtn.hidden = NO;
     
+    self.departmentTF.text = @"";
     self.departmentTF.enabled = YES;
 }
 
@@ -171,6 +172,7 @@
     if (!self.dataList.count) {
         [self requestData];
     }
+//    [self.tableView reloadData];
 }
 
 - (void)requestData {
@@ -213,7 +215,6 @@
             [block_self.tableView reloadData];
         }];
     } else {
-//        cell.food.stall = self.stall;
         [cell setDepartment:self.dataList[indexPath.row]];
     }
     

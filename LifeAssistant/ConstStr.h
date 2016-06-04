@@ -16,6 +16,7 @@
 
 #define kMYInfoController @"kMYInfoController"
 
+#define kMarketClassificationCacheData @"kMarketClassificationCacheData"
 
 #define kCurrentRestaurant @"kCurrentRestaurant"
 

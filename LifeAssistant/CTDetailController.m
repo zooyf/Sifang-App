@@ -19,6 +19,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *nameTF;
 @property (weak, nonatomic) IBOutlet UITextField *phoneTF;
 
+@property (weak, nonatomic) IBOutlet UIImageView *phoneIconIV;
+
 /**
  *  联系人所属部门
  */
@@ -73,10 +75,12 @@
     
     self.nameTF.enabled = (!cancelHidden || addBtnDisplaying) && [AppConfig isManagerUser];
     self.phoneTF.enabled = (!cancelHidden || addBtnDisplaying) && [AppConfig isManagerUser];
+    
+    self.phoneIconIV.hidden = !cancelHidden || !self.addBtn.hidden;
 }
 
 - (void)cancelAction:(id)sender {
-//    [self setFood:self.food];
+    [self setContact:self.contact];
     
     [self setHiddenOfCancelBtn:YES editBtn:NO];
     
@@ -244,7 +248,7 @@
     UIAlertAction *confirm = [UIAlertAction actionWithTitle:@"是" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel://%@", weakContact.phone]]];
     }];
-    UIAlertController *alertCall = [UIAlertController alertControllerWithTitle:@"拨打电话" message:S(@"是否给%@拨打电话?", contact.phone) preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertController *alertCall = [UIAlertController alertControllerWithTitle:@"拨打电话" message:S(@"是否给%@拨打电话?", contact.name) preferredStyle:UIAlertControllerStyleAlert];
     [alertCall addAction:cancel];
     [alertCall addAction:confirm];
     

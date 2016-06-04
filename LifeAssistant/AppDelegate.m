@@ -13,6 +13,7 @@
 #import "Food.h"
 #import "Department.h"
 #import "Contact.h"
+#import "MarketClassification.h"
 
 @interface AppDelegate ()
 
@@ -37,6 +38,7 @@
     [Food registerSubclass];
     [Department registerSubclass];
     [Contact registerSubclass];
+    [MarketClassification registerSubclass];
     
     return YES;
 }
