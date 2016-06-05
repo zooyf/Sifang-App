@@ -19,6 +19,7 @@
 @dynamic deal_location;
 @dynamic seller;
 @dynamic kind;
+@dynamic saleStatus;
 
 + (NSString *)parseClassName {
     return NSStringFromClass(self);

@@ -8,6 +8,7 @@
 
 #import "FMListViewController.h"
 #import "FMDetailTableViewController.h"
+#import "FMDistributeViewController.h"
 
 #define kFMListCell @"FMListCell"
 #define kMYDistributeCell @"MYDistributeCell"
@@ -59,11 +60,16 @@
 
 @property (nonatomic, strong) Product *product;
 
+@property (nonatomic, copy) void(^editBlock)(Product *product, int buttonClick);
+
 @end
 
 @implementation MYDistributeCell
 - (void)awakeFromNib {
     self.titleLabel.text = self.product.title;
+    
+    [self.editBtn addTarget:self action:@selector(edit:) forControlEvents:UIControlEventTouchUpInside];
+    [self.distributeBtn addTarget:self action:@selector(edit:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)setProduct:(Product *)product {
@@ -112,6 +118,17 @@
     }
 }
 
+- (void)edit:(UIButton *)button {
+    int buttonNum;
+    if ([button.currentTitle isEqualToString:@"编辑"]) {
+        buttonNum = 1;
+    } else if([button.currentTitle isEqualToString:@"下架"]) {
+        buttonNum = 0;
+    } else {
+        buttonNum = 2;
+    }
+    self.editBlock(self.product, buttonNum);
+}
 
 @end
 
@@ -146,6 +163,10 @@
     if (self.kind) {
         [query whereKey:@"kind" equalTo:self.kind];
     }
+    if (!self.myDistributeProduct) {
+        [query whereKey:@"saleStatus" equalTo:@(ProductStatusOnSale)];
+    }
+    
     [YFEasyHUD showIndicator];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         [YFEasyHUD hideHud];
@@ -178,9 +199,83 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    FMListCell *cell = [tableView dequeueReusableCellWithIdentifier:self.myDistributeProduct ? kMYDistributeCell : kFMListCell];
+    id cell = [tableView dequeueReusableCellWithIdentifier:self.myDistributeProduct ? kMYDistributeCell : kFMListCell];
     
     [cell setProduct:self.dataList[indexPath.row]];
+    
+    IMP_BLOCK_SELF(FMListViewController)
+    if ([cell isKindOfClass:[MYDistributeCell class]]) {
+        
+        [cell setEditBlock:^(Product *product, int buttonClick) {
+            UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+            
+            switch (buttonClick) {
+                case 0: {   //下架 按钮
+                    UIAlertController *offAlert = [UIAlertController alertControllerWithTitle:@"下架" message:@"您的下架原因是什么?" preferredStyle:UIAlertControllerStyleActionSheet];
+                    
+                    UIAlertAction *soldOutAction = [UIAlertAction actionWithTitle:@"已经卖出" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                        [product setSaleStatus:@2];
+                        NSError *error = nil;
+                        [YFEasyHUD showIndicator];
+                        [product save:&error];
+                        if (!error) {
+                            [YFEasyHUD showMsg:@"保存成功" details:nil lastTime:2];
+                            [block_self.tableView reloadData];
+                            return ;
+                        }
+                        [YFEasyHUD showMsg:@"保存失败" details:@"请检查您的网络" lastTime:2];
+                    }];
+                    
+                    UIAlertAction *offSaleAction = [UIAlertAction actionWithTitle:@"不想卖了" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                        [product setSaleStatus:@0];
+                        NSError *error = nil;
+                        [YFEasyHUD showIndicator];
+                        [product save:&error];
+                        if (!error) {
+                            [YFEasyHUD showMsg:@"保存成功" details:nil lastTime:2];
+                            [block_self.tableView reloadData];
+                            return ;
+                        }
+                        [YFEasyHUD showMsg:@"保存失败" details:@"请检查您的网络" lastTime:2];
+                    }];
+                    
+                    [offAlert addAction:soldOutAction];
+                    [offAlert addAction:offSaleAction];
+                    [offAlert addAction:cancelAction];
+                    
+                    [block_self presentViewController:offAlert animated:YES completion:nil];
+                    
+                }break;
+                    
+                case 1: {   //编辑  按钮
+                    [block_self performSegueWithIdentifier:kFMEditMyDistriSegue sender:product];
+                }break;
+                    
+                case 2:{   // 重新上架  按钮
+                    UIAlertController *reDistributeAlert = [UIAlertController alertControllerWithTitle:@"商品已下架" message:@"是否重新上架?" preferredStyle:UIAlertControllerStyleAlert];
+                    UIAlertAction *confirmAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                        [product setSaleStatus:@(ProductStatusOnSale)];
+                        NSError *error = nil;
+                        [YFEasyHUD showIndicator];
+                        [product save:&error];
+                        if (!error) {
+                            [YFEasyHUD showMsg:@"保存成功" details:nil lastTime:2];
+                            return ;
+                        }
+                        [YFEasyHUD showMsg:@"保存失败" details:@"请检查您的网络" lastTime:2];
+                    }];
+                    [reDistributeAlert addAction:cancelAction];
+                    [reDistributeAlert addAction:confirmAction];
+                    [reDistributeAlert addAction:cancelAction];
+                    
+                    [block_self presentViewController:reDistributeAlert animated:YES completion:nil];
+                }break;
+                    
+                default:
+                    break;
+            }
+        }];
+    }
     
     return cell;
 }
@@ -192,12 +287,17 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    id destinationController = segue.destinationViewController;
     
     if ([segue.identifier isEqualToString:kFMList2DetailSegue]) {
         FMDetailTableViewController *detailVC = segue.destinationViewController;
         if ([detailVC respondsToSelector:@selector(setProduct:)]) {
             [detailVC setProduct:[sender product]];
         }
+    }
+    
+    if ([segue.identifier isEqualToString:kFMEditMyDistriSegue]) {
+        [destinationController setProduct:sender];
     }
     
 }

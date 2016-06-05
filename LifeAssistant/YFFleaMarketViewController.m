@@ -166,7 +166,7 @@
         return;
     } else {
         //信息完善&已登录
-        [self performSegueWithIdentifier:kSegueMarket2Distribute sender:nil];
+        [self performSegueWithIdentifier:kMarket2DistributeSegue sender:nil];
         
     }
     
@@ -224,13 +224,12 @@
     
     [destinationController setHidesBottomBarWhenPushed:YES];
     
-    if ([sender isKindOfClass:[FleaCollectionCell class]]) {
+    if ([segue.identifier isEqualToString:kMarket2ListSegue]) {
         NSIndexPath *indexPath = [self.collectionView indexPathForCell:sender];
         FMListViewController *listVC = segue.destinationViewController;
         listVC.kind = @(indexPath.row+1);
         listVC.myDistributeProduct = NO;
     }
-        
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }

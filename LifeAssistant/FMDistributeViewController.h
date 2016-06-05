@@ -6,30 +6,12 @@
 //  Copyright © 2016年 zooyf. All rights reserved.
 //
 
-#import "BaseViewController.h"
+#import "BaseTableViewController.h"
+@class Product;
 
+@interface FMDistributeViewController : BaseTableViewController
 
-#define kFMDistributeTFCell @"FMDistributeTFCell"
-
-@interface FMDistributeTFCell : UITableViewCell
-
-- (NSString *)contentText;
-
-@end
-
-
-
-#define kFMDistributeTVCell @"FMDistributeTVCell"
-@interface FMDistributeTVCell : UITableViewCell
-
-- (NSString *)contentText;
-
-@end
-
-
-
-
-@interface FMDistributeViewController : BaseViewController
+@property (nonatomic, strong) Product           *product;
 
 @end
 

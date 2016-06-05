@@ -10,66 +10,39 @@
 #import "YFPhotoPickerView.h"
 #import "Product.h"
 #import "SinglePickerView.h"
-
-@interface FMDistributeTFCell ()
-@property (weak, nonatomic) IBOutlet UITextField *textField;
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
-
-@end
-
-@implementation FMDistributeTFCell
-
-- (NSString *)contentText {
-    return self.textField.text;
-}
-
-@end
-
-@interface FMDistributeTVCell ()
-@property (weak, nonatomic) IBOutlet UITextView *textView;
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
-@end
-
-@implementation FMDistributeTVCell
-
-- (NSString *)contentText {
-    return self.textView.text;
-}
-
-@end
-
+#import "UIPlaceholderTextView.h"
+#import <UIImageView+WebCache.h>
 
 #pragma mark -- FMDistributeViewController --
 
-@interface FMDistributeViewController ()<UITableViewDelegate, UITableViewDataSource, UIPickerViewDataSource, UIPickerViewDelegate, YFPhotoPickerViewDelegate>
+@interface FMDistributeViewController ()<YFPhotoPickerViewDelegate> {
+    Product *_product;
+}
 
-@property (nonatomic, strong) NSMutableArray    *titleArr;
 @property (nonatomic, strong) NSString          *imageURL;
 @property (nonatomic, strong) YFPhotoPickerView *photoPickerView;
 @property (nonatomic, strong) SinglePickerView  *sView;
-@property (nonatomic, strong) Product           *product;
 
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
-
+@property (weak, nonatomic) IBOutlet UITextField *nameTF;
+@property (weak, nonatomic) IBOutlet UITextField *priceTF;
+@property (weak, nonatomic) IBOutlet UIPlaceholderTextView *describeTF;
+@property (weak, nonatomic) IBOutlet UITextField *locationTF;
+@property (weak, nonatomic) IBOutlet UITextField *phoneTF;
+@property (weak, nonatomic) IBOutlet UITextField *qqTF;
+@property (weak, nonatomic) IBOutlet UITextField *kindTF;
 
 @end
 
 @implementation FMDistributeViewController
-NSString * const kPriceName      = @"价格：";
-NSString * const kProductName    = @"商品名称：";
-NSString * const kDescName       = @"描述：";
-NSString * const kPlaceName      = @"交易地点：";
-NSString * const kPhoneNumber    = @"手机号：";
-NSString * const kQQNumber       = @"QQ号：";
-NSString * const kKindName       = @"选择分类：";
-
-NSString * const kPickerName     = @"pickerView";
-
 - (Product *)product {
     if (!_product) {
         _product = [Product object];
     }
     return _product;
+}
+
+- (void)setProduct:(Product *)product {
+    _product = product;
 }
 
 - (void)dealloc
@@ -80,19 +53,33 @@ NSString * const kPickerName     = @"pickerView";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.nameTF.text = self.product.title;
+    self.priceTF.text = self.product.price;
+    self.locationTF.text = self.product.deal_location;
+    self.phoneTF.text = self.product.phone_num;
+    self.qqTF.text = self.product.qq;
+    self.imageURL = self.product.imageUrl;
+    if (self.product.title) {
+        self.kindTF.text = [AppConfig allKind][self.product.kind.integerValue];
+        self.describeTF.text = self.product.describe;
+    } else {
+        [self.describeTF setPlaceholder:@"请输入商品描述"];
+    }
+    
+    IMP_BLOCK_SELF(FMDistributeViewController)
     // 键盘出现表格移动动画
     [[NSNotificationCenter defaultCenter] addObserverForName:UIKeyboardWillShowNotification object:nil queue:nil usingBlock:^(NSNotification *note) {
         id _obj = [note.userInfo valueForKey:UIKeyboardFrameEndUserInfoKey];
         CGRect _keyboardFrame = CGRectNull;
         if ([_obj respondsToSelector:@selector(getValue:)]) [_obj getValue:&_keyboardFrame];
         [UIView animateWithDuration:0.25f delay:0.f options:UIViewAnimationOptionCurveEaseInOut animations:^{
-            [_tableView setContentInset:UIEdgeInsetsMake(0.f, 0.f, _keyboardFrame.size.height+10, 0.f)];
+            [block_self.tableView setContentInset:UIEdgeInsetsMake(0.f, 0.f, _keyboardFrame.size.height+10, 0.f)];
         } completion:nil];
     }];
     
     [[NSNotificationCenter defaultCenter] addObserverForName:UIKeyboardWillHideNotification object:nil queue:nil usingBlock:^(NSNotification *note) {
         [UIView animateWithDuration:0.25f delay:0.f options:UIViewAnimationOptionCurveEaseInOut animations:^{
-            [_tableView setContentInset:UIEdgeInsetsZero];
+            [block_self.tableView setContentInset:UIEdgeInsetsZero];
         } completion:nil];
     }];
     
@@ -100,7 +87,7 @@ NSString * const kPickerName     = @"pickerView";
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(CGRectGetMinX(self.tableView.frame), CGRectGetMinY(self.tableView.frame), ScreenWidth, ScreenWidth/3.0)];
     CGFloat pickerViewBorder = headerView.frame.size.height * 0.8;
     self.photoPickerView = [[YFPhotoPickerView alloc] initWithFrame:CGRectMake(0, 0, pickerViewBorder, pickerViewBorder)];
-    [self.photoPickerView setImage:[UIImage imageNamed:@"take_photo"]];
+    [self.photoPickerView sd_setImageWithURL:URL(self.product.imageUrl) placeholderImage:[UIImage imageNamed:@"take_photo"]];
     self.photoPickerView.center = headerView.center;
     [headerView addSubview:self.photoPickerView];
     
@@ -112,6 +99,8 @@ NSString * const kPickerName     = @"pickerView";
     
     [self.tableView setKeyboardDismissMode:UIScrollViewKeyboardDismissModeOnDrag];
     
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonItemStylePlain target:self action:@selector(cancelAction:)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"发布" style:UIBarButtonItemStylePlain target:self action:@selector(distributeAction:)];
     // Do any additional setup after loading the view.
 }
 
@@ -125,22 +114,17 @@ NSString * const kPickerName     = @"pickerView";
 }
 
 
-- (IBAction)cancelAction:(id)sender {
+- (void)cancelAction:(id)sender {
     [self.view endEditing:YES];
     
-    kWEAK
+    IMP_BLOCK_SELF(FMDistributeViewController)
     UIAlertController *cancelAlert = [UIAlertController alertControllerWithTitle:@"放弃发布商品"
                                                                          message:@"填写的信息将不会被保存"
                                                                   preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *abortAction = [UIAlertAction actionWithTitle:@"放弃"
-                                                          style:UIAlertActionStyleDestructive
-                                                        handler:^(UIAlertAction * _Nonnull action) {
-        [weakSelf dismissViewControllerAnimated:YES completion:nil];
+    UIAlertAction *abortAction = [UIAlertAction actionWithTitle:@"放弃" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+        [block_self.navigationController popViewControllerAnimated:YES];
     }];
-    UIAlertAction *continueAction = [UIAlertAction actionWithTitle:@"继续发布"
-                                                            style:UIAlertActionStyleCancel
-                                                          handler:^(UIAlertAction * _Nonnull action) {
-    }];
+    UIAlertAction *continueAction = [UIAlertAction actionWithTitle:@"继续发布" style:UIAlertActionStyleCancel handler:nil];
     
     [cancelAlert addAction:abortAction];
     [cancelAlert addAction:continueAction];
@@ -148,7 +132,7 @@ NSString * const kPickerName     = @"pickerView";
     [self presentViewController:cancelAlert animated:YES completion:nil];
 }
 
-- (IBAction)distributeAction:(id)sender {
+- (void)distributeAction:(id)sender {
     [self.view endEditing:YES];
     
     if (!self.imageURL) {
@@ -156,37 +140,29 @@ NSString * const kPickerName     = @"pickerView";
         return;
     }
 
-    NSMutableArray *array = [NSMutableArray arrayWithCapacity:self.titleArr.count];
-    for (int i = 0; i < self.titleArr.count; i++) {
+    for (int i = 0; i < [self.tableView numberOfRowsInSection:0]; i++) {
         id cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
         
-        NSString *inputStr = nil;
-        if ([cell respondsToSelector:@selector(textView)]) {
-            inputStr = [cell textView].text;
-        } else if ([cell respondsToSelector:@selector(textField)]) {
-            inputStr = [cell textField].text;
-        } else {
-            
+        for (id view in [cell contentView].subviews) {
+            if ([view isKindOfClass:[UITextField class]] || [view isKindOfClass:[UITextView class]]) {
+                
+                if (StringIsNullOrEmpty([view text])) {
+                    [YFEasyHUD showMsg:S(@"请输入%@", [view placeholder]) details:nil lastTime:2];
+                    return;
+                }
+            }
         }
-        
-        if (StringIsNullOrEmpty(inputStr)) {
-            NSString *title = [cell titleLabel].text;
-            [YFEasyHUD showMsg:S(@"请输入%@", title) details:nil lastTime:1.5];
-            return;
-        }
-        
-        [array addObject:inputStr];
     }
     
     [YFEasyHUD showMsg:@"发布中..."];
     
     Product *pro = self.product;
-    pro.title           = array[0];
-    pro.price           = array[1];
-    pro.describe        = array[2];
-    pro.deal_location   = array[3];
-    pro.phone_num       = array[4];
-    pro.qq              = array[5];
+    pro.title           = self.nameTF.text;
+    pro.price           = self.priceTF.text;
+    pro.describe        = self.describeTF.text;
+    pro.deal_location   = self.locationTF.text;
+    pro.phone_num       = self.phoneTF.text;
+    pro.qq              = self.qqTF.text;
     pro.imageUrl        = self.imageURL;
     pro.seller = [AVUser currentUser];
     
@@ -201,13 +177,13 @@ NSString * const kPickerName     = @"pickerView";
         
         [YFEasyHUD hideHud];
         
-        [block_self dismissViewControllerAnimated:NO completion:nil];
+        [YFEasyHUD showMsg:@"发布成功" details:nil lastTime:2];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            
+            [block_self.navigationController popViewControllerAnimated:YES];
+        });
     }];
     
-}
-
-- (IBAction)tapToEndEditing:(id)sender {
-    [self.view endEditing:YES];
 }
 
 - (void)photoPickerSavedInDefaults:(UIImage *)selectedImage {
@@ -223,55 +199,14 @@ NSString * const kPickerName     = @"pickerView";
 
 #pragma mark -- UITableViewDelegate & UITableViewDataSource --
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.titleArr.count;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    NSString *text = self.titleArr[indexPath.row];
-    
-    // picker cell
-    if ([text isEqualToString:kPickerName]) {
-        id cell = [tableView dequeueReusableCellWithIdentifier:@"FMDistributePickerCell"];        
-        return cell;
-    }
-    
-    NSString *reuseID = kFMDistributeTFCell;    //textField cell
-    
-    // textView cell
-    if ([text isEqualToString:kDescName]) {
-        reuseID = kFMDistributeTVCell;
-    }
-    
-    id cell = [tableView dequeueReusableCellWithIdentifier:reuseID];
-    
-    [cell titleLabel].text = self.titleArr[indexPath.row];
-    
-    // set keyboard type to Number Pad
-    if ([[cell titleLabel].text isEqualToString:kPriceName] || [[cell titleLabel].text isEqualToString:kQQNumber] || [[cell titleLabel].text isEqualToString:kPhoneNumber]) {
-        [[cell textField] setKeyboardType:UIKeyboardTypeNumberPad];
-    }
-    
-    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-    
-    // disable textField of kKindName
-    if ([text isEqualToString:kKindName]) {
-        [[cell textField] setEnabled:NO];
-    }
-    
-    return cell;
-}
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [self.view endEditing:YES];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     IMP_BLOCK_SELF(FMDistributeViewController)
     
     // 分类选择器
-    if ([self.titleArr[indexPath.row] isEqualToString:kKindName]) {
-        
-        id cell = [tableView cellForRowAtIndexPath:indexPath];
+    if (indexPath.row == 6) {
         
         NSArray *allKindArray = [AppConfig allKind];
         NSMutableArray *aryItems = [NSMutableArray arrayWithCapacity:allKindArray.count];
@@ -289,13 +224,8 @@ NSString * const kPickerName     = @"pickerView";
         self.sView.title = @"请选择分类";
         self.sView.sureHandler = ^(ChooseItem * kind)
         {
-            @try {
-                [cell textField].text = kind.name;
-            } @catch (NSException *exception) {
-                [cell textView].text = kind.name;
-            } @finally {
-                block_self.product.kind = @(kind.code+1);
-            }
+            block_self.kindTF.text = kind.name;
+            block_self.product.kind = @(kind.code+1);
             [block_self.sView closeAction];
         };
         [self.sView show];
@@ -303,54 +233,11 @@ NSString * const kPickerName     = @"pickerView";
 
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if ([self.titleArr[indexPath.row] isEqualToString:kPickerName]) {
-        return 100;
-    }
-    return 60;
-}
-
-
-#pragma mark -- UIPickerViewDataSource & UIPickerViewDelegate --
-
-- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-    return 12;
-}
-
-- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
-    return 1;
-}
-
-- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    return @"hhh";
-}
-
-
-#pragma mark -- Lazily --
-
-- (NSMutableArray *)titleArr {
-    if (!_titleArr) {
-        _titleArr = @[
-                      kProductName,
-                      kPriceName,
-                      kDescName,
-                      kPlaceName,
-                      kPhoneNumber,
-                      kQQNumber,
-                      kKindName
-                      ].mutableCopy;
-    }
-    return _titleArr;
-}
-
-/*
-#pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
-*/
 
 @end

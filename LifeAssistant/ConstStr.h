@@ -9,9 +9,10 @@
 #ifndef ConstStr_h
 #define ConstStr_h
 
-#define kSegueMarket2Distribute @"MARKET2DISTRIBUTE"
-#define kSegueCONTACT2DETAIL @"CONTACT2DETAIL"
-
+#define kMarket2DistributeSegue @"kMarket2DistributeSegue"
+#define kMarket2ListSegue @"kMarket2ListSegue"
+#define kCONTACT2DETAILSegue @"kCONTACT2DETAILSegue"
+#define kFMEditMyDistriSegue @"kFMEditMyDistriSegue"
 #define kFMList2DetailSegue @"kFMList2DetailSegue"
 
 #define kMYInfoController @"kMYInfoController"

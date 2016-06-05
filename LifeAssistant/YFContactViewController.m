@@ -240,7 +240,7 @@
     
     [destinationController setHidesBottomBarWhenPushed:YES];
     
-    if ([segue.identifier isEqualToString:kSegueCONTACT2DETAIL]) {
+    if ([segue.identifier isEqualToString:kCONTACT2DETAILSegue]) {
         [destinationController setCurrentDepartment:(Department *)[sender department]];
     }
 }

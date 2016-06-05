@@ -22,6 +22,7 @@
 		99921CE11CFECCF400D10C20 /* MYInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99921CE01CFECCF400D10C20 /* MYInfoController.m */; };
 		99921CE51CFFE50000D10C20 /* YFMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99921CE41CFFE50000D10C20 /* YFMineViewController.m */; };
 		99921CE81CFFE96B00D10C20 /* MYUnLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99921CE71CFFE96B00D10C20 /* MYUnLoginController.m */; };
+		99D712851D03AD9F008E51CA /* UIPlaceholderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 99D712841D03AD9F008E51CA /* UIPlaceholderTextView.m */; };
 		99D7C0391CC65AAD007150C0 /* FMListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99D7C0381CC65AAD007150C0 /* FMListViewController.m */; };
 		99D7C04D1CC68669007150C0 /* FMDistributeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99D7C04C1CC68669007150C0 /* FMDistributeViewController.m */; };
 		99D7C0511CC71AE7007150C0 /* YFContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99D7C0501CC71AE7007150C0 /* YFContactViewController.m */; };
@@ -304,6 +305,8 @@
 		99921CE41CFFE50000D10C20 /* YFMineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFMineViewController.m; sourceTree = "<group>"; };
 		99921CE61CFFE96B00D10C20 /* MYUnLoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYUnLoginController.h; sourceTree = "<group>"; };
 		99921CE71CFFE96B00D10C20 /* MYUnLoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYUnLoginController.m; sourceTree = "<group>"; };
+		99D712831D03AD9F008E51CA /* UIPlaceholderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIPlaceholderTextView.h; sourceTree = "<group>"; };
+		99D712841D03AD9F008E51CA /* UIPlaceholderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIPlaceholderTextView.m; sourceTree = "<group>"; };
 		99D7C0371CC65AAD007150C0 /* FMListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMListViewController.h; sourceTree = "<group>"; };
 		99D7C0381CC65AAD007150C0 /* FMListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMListViewController.m; sourceTree = "<group>"; };
 		99D7C0441CC66CC5007150C0 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
@@ -723,6 +726,8 @@
 		99EDC05C1CCB68290069A788 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
+				99D712831D03AD9F008E51CA /* UIPlaceholderTextView.h */,
+				99D712841D03AD9F008E51CA /* UIPlaceholderTextView.m */,
 				99F09C7D1CF7EF760094362A /* YFEasyHUD.h */,
 				99F09C7E1CF7EF760094362A /* YFEasyHUD.m */,
 				99EDC05D1CCB68370069A788 /* YFPhotoPickerView.h */,
@@ -1541,6 +1546,7 @@
 				99F8C1D11CF6B2C4001C43A0 /* NSObject+Extention.m in Sources */,
 				99F09C881CF949370094362A /* SinglePickerView.m in Sources */,
 				99DA17911CFA026200A6A1B7 /* InputViewController.m in Sources */,
+				99D712851D03AD9F008E51CA /* UIPlaceholderTextView.m in Sources */,
 				99F8C1CE1CF6B2C4001C43A0 /* NSDictionary+Extension.m in Sources */,
 				99F8C1E21CF6B2C4001C43A0 /* UIView+Extension.m in Sources */,
 				99D7C04D1CC68669007150C0 /* FMDistributeViewController.m in Sources */,

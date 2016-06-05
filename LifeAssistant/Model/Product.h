@@ -11,8 +11,11 @@
 #define kAVProductName @"Product"
 
 typedef enum : NSUInteger {
+    //下架
     ProductStatusOffSale = 0,
+    //在售
     ProductStatusOnSale,
+    //售出
     ProductStatusSoldOut,
 } ProductStatus;
 
