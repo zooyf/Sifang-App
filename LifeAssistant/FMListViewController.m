@@ -165,6 +165,8 @@
     }
     if (!self.myDistributeProduct) {
         [query whereKey:@"saleStatus" equalTo:@(ProductStatusOnSale)];
+    } else {
+        [query whereKey:@"seller" equalTo:[AVUser currentUser]];
     }
     
     [YFEasyHUD showIndicator];
