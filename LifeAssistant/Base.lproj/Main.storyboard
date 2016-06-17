@@ -2125,9 +2125,9 @@
         <image name="tab_my" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="POy-6g-4oO"/>
         <segue reference="rpg-Q0-LI2"/>
-        <segue reference="hVK-Xv-IMQ"/>
-        <segue reference="ets-CE-4X8"/>
+        <segue reference="gcQ-AT-UJf"/>
         <segue reference="kbO-8c-uDa"/>
     </inferredMetricsTieBreakers>
 </document>

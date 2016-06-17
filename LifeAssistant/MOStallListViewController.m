@@ -48,10 +48,12 @@
     
     self.nameTF.text = stall.name;
     self.desTF.text = stall.major_business;
-    self.numberLB.text = S(@"%@号", stall.number);
+    self.numberLB.text = stall.number ? S(@"%@号", stall.number) : @"";
     AVFile *imgFile = [AVFile fileWithURL:stall.image_url];
     
     IMP_BLOCK_SELF(MOStallListCell)
+    
+    
     
     [imgFile getThumbnail:YES width:100 height:100 withBlock:^(UIImage *image, NSError *error) {
         if (image) {
@@ -183,6 +185,10 @@ static int skip = 0;
     // Do any additional setup after loading the view.
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [self.tableView reloadData];
+}
+
 - (void)requestData {
     AVQuery *query = [AVQuery queryWithClassName:kStallName];
     
@@ -195,10 +201,6 @@ static int skip = 0;
             return;
         }
     }
-//    //查找我的收藏逻辑未完成
-//    if (self.favourite) {
-//        [query whereKey:@"seller" equalTo:[AVUser currentUser]];
-//    }
     IMP_BLOCK_SELF(MOStallListViewController)
     
     query.limit = limit;

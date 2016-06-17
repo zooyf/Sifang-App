@@ -14,7 +14,7 @@
 
 @interface YFMealViewController ()
 @property (nonatomic, strong) Restaurant *restaurant;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *myFavAction;
+@property (nonatomic, strong) UIBarButtonItem *addStallBarButtonItem;
 
 @property (nonatomic, strong) MOStallListViewController *stallListVC;
 
@@ -34,16 +34,18 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     self.navigationItem.rightBarButtonItem.enabled = self.restaurant ? YES : NO;
+    
+    if ([AppConfig isManagerUser]) {
+        self.navigationItem.rightBarButtonItem = self.addStallBarButtonItem;
+    } else {
+        self.navigationItem.rightBarButtonItem = nil;
+    }
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    if ([AppConfig isManagerUser]) {
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"添加档口" style:UIBarButtonItemStylePlain target:self action:@selector(addStall)];
-    } else {
-        self.navigationItem.rightBarButtonItem = _myFavAction;
-    }
+    self.addStallBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"添加档口" style:UIBarButtonItemStylePlain target:self action:@selector(addStall)];
     
     self.restaurant = [AppConfig currentRestaurant];
     if (self.restaurant) {

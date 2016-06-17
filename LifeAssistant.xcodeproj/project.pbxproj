@@ -741,13 +741,13 @@
 		99EDC0881CCCB3E90069A788 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				99F8C1931CF6B2C4001C43A0 /* Extensions */,
 				99EDC0911CCCBBAA0069A788 /* UIViewController+PresentedVC.h */,
 				99EDC0921CCCBBAA0069A788 /* UIViewController+PresentedVC.m */,
 				99F8C1E31CF6B73C001C43A0 /* AppConfig.h */,
 				99F8C1E41CF6B73C001C43A0 /* AppConfig.m */,
 				99F09C801CF7F0AA0094362A /* YFUtils.h */,
 				99F09C811CF7F0AA0094362A /* YFUtils.m */,
+				99F8C1931CF6B2C4001C43A0 /* Extensions */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -1228,6 +1228,7 @@
 				TargetAttributes = {
 					9950E5A81CB3BEFC00F13D63 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = VZH93B46V6;
 					};
 				};
 			};
@@ -1687,12 +1688,15 @@
 			baseConfigurationReference = 846574FB8E0361E67B3F7734 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = LifeAssistant/PrefixHeader.pch;
 				INFOPLIST_FILE = LifeAssistant/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.JasonYu.LifeAssistant;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -1701,12 +1705,15 @@
 			baseConfigurationReference = 3209072C2E2FB0198D6B12A9 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = LifeAssistant/PrefixHeader.pch;
 				INFOPLIST_FILE = LifeAssistant/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.JasonYu.LifeAssistant;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
