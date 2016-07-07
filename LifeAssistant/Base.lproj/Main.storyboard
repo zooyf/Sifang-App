@@ -812,14 +812,8 @@
                                 <segue destination="6oH-pg-ma2" kind="show" identifier="MEAL2RESLIST" id="SJw-In-4fb"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="我的收藏" id="5dj-6g-Tqj">
-                            <connections>
-                                <segue destination="3uA-CQ-NVw" kind="show" identifier="MEAL2FAVOURITE" id="ets-CE-4X8"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="myFavAction" destination="5dj-6g-Tqj" id="q5c-Ug-kss"/>
                         <segue destination="YUT-0Y-Zlb" kind="show" identifier="MEAL2ADDSTALL" id="JKL-33-jCD"/>
                     </connections>
                 </viewController>
@@ -1684,7 +1678,7 @@
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MOStallsListCell" rowHeight="70" id="vTH-0P-Td9" customClass="MOStallListCell">
-                                        <rect key="frame" x="0.0" y="92" width="600" height="70"/>
+                                        <rect key="frame" x="0.0" y="28" width="600" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vTH-0P-Td9" id="WvM-ng-57F">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="69"/>
@@ -1816,7 +1810,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MOFoodListCell" id="B6K-X8-nI1" customClass="MOFoodListCell">
-                                        <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="B6K-X8-nI1" id="OLd-T8-d5S">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -2119,15 +2113,14 @@
         <image name="icon_signin_phone.png" width="22" height="22"/>
         <image name="placeholder_avatar" width="256" height="256"/>
         <image name="placeholder_null" width="350" height="350"/>
-        <image name="tab_contact" width="30" height="24"/>
-        <image name="tab_food" width="25" height="24"/>
-        <image name="tab_market" width="24" height="24"/>
-        <image name="tab_my" width="24" height="24"/>
+        <image name="tab_contact" width="22" height="23"/>
+        <image name="tab_food" width="27" height="23"/>
+        <image name="tab_market" width="21" height="23"/>
+        <image name="tab_my" width="19" height="23"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="POy-6g-4oO"/>
-        <segue reference="rpg-Q0-LI2"/>
-        <segue reference="gcQ-AT-UJf"/>
         <segue reference="kbO-8c-uDa"/>
+        <segue reference="rpg-Q0-LI2"/>
     </inferredMetricsTieBreakers>
 </document>
