@@ -1,5 +1,11 @@
+platform :ios, '8.0'
+
+target 'LifeAssistant' do
+
 pod "AFNetworking"
 pod 'MJRefresh'
 pod 'SDWebImage'
 pod 'AVOSCloud'
 pod 'MBProgressHUD'
+
+end
